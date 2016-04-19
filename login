@@ -22,9 +22,9 @@
 
 <body>
 
-<div class="flex-align">
-
-<form class="form-horizontal" role="form" action="login.php" method="POST" onSubmit="return validaLogin(this)">
+<div class="jumbotron vertical-center">
+<div class="container">
+<form class="auth-form-body form-horizontal" role="form" action="login.php" method="POST" onSubmit="return validaLogin(this)">
 
 <div class="row">
 <div class="col-sm-offset-4 col-sm-4">
@@ -58,7 +58,7 @@
 </div>
 
 </form>
-
+</div>
 </div>
 
 

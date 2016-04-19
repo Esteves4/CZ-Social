@@ -14,12 +14,12 @@
 	<!-- Fonte -->
 	<link href='https://fonts.googleapis.com/css?family=Lato:400,300,100,700,900' rel='stylesheet' type='text/css'>
 	
-	<title> Dummy Social </title>
+	<title> CZ Social </title>
 </head>
 
 <body>
 <div class="container-fluid">
-	<a href="login.html" class="btn btn-info">Login</a>
+	<a href="login" class="btn btn-info">Login</a>
 </div>
 
 

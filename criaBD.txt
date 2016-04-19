@@ -1,6 +1,7 @@
 drop database dummySocial;
-create database dummySocial;
-use dummySocial
+drop database czSocial;
+create database czSocial;
+use czSocial
 
 create table enderecos(endereco_id int AUTO_INCREMENT primary key, cidade varchar(20) not null, UF varchar(2) not null); 
 create table perfis(perfil_id int primary key AUTO_INCREMENT, conta_id int not null, sexo varchar(10) not null, formacao varchar(100) not null, perf_foto longblob not null, interessado varchar(10) not null, endereco_id int not null, foreign key(endereco_id) references enderecos(endereco_id));

@@ -21,45 +21,51 @@
 </head>
 
 <body>
-
+	
 <div class="jumbotron vertical-center">
-<div class="container">
-<form class="auth-form-body form-horizontal" role="form" action="login.php" method="POST" onSubmit="return validaLogin(this)">
-
-<div class="row">
-<div class="col-sm-offset-4 col-sm-4">
-	<!--<label class="control-label col-sm-4" for="email"><span class="glyphicon glyphicon-envelope"> </span></label>-->
-	<label class="sr-only control-label" for="email"></label>
-	<div class="input-group">
-		<div class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></div>
-	<input class="form-control" type="email"  id="email" placeholder="Digite o email">
+	<div class="container">
+		<form class="form-horizontal" role="form" action="login.php" method="POST" onSubmit="return validaLogin(this)">
+			<div class="row">
+				<div "class="col-sm-offset-4 col-sm-4">
+					<h3 id="login">Login</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-offset-4 col-sm-4">
+					<label class="sr-only control-label" for="email"></label>
+					<div class="input-group">
+						<div class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></div>
+						<input class="form-control" type="email"  id="email" placeholder="Digite o email">
+						<div class="input-group-addon"></div>
+					</div>
+					
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-offset-4 col-sm-4">
+					<label class="sr-only" for="senha"></label>
+					<div class="input-group">
+						<div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></div>
+							<input class="form-control" type="password" id="senha" placeholder="Digite a senha">
+						<div class="input-group-addon"></div>
+					</div>
+										
+				</div>
+			</div>
+			<div class="row">
+				<div class="checkbox col-sm-offset-4 col-sm-4">
+				<label id="remember"><input type="checkbox">Lembre-se de mim</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-offset-4 col-sm-4">
+				<button class="btn btn-default" type="submit">Entrar</button>
+				</div>
+			</div>
+		</form>
 	</div>
 </div>
-</div>
-<div class="row">
-<div class="col-sm-offset-4 col-sm-4">
-	<label class="sr-only" for="senha"></label>
-	<div class="input-group">
-		<div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></div>
- 	<input class="form-control" type="password" id="senha" placeholder="Digite a senha">
-	</div>
-</div>
-</div>
-<div class="row">
-		<div class="checkbox col-sm-offset-4 col-sm-4">
-			<label><input type="checkbox">Lembre-se de mim</label>
-		</div>
-</div>
-<div class="row">
-	<div class="col-sm-offset-4 col-sm-4">
-		<button class="btn btn-default" type="submit">Entrar</button>
-	</div>
 
-</div>
-
-</form>
-</div>
-</div>
 
 
 <!--Javascript para validar informações digitadas no login-->

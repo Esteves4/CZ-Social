@@ -25,7 +25,7 @@
 	
 <div class="vertical-center">
 	<div class="container">
-		<form class="form-horizontal" role="form" action="login.php" method="POST" onSubmit="return valida(this)">
+		<form class="form-horizontal" role="form" action="login.php" method="POST">
 			<div class="row">
 				<div class="col-sm-offset-4 col-sm-4">
 					<h3 id="login">Login</h3>
@@ -66,10 +66,10 @@
 			
 			<div class="row">
 				<div class="col-sm-offset-4 col-sm-2">
-				<button id="cadastrar" class="btn btn-info btn-block" href="#">Registrar-se</button>
+				<button id="cadastrar" class="btn btn-info btn-block" type="button">Registrar-se</button>
 				</div>
 				<div class="col-sm-2">
-				<button id="esqueciSenha" class="btn btn-link btn-block" href="#">Esqueceu a senha?</button>
+				<button id="esqueciSenha" class="btn btn-link btn-block" type="button">Esqueceu a senha?</button>
 				</div>
 			</div>
 		</form>

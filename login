@@ -25,7 +25,7 @@
 	
 <div class="vertical-center">
 	<div class="container">
-		<form class="form-horizontal" role="form" action="login.php" method="POST" onSubmit="return validaLogin(this)">
+		<form class="form-horizontal" role="form" action="login.php" method="POST" onSubmit="return valida(this)">
 			<div class="row">
 				<div class="col-sm-offset-4 col-sm-4">
 					<h3 id="login">Login</h3>
@@ -78,15 +78,13 @@
 </div>
 
 
-
+<!-- jQuery (necessario para os plugins Javascript Bootstrap) -->
+<script src="js/jquery-2.2.3.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/index.js"></script>
 
 <!--Javascript para validar informações digitadas no login-->
 <script src="js/validaLogin.js"></script>
-
-<!-- jQuery (necessario para os plugins Javascript Bootstrap) -->
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/index.js"></script>
 
 </body>
 </html>

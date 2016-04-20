@@ -20,6 +20,15 @@ body{
 	color: white;
 }
 
+#cadastrar, #esqueciSenha{
+	display:inline-block;
+}
+
+#esqueciSenha{
+	float: right;
+}
+
+
 .row{
 	margin: 5px;
 	
@@ -34,6 +43,7 @@ body{
   background-size: cover;
   display: flex;
   align-items: center;
+  
      
   
 }

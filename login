@@ -25,14 +25,14 @@
 	
 <div class="vertical-center">
 	<div class="container">
-		<form class="form-horizontal" role="form" action="login.php" method="POST">
+		<form class="form-horizontal col-sm-offset-4 col-sm-4" role="form" action="login.php" method="POST">
 			<div class="row">
-				<div class="col-sm-offset-4 col-sm-4">
+				<div >
 					<h3 id="login">Login</h3>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-sm-offset-4 col-sm-4">
+				<div >
 					<label class="sr-only control-label" for="email"></label>
 					<div class="input-group">
 						<div class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></div>
@@ -43,7 +43,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-sm-offset-4 col-sm-4">
+				<div >
 					<label class="sr-only" for="senha"></label>
 					<div class="input-group">
 						<div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></div>
@@ -54,23 +54,19 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="checkbox col-sm-offset-4 col-sm-4">
-				<label id="remember"><input type="checkbox">Lembre-se de mim</label>
+				<div>
+				<label id="remember"><input type="checkbox"> Lembre-se de mim</label>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-sm-offset-4 col-sm-4">
+				<div>
 				<button id="entrar" class="btn btn-success btn-block" type="submit">Entrar</button>
 				</div>
 			</div>
 			
 			<div class="row">
-				<div class="col-sm-offset-4 col-sm-2">
-				<button id="cadastrar" class="btn btn-info btn-block" type="button">Registrar-se</button>
-				</div>
-				<div class="col-sm-2">
-				<button id="esqueciSenha" class="btn btn-link btn-block" type="button">Esqueceu a senha?</button>
-				</div>
+				<a href="#" id="cadastrar" class="btn btn-info col-sm-6 " type="button">Registrar-se</a>
+				<a href="#" id="esqueciSenha" class="btn btn-link col-sm-6" type="button">Esqueceu a senha?</a>				
 			</div>
 		</form>
 		

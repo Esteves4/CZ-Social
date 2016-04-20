@@ -21,18 +21,20 @@
 </head>
 
 <body>
-
 	
 <div class="vertical-center">
 	<div class="container">
-		<form class="form-horizontal" role="form" action="login.php" method="POST" onSubmit="return valida(this)">
+	<div class="row">
+	<div class="col-sm-offset-4 col-sm-4">
+		<div class="panel panel-default" id="painel">
+		<form class="form-horizontal" role="form" action="login.php" method="POST" onSubmit="return validaLogin(this)">
 			<div class="row">
-				<div class="col-sm-offset-4 col-sm-4">
+				<div class="col-sm-offset-1 col-sm-10">
 					<h3 id="login">Login</h3>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-sm-offset-4 col-sm-4">
+				<div class="col-sm-offset-1 col-sm-10">
 					<label class="sr-only control-label" for="email"></label>
 					<div class="input-group">
 						<div class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></div>
@@ -43,7 +45,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-sm-offset-4 col-sm-4">
+				<div class="col-sm-offset-1 col-sm-10">
 					<label class="sr-only" for="senha"></label>
 					<div class="input-group">
 						<div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></div>
@@ -54,21 +56,21 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="checkbox col-sm-offset-4 col-sm-4">
+				<div class="checkbox col-sm-offset-1 col-sm-10">
 				<label id="remember"><input type="checkbox">Lembre-se de mim</label>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-sm-offset-4 col-sm-4">
+				<div class="col-sm-offset-1 col-sm-10">
 				<button id="entrar" class="btn btn-success btn-block" type="submit">Entrar</button>
 				</div>
 			</div>
 			
 			<div class="row">
-				<div class="col-sm-offset-4 col-sm-2">
+				<div class="col-sm-offset-1 col-sm-5">
 				<button id="cadastrar" class="btn btn-info btn-block" href="#">Registrar-se</button>
 				</div>
-				<div class="col-sm-2">
+				<div class="col-sm-1">
 				<button id="esqueciSenha" class="btn btn-link btn-block" href="#">Esqueceu a senha?</button>
 				</div>
 			</div>
@@ -77,14 +79,18 @@
 	</div>
 </div>
 
+</div>
+</div>
+</div>
 
-<!-- jQuery (necessario para os plugins Javascript Bootstrap) -->
-<script src="js/jquery-2.2.3.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/index.js"></script>
 
 <!--Javascript para validar informações digitadas no login-->
 <script src="js/validaLogin.js"></script>
+
+<!-- jQuery (necessario para os plugins Javascript Bootstrap) -->
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/index.js"></script>
 
 </body>
 </html>

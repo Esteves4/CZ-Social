@@ -1,11 +1,19 @@
 $(document).ready(function(){
      $("#entrar").click(function(){
         if( $("#email").val() == ""){
-			alert("O Campo \"Email\" é obrigatório.");
+			$("#erro").show();
 			return false;
 		}else if( $("#senha").val() == ""){
-			alert("O Campo \"Senha\" é obrigatório.");
+			$("#erro2").show();
 			return false;
 		}
+    });
+	
+	$("#email").click(function(){
+			$("#erro").hide();
+    });
+	
+	$("#senha").click(function(){
+			$("#erro2").hide();
     });
 });

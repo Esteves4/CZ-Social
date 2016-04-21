@@ -28,6 +28,9 @@ body{
 	float: right;
 }
 
+#erro, #erro2{
+	display: none;
+}
 
 .row{
 	margin: 5px;

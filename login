@@ -36,7 +36,7 @@
 					<label class="sr-only control-label" for="email"></label>
 					<div class="input-group">
 						<div class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></div>
-						<input class="form-control" type="email"  id="email" placeholder="Digite o email">
+						<input class="form-control" type="email"  id="email" placeholder="Digite o e-mail">
 						<div class="input-group-addon"></div>
 					</div>
 					
@@ -67,6 +67,16 @@
 			<div class="row">
 				<a href="#" id="cadastrar" class="btn btn-info col-sm-6 " type="button">Registrar-se</a>
 				<a href="#" id="esqueciSenha" class="btn btn-link col-sm-6" type="button">Esqueceu a senha?</a>				
+			</div>
+			
+			<div id="erro" class="row alert alert-danger alert-dismissible" role="alert">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<p id="erroText">Shiii.. O campo <strong>e-mail</strong> é obrigatório.</p>
+			</div>
+			
+			<div id="erro2" class="row alert alert-danger alert-dismissible" role="alert">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<p id="erroText2">Shiii.. O campo <strong>senha</strong> é obrigatório.</p>
 			</div>
 		</form>
 		

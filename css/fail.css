@@ -3,33 +3,13 @@ body{
 	
 }
 
-#remember, #login{
-	color: white;
-	font-weight: 700;
-}
-
-#login{
+#titulo{
 	text-align: center;
-	font-family: 'Lato', sans-serif;
-
-}
-
-#entrar, #cadastrar, #esqueciSenha{
-	
-	font-size: 14px;
 	color: white;
 }
-
-#cadastrar, #esqueciSenha{
-	display:inline-block;
-}
-
-#esqueciSenha{
-	float: right;
-}
-
-#erro, #erro2{
-	display: none;
+#acesso{
+	display: block;
+	text-align: center;
 }
 
 .row{
@@ -54,10 +34,3 @@ body{
   
 }
 
-.form-horizontal{
-	border: 1px solid;
-	padding-bottom: 20px;
-	background-color: rgba(0,0,0,0.5);
-	
-
-}

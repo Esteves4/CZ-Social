@@ -54,9 +54,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div>
-				<label id="remember"><input type="checkbox"> Lembre-se de mim</label>
-				</div>
+				<label id="remember"><input name="conectado" value="true" type="checkbox"> Manter conectado</label>
 			</div>
 			<div class="row">
 				<div>
@@ -65,8 +63,8 @@
 			</div>
 			
 			<div class="row">
-				<a href="#" id="cadastrar" class="btn btn-info col-sm-6 " type="button">Registrar-se</a>
-				<a href="#" id="esqueciSenha" class="btn btn-link col-sm-6" type="button">Esqueceu a senha?</a>				
+				<a href="cadastrar" id="cadastrar" class="btn btn-info col-sm-6 " type="button">Registrar-se</a>
+				<a href="reset" id="esqueciSenha" class="btn btn-link col-sm-6" type="button">Esqueceu a senha?</a>				
 			</div>
 			
 			<div id="erro" class="row alert alert-danger alert-dismissible" role="alert">

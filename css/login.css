@@ -1,0 +1,74 @@
+body{
+
+	
+}
+
+#remember, #login{
+	color: white;
+	font-weight: 700;
+}
+
+#login{
+	text-align: center;
+	font-family: 'Lato', sans-serif;
+
+}
+
+#entrar, #cadastrar, #esqueciSenha{
+	
+	font-size: 14px;
+	color: white;
+}
+
+#cadastrar, #esqueciSenha{
+	display:inline-block;
+}
+
+#esqueciSenha{
+	float: right;
+}
+
+#erro, #erro2{
+	display: none;
+}
+
+.row{
+	margin: 5px;
+	
+}
+
+.vertical-center {
+  min-height: 100%; 
+  min-height: 100vh;
+  align-items: center;
+  display: flex;
+  font-family: 'Lato', sans-serif;
+  
+  	background-image: url('../pictures/background.png');
+  background-color: black;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  
+      
+  
+}
+
+.navbar-inverse{
+	margin: 0px;
+}
+
+.navbar-brand{
+	padding: 2px;
+}
+
+.form-horizontal{
+	border: 1px solid;
+	padding-bottom: 20px;
+	background-color: rgba(0,0,0,0.5);
+	
+
+}

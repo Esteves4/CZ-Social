@@ -16,4 +16,5 @@ $(document).ready(function(){
 	$("#senha").click(function(){
 			$("#erro2").hide();
     });
+	
 });

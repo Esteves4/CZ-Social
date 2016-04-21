@@ -1,5 +1,5 @@
 body{
-	font-family: 'Lato', sans-serif;
+
 	
 }
 
@@ -40,18 +40,29 @@ body{
 .vertical-center {
   min-height: 100%; 
   min-height: 100vh;
-  background-image: url('../pictures/background.png');
+  align-items: center;
+  display: flex;
+  font-family: 'Lato', sans-serif;
+  
+  	background-image: url('../pictures/background.png');
+  background-color: black;
   background-repeat: no-repeat;
   background-position: center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  display: flex;
-  align-items: center;
   
-     
+      
   
+}
+
+.navbar-inverse{
+	margin: 0px;
+}
+
+.navbar-brand{
+	padding: 2px;
 }
 
 .form-horizontal{

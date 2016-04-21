@@ -9,6 +9,6 @@ $resultado = mysql_query("SELECT * FROM contas where email = '$email' and senha 
 if(mysql_num_rows($resultado) == 0){
 	header("Location: fail");
 }else{
-	header("Location: inicio")
+	header("Location: inicio");
 }
  ?>

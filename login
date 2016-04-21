@@ -25,7 +25,7 @@
 	
 <div class="vertical-center">
 	<div class="container">
-		<form class="form-horizontal col-sm-offset-4 col-sm-4" role="form" action="login.php" method="POST">
+		<form class="form-horizontal col-sm-offset-4 col-sm-4" role="form" action="processaLogin.php" method="POST">
 			<div class="row">
 				<div >
 					<h3 id="login">Login</h3>
@@ -36,7 +36,7 @@
 					<label class="sr-only control-label" for="email"></label>
 					<div class="input-group">
 						<div class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></div>
-						<input class="form-control" type="email"  id="email" placeholder="Digite o e-mail">
+						<input class="form-control" type="email" name="email" id="email" placeholder="Digite o e-mail">
 						<div class="input-group-addon"></div>
 					</div>
 					
@@ -47,7 +47,7 @@
 					<label class="sr-only" for="senha"></label>
 					<div class="input-group">
 						<div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></div>
-							<input class="form-control" type="password" id="senha" placeholder="Digite a senha">
+							<input class="form-control" type="password" name="senha" id="senha" placeholder="Digite a senha">
 						<div class="input-group-addon"></div>
 					</div>
 										

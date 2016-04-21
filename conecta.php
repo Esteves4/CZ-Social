@@ -3,7 +3,7 @@
    
   if($conexao)
   {
-  $baseSelecionada = mysql_select_db("dummySocial");
+  $baseSelecionada = mysql_select_db("czSocial");
   if (!$baseSelecionada) {
       die ('Não foi possível conectar a base de dados: ' . mysql_error());
   } } else {

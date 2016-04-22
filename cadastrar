@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, inicial-scale=1">
+	
+	<!-- Bootstrap -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	
+	<!-- Css -->
+	<link rel="stylesheet" href="css/registrar.css">
+	
+	<!-- Fonte -->
+	<link href='https://fonts.googleapis.com/css?family=Lato:400,300,100,700,900' rel='stylesheet' type='text/css'>
+	
+	<title> Cadastro </title>
+</head>
+
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">
+		<img alt="Brand" class="img-responsive" src="pictures/LogoCz2.png" width="63" height="50">
+	  </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+	<div class="vertical-center">
+		<div class="container">
+			<form class="form-horizontal col-sm-offset-3 col-sm-6" id="form">
+			<h3> Registre-se já! </h3>
+			<br/>
+		<div class="form-group">
+    <label for="nome" class="col-sm-offset-0 col-sm-4 control-label" id="nome">Nome de usuário:</label>
+    <div class="col-sm-7">
+      <input type="text" class="form-control" placeholder="Digite o seu nome">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="nascimento" class="col-sm-offset-0 col-sm-4 control-label" id="nascimento" >Data de nascimento:</label>
+    <div class="col-sm-7">
+      <input type="date" class="form-control"placeholder="Digite sua data de nascimento:">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="email" class="col-sm-offset-0 col-sm-4 control-label" id="email">Email:</label>
+    <div class="col-sm-7">
+      <input type="email" class="form-control"  placeholder="Digite o seu email">
+    </div>
+	</div>
+	<div class="form-group">
+    <label for="senha" class="col-sm-offset-0 col-sm-4 control-label" id="senha">Senha:</label>
+    <div class="col-sm-7">
+      <input type="password" class="form-control"  placeholder="Digite sua senha">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="senha" class="col-sm-offset-0 col-sm-4 control-label" id="senha">Confirme sua senha:</label>
+    <div class="col-sm-7">
+      <input type="password" class="form-control" placeholder="Digite a senha novamente">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-4 col-sm-3">
+      <button type="submit" class="btn btn-success btn-block" id="cadastrar">Registrar</button
+	  
+    </div>
+  </div>
+  
+</form>
+
+<!-- jQuery (necessario para os plugins Javascript Bootstrap) -->
+<script src="js/jquery-2.2.3.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/index.js"></script>
+
+<!--Javascript para validar informações digitadas no login-->
+<script src="js/validaLogin.js"></script>
+
+</body>
+</html>

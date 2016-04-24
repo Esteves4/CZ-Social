@@ -8,8 +8,9 @@
 	<meta name="viewport" content="width=device-width, inicial-scale=1">
 	
 	<!-- Bootstrap -->
-	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
+	<link href="css/bootstrap-datepicker.standalone.css" rel="stylesheet">
 	
 	<!-- Css -->
 	<link rel="stylesheet" href="css/cadastrar.css">
@@ -21,77 +22,109 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">
-		<img alt="Brand" class="img-responsive" src="pictures/LogoCz2.png" width="63" height="50">
-	  </a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Login</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index">
+					<img alt="Brand" class="img-responsive" src="pictures/LogoCz2.png" width="63" height="50">
+				</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+
+				</ul>
+			</div>
+		</div>
+	</nav>		
 
 	<div class="vertical-center">
 		<div class="container">
-			<form class="form-horizontal col-sm-offset-3 col-sm-6" id="form">
+			
 			<h3> Registre-se já! </h3>
-			<br/>
-		<div class="form-group">
-    <label for="nome" class="col-sm-offset-0 col-sm-4 control-label" id="nome">Nome de usuário:</label>
-    <div class="col-sm-7">
-      <input type="text" class="form-control" placeholder="Digite o seu nome">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="nascimento" class="col-sm-offset-0 col-sm-4 control-label" id="nascimento" >Data de nascimento:</label>
-    <div class="col-sm-7">
-      <input type="date" class="form-control"placeholder="Digite sua data de nascimento:">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="email" class="col-sm-offset-0 col-sm-4 control-label" id="email">Email:</label>
-    <div class="col-sm-7">
-      <input type="email" class="form-control"  placeholder="Digite o seu email">
-    </div>
-	</div>
-	<div class="form-group">
-    <label for="senha" class="col-sm-offset-0 col-sm-4 control-label" id="senha">Senha:</label>
-    <div class="col-sm-7">
-      <input type="password" class="form-control"  placeholder="Digite sua senha">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="senha" class="col-sm-offset-0 col-sm-4 control-label" id="senha">Confirme sua senha:</label>
-    <div class="col-sm-7">
-      <input type="password" class="form-control" placeholder="Digite a senha novamente">
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="col-sm-offset-4 col-sm-3">
-      <button type="submit" class="btn btn-success btn-block" id="cadastrar">Registrar</button
-	  
-    </div>
-  </div>
-  
-</form>
+			<form class="form-horizontal col-sm-offset-3 col-sm-6" action="processaCadastro.php" id="formulario" method="POST" role="form">
+				<div class="row" >
+						<div class="input-group" id="group-nome">
+							<input type="text" id="nome" class="form-control required" placeholder="Nome" aria-describedby="addon1">
+							<div class="input-group-addon" id="addon1"><span></span></div>
+							
+							<input type="text" id="sobrenome" class="form-control required" placeholder="Sobrenome" aria-describedby="addon7">
+							<div class="input-group-addon" id="addon7"><span class="glyphicon glyphicon-font"></span></div>
+							
+						</div>
+						
+				</div>
+				<div class="row" id="sandbox-container">
+						<div class="input-group date" id="group-data">
+							<input type="date" class="form-control required" id="data" placeholder="Data de Nascimento" aria-describedby="addon2">
+							<div class="input-group-btn" id="addon2"><button type="button" class="btn btn-default" id="btn-data"><span class="glyphicon glyphicon-calendar"></span></button></div>
+						</div>
+						
+				</div>
+				<div class="row">
+						<div class="input-group" id="group-email">
+							<input type="email" id="email" class="form-control required" placeholder="Email" aria-describedby="addon3">
+							<div class="input-group-addon" id="addon2"><span class="glyphicon glyphicon-envelope"></span></div>
+						</div>
+				</div>
+				<div class="row">
+						<div class="input-group" id="group-senha">
+							<input type="password" id="senha" class="form-control required" placeholder="Senha" aria-describedby="addon4">
+							<div class="input-group-addon" id="addon4"><span class="glyphicon glyphicon-lock"></span></div>
+						</div>
+				</div>
+				<div class="row">
+						<div class="input-group" id="group-conf-senha">
+
+							<input type="password" id="confSenha" class="form-control required" placeholder="Confirme a Senha" aria-describedby="addon5">
+							
+							<div class="input-group-addon" id="addon5"><span class="glyphicon glyphicon-lock"></span></div>
+						</div>
+				</div>
+				<div class="row">
+					<button class="btn btn-success col-sm-6" id="registrar" type="submit">Registrar</button>
+				</div>
+				<div id="erro" class="row alert alert-danger alert-dismissible" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<p id="erroText">Shiii.. Os campos <strong>Nome</strong> e <strong>Sobrenome</strong> são obrigatórios.</p>
+				</div>			
+				<div id="erro1" class="row alert alert-danger alert-dismissible" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<p id="erroText">Shiii.. O campo <strong>Data de Nascimento</strong> é obrigatório.</p>
+				</div>				
+				<div id="erro2" class="row alert alert-danger alert-dismissible" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<p id="erroText2">Shiii.. O campo <strong>Email</strong> é obrigatório.</p>
+				</div>
+				<div id="erro3" class="row alert alert-danger alert-dismissible" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<p id="erroText3">Shiii.. O campo <strong>Senha</strong> é obrigatório.</p>
+				</div>
+				<div id="erro4" class="row alert alert-danger alert-dismissible" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<p id="erroText4">Shiii.. As <strong>Senhas</strong> digitas não conferem.</p>
+				</div>
+				<div id="erro5" class="row alert alert-danger alert-dismissible" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<p id="erroText5">Shiii.. Os <strong>Campos</strong> em vermelho precisam ser preenchidos.</p>
+				</div>
+			
+			</form>
 
 <!-- jQuery (necessario para os plugins Javascript Bootstrap) -->
 <script src="js/jquery-2.2.3.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/index.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script src="js/jquery.form-validator.min.js"></script>
+<script src="locales/bootstrap-datepicker.pt-BR.min.js"></script>
+
 
 <!--Javascript para validar informações digitadas no login-->
-<script src="js/validaLogin.js"></script>
+<script src="js/validaCadastro.js"></script>
 
 </body>
 </html>

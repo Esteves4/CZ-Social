@@ -1,12 +1,14 @@
 $(document).ready(function(){ 
 	
 	$('#sandbox-container .input-group.date').datepicker({
-		format: "dd/mm/yyyy",
+		format: "yyyy-mm-dd",
 		startView: 2,
 		clearBtn: true,
 		language: "pt-BR",
 		autoclose: true
     });
+		
+
 	$("#nome").change(function() {
 		if( $("#nome").val() == "" || $("#sobrenome").val() == "" ){
 			$("#group-nome").addClass("has-error");
@@ -25,7 +27,6 @@ $(document).ready(function(){
 			$("#erro").hide();
 		}					
 	});
-	
 	$("#data").change(function() {
 		if( $("#data").val() == "" ){
 			$("#group-data").addClass("has-error");
@@ -39,16 +40,34 @@ $(document).ready(function(){
 			$("#erro1").hide();
 		}					
 	});
-	
 	$("#email").change(function() {
 		if( $("#email").val() == "" ){
 			$("#group-email").addClass("has-error");
+			$('#erro6').hide();
+			$('#sucesso').hide();
 			$("#erro2").show();
+			return false;
 		}else if( $("#email").val() != "" ){
 			$("#group-email").removeClass("has-error");
+			$('#erro6').hide();			
 			$("#erro2").hide();
-		}					
+		}
+		
+		var email = $('#email').val();
+		
+		$.post("checaEmail.php", { email: email },  
+            function(result){  
+                //if the result is 1  
+                if(result == 0){  
+                    //show that the username is available  
+                    $('#sucesso').show(); 
+                }else{  
+                    //show that the username is NOT available
+                    $('#erro6').show();  
+                }
+			});
 	});
+	
 	$("#senha").change(function() {
 		if( $("#senha").val() == "" ){
 			$("#group-senha").addClass("has-error");
@@ -101,11 +120,11 @@ $(document).ready(function(){
 		if( $("#confSenha").val() != $("#senha").val()  ){
 			$("#erro4").show();
 			isValido = false;
+		}if($('#erro6').is(":visible")){
+			isValido = false;
 		}
 		
 		return isValido;
 	});
-		
-		
 	
 });

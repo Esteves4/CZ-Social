@@ -49,10 +49,10 @@
 			<form class="form-horizontal col-sm-offset-3 col-sm-6" action="processaCadastro.php" id="formulario" method="POST" role="form">
 				<div class="row" >
 						<div class="input-group" id="group-nome">
-							<input type="text" id="nome" class="form-control required" placeholder="Nome" aria-describedby="addon1">
+							<input type="text" id="nome" name="nome" class="form-control required" placeholder="Nome" aria-describedby="addon1">
 							<div class="input-group-addon" id="addon1"><span></span></div>
 							
-							<input type="text" id="sobrenome" class="form-control required" placeholder="Sobrenome" aria-describedby="addon7">
+							<input type="text" id="sobrenome" name="sobrenome" class="form-control required" placeholder="Sobrenome" aria-describedby="addon7">
 							<div class="input-group-addon" id="addon7"><span class="glyphicon glyphicon-font"></span></div>
 							
 						</div>
@@ -60,20 +60,20 @@
 				</div>
 				<div class="row" id="sandbox-container">
 						<div class="input-group date" id="group-data">
-							<input type="date" class="form-control required" id="data" placeholder="Data de Nascimento" aria-describedby="addon2">
+							<input type="date" class="form-control required" id="data" name="dataN" placeholder="Data de Nascimento" aria-describedby="addon2">
 							<div class="input-group-btn" id="addon2"><button type="button" class="btn btn-default" id="btn-data"><span class="glyphicon glyphicon-calendar"></span></button></div>
 						</div>
 						
 				</div>
 				<div class="row">
 						<div class="input-group" id="group-email">
-							<input type="email" id="email" class="form-control required" placeholder="Email" aria-describedby="addon3">
+							<input type="email" id="email" name="email" class="form-control required" placeholder="Email" aria-describedby="addon3">
 							<div class="input-group-addon" id="addon2"><span class="glyphicon glyphicon-envelope"></span></div>
 						</div>
 				</div>
 				<div class="row">
 						<div class="input-group" id="group-senha">
-							<input type="password" id="senha" class="form-control required" placeholder="Senha" aria-describedby="addon4">
+							<input type="password" id="senha" name="senha"class="form-control required" placeholder="Senha" aria-describedby="addon4">
 							<div class="input-group-addon" id="addon4"><span class="glyphicon glyphicon-lock"></span></div>
 						</div>
 				</div>
@@ -106,17 +106,26 @@
 				</div>
 				<div id="erro4" class="row alert alert-danger alert-dismissible" role="alert">
 					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<p id="erroText4">Shiii.. As <strong>Senhas</strong> digitas não conferem.</p>
+					<p id="erroText4">Shiii.. As <strong>Senhas</strong> digitadas não conferem.</p>
 				</div>
 				<div id="erro5" class="row alert alert-danger alert-dismissible" role="alert">
 					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 					<p id="erroText5">Shiii.. Os <strong>Campos</strong> em vermelho precisam ser preenchidos.</p>
 				</div>
-			
+				<div id="erro6" class="row alert alert-danger alert-dismissible" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<p id="erroText6">Shiii.. O <strong>Email</strong> digitado já está em uso.</p>
+				</div>
+				<div id="sucesso" class="row alert alert-success alert-dismissible" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<p id="sucessoText">O <strong>Email</strong> digitado está disponível.</p>
+				</div>
+				<p id="testes"></p>
 			</form>
 
 <!-- jQuery (necessario para os plugins Javascript Bootstrap) -->
 <script src="js/jquery-2.2.3.js"></script>
+<script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src="js/bootstrap-datepicker.js"></script>
 <script src="js/jquery.form-validator.min.js"></script>

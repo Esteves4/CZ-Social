@@ -1,5 +1,12 @@
 body{
-
+	background-image: url('../pictures/background.png');
+	background-color: black;
+	background-repeat: no-repeat;
+	background-position: center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 h3{
 	text-align: center;
@@ -11,30 +18,32 @@ h3{
 	background-color: black;
 	font-weight: 700;
 }
-#nome, #nascimento, #email, #senha{
-	color: white;
+#erro,#erro1, #erro2, #erro3, #erro4, #erro5, #erro6, #sucesso{
+	display: none;
 }
 
+.btn-danger{
+	color: #a94442;
+	background-color: #f2dede;
+	border-color: #a94442;
+}
+
+.btn-default{
+	background-color: #eee;
+}
 .row{
-	margin: 5px;
+	margin: 10px;
 	
 }
 
 .vertical-center {
-  min-height: 100%; 
-  min-height: 100vh;
-  align-items: center;
-  display: flex;
-  font-family: 'Lato', sans-serif;
-  
-  	background-image: url('../pictures/background.png');
-  background-color: black;
-  background-repeat: no-repeat;
-  background-position: center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+	min-height: 100%; 
+	min-height: 100vh;
+	align-items: center;
+	display: flex;
+	font-family: 'Lato', sans-serif;
+
+
   
       
   
@@ -49,9 +58,8 @@ h3{
 }
 
 .form-horizontal{
-	border-radius: 20px;
 	border: 1px solid;
-	padding-bottom: 20px;
+	padding: 20px;
 	background-color: rgba(0,0,0,0.5);
 	
 

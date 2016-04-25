@@ -1,5 +1,12 @@
 body{
-
+	background-image: url('../pictures/background.png');
+	background-color: black;
+	background-repeat: no-repeat;
+	background-position: center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 	
 }
 
@@ -21,7 +28,7 @@ body{
 }
 
 #cadastrar, #esqueciSenha{
-	display:inline-block;
+	position: inline-block;
 }
 
 #esqueciSenha{
@@ -43,16 +50,7 @@ body{
   align-items: center;
   display: flex;
   font-family: 'Lato', sans-serif;
-  
-  	background-image: url('../pictures/background.png');
-  background-color: black;
-  background-repeat: no-repeat;
-  background-position: center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  
+   
       
   
 }

@@ -21,25 +21,26 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-inverse">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="index">
-					<img alt="Brand" class="img-responsive" src="pictures/LogoCz2.png" width="63" height="50">
-				</a>
-			</div>
-			<div class="collapse navbar-collapse" id="myNavbar">
-				<ul class="nav navbar-nav">
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">
+		<img alt="Brand" class="img-responsive" src="pictures/LogoCz2.png" width="63" height="50">
+	  </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-				</ul>
-			</div>
-		</div>
-	</nav>
 	<div class="vertical-center">
 		<div class="container">
 			<form class="form-horizontal col-sm-offset-4 col-sm-4" role="form" action="processaLogin.php" method="POST">

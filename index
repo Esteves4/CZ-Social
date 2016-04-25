@@ -8,9 +8,8 @@
 	<meta name="viewport" content="width=device-width, inicial-scale=1">
 	
 	<!-- Bootstrap -->
-	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
-	<link href="css/bootstrap-datepicker.standalone.css" rel="stylesheet">
 	
 	<!-- Fonte -->
 	<link href='https://fonts.googleapis.com/css?family=Lato:400,300,100,700,900' rel='stylesheet' type='text/css'>
@@ -23,10 +22,11 @@
 	<a href="login" class="btn btn-info">Login</a>
 </div>
 
+
+
 <!-- jQuery (necessario para os plugins Javascript Bootstrap) -->
-<script src="js/jquery-2.2.3.js"></script>
-<script src="js/bootstrap.js"></script>
-<script src="js/bootstrap-datepicker.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <script src="js/index.js"></script>
 </body>
 </html>

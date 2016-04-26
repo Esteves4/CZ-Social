@@ -11,6 +11,7 @@
 	<link href="css/bootstrap.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
 	<link href="css/bootstrap-datepicker.standalone.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 	
 	<!-- Css -->
 	<link rel="stylesheet" href="css/cadastrar.css">
@@ -22,38 +23,19 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-inverse">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="index">
-					<img alt="Brand" class="img-responsive" src="pictures/LogoCz2.png" width="63" height="50">
-				</a>
-			</div>
-			<div class="collapse navbar-collapse" id="myNavbar">
-				<ul class="nav navbar-nav">
-
-				</ul>
-			</div>
-		</div>
-	</nav>		
-
 	<div class="vertical-center">
 		<div class="container">
-			
-			<h3> Registre-se já! </h3>
-			<form class="form-horizontal col-sm-offset-3 col-sm-6" action="processaCadastro.php" id="formulario" method="POST" role="form">
+
+			<form class="form-horizontal col-sm-offset-4 col-sm-4" action="processaCadastro.php" id="formulario" method="POST" role="form">
+				<a href="index">
+					<img alt="Brand" id="brand" class="img-responsive center-block" src="pictures/LogoCz2.png" width="200" height="200">
+				</a>
 				<div class="row" >
 						<div class="input-group" id="group-nome">
 							<input type="text" id="nome" name="nome" class="form-control required" placeholder="Nome" aria-describedby="addon1">
-							<div class="input-group-addon" id="addon1"><span></span></div>
 							
 							<input type="text" id="sobrenome" name="sobrenome" class="form-control required" placeholder="Sobrenome" aria-describedby="addon7">
-							<div class="input-group-addon" id="addon7"><span class="glyphicon glyphicon-font"></span></div>
+							<div class="input-group-addon" id="addon7"><span class="glyphicon glyphicon-user"></span></div>
 							
 						</div>
 						
@@ -78,15 +60,15 @@
 						</div>
 				</div>
 				<div class="row">
-						<div class="input-group" id="group-conf-senha">
+						<div class="input-group has-success" id="group-conf-senha">
 
 							<input type="password" id="confSenha" class="form-control required" placeholder="Confirme a Senha" aria-describedby="addon5">
 							
-							<div class="input-group-addon" id="addon5"><span class="glyphicon glyphicon-lock"></span></div>
+							<div class="input-group-addon" id="addon5"><span class="glyphicon glyphicon-ok"></span></div>
 						</div>
 				</div>
 				<div class="row">
-					<button class="btn btn-success col-sm-6" id="registrar" type="submit">Registrar</button>
+					<button class="btn btn-info btn-block col-sm-6" id="registrar" type="submit">Registrar</button>
 				</div>
 				<div id="erro" class="row alert alert-danger alert-dismissible" role="alert">
 					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>

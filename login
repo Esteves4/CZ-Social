@@ -10,6 +10,7 @@
 	<!-- Bootstrap -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 	
 	<!-- Css -->
 	<link rel="stylesheet" href="css/login.css">
@@ -21,31 +22,13 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-inverse">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="index">
-					<img alt="Brand" class="img-responsive" src="pictures/LogoCz2.png" width="63" height="50">
-				</a>
-			</div>
-			<div class="collapse navbar-collapse" id="myNavbar">
-				<ul class="nav navbar-nav">
 
-				</ul>
-			</div>
-		</div>
-	</nav>
 	<div class="vertical-center">
 		<div class="container">
 			<form class="form-horizontal col-sm-offset-4 col-sm-4" role="form" action="processaLogin.php" method="POST">
-				<div class="row">
-					<h3 id="login">Login</h3>
-				</div>
+				<a href="index">
+					<img alt="Brand" id="brand" class="img-responsive center-block" src="pictures/LogoCz2.png" width="200" height="200">
+				</a>
 				<div class="row">
 					<label class="sr-only control-label" for="email"></label>
 					<div class="input-group">
@@ -67,10 +50,10 @@
 					<label id="remember"><input name="conectado" value="true" type="checkbox"> Manter conectado</label>
 				</div>
 				<div class="row">
-					<button id="entrar" class="btn btn-success btn-block" type="submit">Entrar</button>
+					<button id="entrar" class="btn btn-info btn-block" type="submit">Entrar</button>
 				</div>		
 				<div class="row">
-					<a href="cadastrar" id="cadastrar" class="btn btn-info col-sm-6" type="button">Registrar-se</a>
+					<a href="cadastrar" id="cadastrar" class="btn btn-warning col-sm-6" type="button">Registrar-se</a>
 					<a href="reset" id="esqueciSenha" class="btn btn-link col-sm-6" type="button">Esqueceu a senha?</a>				
 				</div>		
 				<div id="erro" class="row alert alert-danger alert-dismissible" role="alert">

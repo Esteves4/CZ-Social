@@ -14,6 +14,11 @@ h3{
 #nome, #nascimento, #email, #senha{
 	color: white;
 }
+.input-group-addon{
+	background-color: transparent;
+	color: #FFF;
+	border: transparent;
+}
 
 .row{
 	margin: 5px;
@@ -46,6 +51,7 @@ h3{
 
 .navbar-brand{
 	padding: 2px;
+	
 }
 
 .form-horizontal{

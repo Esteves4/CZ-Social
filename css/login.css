@@ -1,12 +1,13 @@
 body{
-	background-image: url('../pictures/background.png');
-	background-color: black;
+	background-image: url('../pictures/background3.png');
+	background-color: white;
 	background-repeat: no-repeat;
 	background-position: center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+
 	
 }
 
@@ -29,10 +30,13 @@ body{
 
 #cadastrar, #esqueciSenha{
 	position: inline-block;
+	
 }
+
 
 #esqueciSenha{
 	float: right;
+
 }
 
 #erro, #erro2{
@@ -54,6 +58,10 @@ body{
       
   
 }
+.navbar-inverse .navbar-collapse, .navbar-inverse {
+	border-color: transparent;
+	background-color: transparent;
+}
 
 .navbar-inverse{
 	margin: 0px;
@@ -62,11 +70,8 @@ body{
 .navbar-brand{
 	padding: 2px;
 }
-
 .form-horizontal{
-	border: 1px solid;
-	padding-bottom: 20px;
-	background-color: rgba(0,0,0,0.5);
+
 	
 
 }

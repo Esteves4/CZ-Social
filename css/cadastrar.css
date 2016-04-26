@@ -1,17 +1,21 @@
 body{
-	background-image: url('../pictures/background.png');
-	background-color: black;
+	background-image: url('../pictures/background3.png');
 	background-repeat: no-repeat;
 	background-position: center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+	
+
 }
+
+
 h3{
 	text-align: center;
 	font-weight: 700;
-	color: white;
+	color: black;
+	text-shadow: 20px 20px 20px black;
 }
 #form {
 	color: white
@@ -22,6 +26,16 @@ h3{
 	display: none;
 }
 
+#brand{
+	display: block;
+	margin-left: auto;
+    margin-right: auto;
+	
+
+}
+
+
+
 .btn-danger{
 	color: #a94442;
 	background-color: #f2dede;
@@ -31,8 +45,14 @@ h3{
 .btn-default{
 	background-color: #eee;
 }
+
+.navbar-inverse .navbar-collapse, .navbar-inverse {
+	border-color: transparent;
+	background-color: transparent;
+}
+
 .row{
-	margin: 10px;
+	margin: 5px;
 	
 }
 
@@ -58,9 +78,8 @@ h3{
 }
 
 .form-horizontal{
-	border: 1px solid;
-	padding: 20px;
-	background-color: rgba(0,0,0,0.5);
+
+
 	
 
 }

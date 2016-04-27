@@ -34,7 +34,7 @@
 			</div>
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav navbar-right" id="icones">
-				<li><a href="perfil"><span class="button" class="btn btn-link" id="perfil">Perfil do usuário</button></a></li>
+				<li><a href="perfil"><span class="button" type="submit" class="btn btn-link" id="perfil">Perfil do usuário</button></a></li>
 				<li><a href="inicio"><span class="glyphicon glyphicon-home"></span>&nbsp; Página Inicial</a></li>
 				<li><a href="amigos"><span class="glyphicon glyphicon-user"></span>&nbsp; Amigos</a></li>
 				<li><a href="novidades"><span class="glyphicon glyphicon-question-sign"></span>&nbsp; Novidades</a></li>
@@ -96,5 +96,14 @@
 		</figure>
 	</div>
 </div>
+				
+	
+
+
+<!-- jQuery (necessario para os plugins Javascript Bootstrap) -->
+<script src="js/jquery-2.2.3.js"></script>
+<script src="js/bootstrap.js"></script>
+
+
 </body>
 </html>

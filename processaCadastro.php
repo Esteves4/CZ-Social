@@ -1,5 +1,6 @@
 <?php
-  require("conecta.php");
+
+require("conecta.php");
  
  
 $nome = mysql_real_escape_string($_POST['nome']);

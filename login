@@ -21,7 +21,7 @@
 	<title> Login </title>
 </head>
 
-<body>
+<body id="bodyBackground">
 
 	<div class="vertical-center">
 		<div class="container">

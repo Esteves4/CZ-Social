@@ -1,4 +1,28 @@
+var currentBackground = 0;
+var backgrounds = [];
+backgrounds[0] = '../pictures/background3.png';
+backgrounds[1] = '../pictures/background34.png';
+backgrounds[2] = '../pictures/background35.png';
+
+function changeBackground() {
+    currentBackground++;
+    if(currentBackground > 2) currentBackground = 0;
+   
+	$('#bodyBackground').css({
+		'background-image' : "url('" + backgrounds[currentBackground] + "')"
+	});
+
+
+
+
+    setTimeout(changeBackground, 5000);
+}
+
+
+
 $(document).ready(function(){
+	setTimeout(changeBackground, 5000);
+	
      $("#entrar").click(function(){
 		var isValid = true; 
 		 

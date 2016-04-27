@@ -1,4 +1,8 @@
 $(document).ready(function(){ 
+	$(function () {
+	  $('[data-toggle="popover"]').popover("show")
+	});
+	
 	
 	$('#sandbox-container .input-group.date').datepicker({
 		format: "yyyy-mm-dd",
@@ -80,9 +84,14 @@ $(document).ready(function(){
 	$("#confSenha").change(function() {
 		if( $("#confSenha").val() == "" || $("#confSenha").val() != $("#senha").val() ){
 			$("#group-conf-senha").addClass("has-error");
+			$("#icone").removeClass("glyphicon glyphicon-exclamation-sign");
+			$("#icone").addClass("glyphicon glyphicon-remove");
 			$("#erro4").show();
 		}else if( $("#confSenha").val() == $("#senha").val() ){
 			$("#group-conf-senha").removeClass("has-error");
+			$("#group-conf-senha").addClass("has-success");
+			$("#icone").removeClass("glyphicon glyphicon-remove");
+			$("#icone").addClass("glyphicon glyphicon-ok");
 			$("#erro4").hide();
 		}					
 	});

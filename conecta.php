@@ -1,5 +1,5 @@
 <?php
-  $conexao = mysql_connect("localhost", "root", "senha");
+  $conexao = mysql_connect("localhost", "root", "");
    
   if($conexao)
   {

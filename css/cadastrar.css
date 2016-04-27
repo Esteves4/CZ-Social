@@ -35,6 +35,12 @@ h3{
 }
 
 
+#sobrenome{
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+}
+
+
 
 .btn-danger{
 	color: #a94442;
@@ -53,7 +59,7 @@ h3{
 
 .row{
 	margin: 5px;
-	
+
 }
 
 .vertical-center {

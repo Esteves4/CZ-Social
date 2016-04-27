@@ -11,7 +11,7 @@
 	<link href="css/bootstrap.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
 	<link href="css/bootstrap-datepicker.standalone.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+	<link href="css/bootstrap-theme.min.css" rel="stylesheet">	
 	
 	<!-- Css -->
 	<link rel="stylesheet" href="css/cadastrar.css">
@@ -27,8 +27,8 @@
 		<div class="container">
 
 			<form class="form-horizontal col-sm-offset-4 col-sm-4" action="processaCadastro.php" id="formulario" method="POST" role="form">
-				<a href="index">
-					<img alt="Brand" id="brand" class="img-responsive center-block" src="pictures/LogoCz2.png" width="200" height="200">
+				<a href="login">
+					<img alt="Brand" id="login" class="img-responsive center-block" src="pictures/LogoCz2.png" width="200" height="200">
 				</a>
 				<div class="row" >
 						<div class="input-group" id="group-nome">
@@ -42,8 +42,8 @@
 				</div>
 				<div class="row" id="sandbox-container">
 						<div class="input-group date" id="group-data">
-							<input type="date" class="form-control required" id="data" name="dataN" placeholder="Data de Nascimento" aria-describedby="addon2">
-							<div class="input-group-btn" id="addon2"><button type="button" class="btn btn-default" id="btn-data"><span class="glyphicon glyphicon-calendar"></span></button></div>
+							<input type="text" class="form-control" id="data" name="dataN" placeholder="Data de Nascimento" aria-describedby="addon2">
+							<div class="input-group-btn" id="addon2"><button type="button" class="btn btn-default" id="btn-data" data-toggle="popover" data-trigger="hover" data-container="body" data-placement="right" data-content="Clique aqui para escolher a data."><span class="glyphicon glyphicon-calendar"></span></button></div>
 						</div>
 						
 				</div>
@@ -60,11 +60,11 @@
 						</div>
 				</div>
 				<div class="row">
-						<div class="input-group has-success" id="group-conf-senha">
+						<div class="input-group" id="group-conf-senha">
 
 							<input type="password" id="confSenha" class="form-control required" placeholder="Confirme a Senha" aria-describedby="addon5">
 							
-							<div class="input-group-addon" id="addon5"><span class="glyphicon glyphicon-ok"></span></div>
+							<div class="input-group-addon" id="addon5"><span id="icone" class="glyphicon glyphicon-exclamation-sign"></span></div>
 						</div>
 				</div>
 				<div class="row">
@@ -72,37 +72,36 @@
 				</div>
 				<div id="erro" class="row alert alert-danger alert-dismissible" role="alert">
 					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<p id="erroText">Shiii.. Os campos <strong>Nome</strong> e <strong>Sobrenome</strong> são obrigatórios.</p>
+					<p id="erroText"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Ops.. Os campos <strong>Nome</strong> e <strong>Sobrenome</strong> são obrigatórios.</p>
 				</div>			
 				<div id="erro1" class="row alert alert-danger alert-dismissible" role="alert">
 					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<p id="erroText">Shiii.. O campo <strong>Data de Nascimento</strong> é obrigatório.</p>
+					<p id="erroText"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Ops.. O campo <strong>Data de Nascimento</strong> é obrigatório.</p>
 				</div>				
 				<div id="erro2" class="row alert alert-danger alert-dismissible" role="alert">
 					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<p id="erroText2">Shiii.. O campo <strong>Email</strong> é obrigatório.</p>
+					<p id="erroText2"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Ops.. O campo <strong>Email</strong> é obrigatório.</p>
 				</div>
 				<div id="erro3" class="row alert alert-danger alert-dismissible" role="alert">
 					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<p id="erroText3">Shiii.. O campo <strong>Senha</strong> é obrigatório.</p>
+					<p id="erroText3"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Ops.. O campo <strong>Senha</strong> é obrigatório.</p>
 				</div>
 				<div id="erro4" class="row alert alert-danger alert-dismissible" role="alert">
 					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<p id="erroText4">Shiii.. As <strong>Senhas</strong> digitadas não conferem.</p>
+					<p id="erroText4"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Ops.. As <strong>Senhas</strong> digitadas não conferem.</p>
 				</div>
 				<div id="erro5" class="row alert alert-danger alert-dismissible" role="alert">
 					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<p id="erroText5">Shiii.. Os <strong>Campos</strong> em vermelho precisam ser preenchidos.</p>
+					<p id="erroText5"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Ops.. Os <strong>Campos</strong> em vermelho precisam ser preenchidos.</p>
 				</div>
-				<div id="erro6" class="row alert alert-danger alert-dismissible" role="alert">
-					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<p id="erroText6">Shiii.. O <strong>Email</strong> digitado já está em uso.</p>
+				<div id="erro6" class="row alert alert-danger" role="alert">
+					<p id="erroText6"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Ops.. O <strong>Email</strong> digitado já está em uso.</p>
 				</div>
 				<div id="sucesso" class="row alert alert-success alert-dismissible" role="alert">
 					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<p id="sucessoText">O <strong>Email</strong> digitado está disponível.</p>
+					<p id="sucessoText"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> O <strong>Email</strong> digitado está disponível.</p>
 				</div>
-				<p id="testes"></p>
+				
 			</form>
 
 <!-- jQuery (necessario para os plugins Javascript Bootstrap) -->

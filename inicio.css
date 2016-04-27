@@ -1,0 +1,62 @@
+body {
+	background-color: lightgray;
+	background-repeat: no-repeat;
+	background-position: center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#imagem{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+#brand {
+	position: absolute;
+	top: 0px;
+	left: 80px;
+}
+
+#icones{
+	color: black;
+	font-family: arial;
+}
+
+#divisao {
+	border: 1px solid lightgray;
+	background-color: white;
+	height: 340px;
+	width: 435px;
+	margin-left:2px;
+	margin-right: 2px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	
+}
+
+figure.foto-legenda figcaption{
+	opacity: 0;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background-color: rgba(0,0,0,0.5);
+	color: white;
+	font-weight: bold;
+	font-family: calibri;
+	width: 100%;
+	height: 100%;
+	padding: 10px;
+	box-sizing: border-box;
+	transition: opacity 1s;
+}
+
+figure.foto-legenda:hover figcaption {
+	opacity: 1;
+}
+
+h5{
+	text-align: center;
+}

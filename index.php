@@ -1,11 +1,23 @@
+
 <?php
-	if (!empty($_SERVER['HTTPS']) && ('on' == $_SERVER['HTTPS'])) {
-		$uri = 'https://';
-	} else {
-		$uri = 'http://';
-	}
-	$uri .= $_SERVER['HTTP_HOST'];
-	header('Location: '.$uri.'/login');
-	exit;
+
+//chama nosso autoloader
+include 'bootstrap.php';
+
+//inclui os arquivos e cria um nome curto para o namespace
+use MWSocial\core\core as core; 
+use MWSocial\core\request as request; 
+
+//instancia as classes
+$core = new core;
+$request = new request; 
+
+//executa os códigos
+$core->debug($request->data());
 ?>
-Something is wrong with the XAMPP installation :-(
+<form action="index.php?nome=Erik&sobrenome=Figueiredo" method="post">
+<input type="text" name="idade" value="28 anos">
+<input type="text" name="sexo" value="Masculino">
+<input type="text" name="profissao" value="Vendedor de agua de coco">
+<input name="envia" type="submit" value="Enviar">
+</form>

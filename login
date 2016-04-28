@@ -8,7 +8,7 @@
 	<meta name="viewport" content="width=device-width, inicial-scale=1">
 	
 	<!-- Bootstrap -->
-	<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
 	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
 
@@ -32,8 +32,8 @@
 				<div class="row">
 					<label class="sr-only control-label" for="email"></label>
 					<div class="input-group">
-						<div class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></div>
-						<input class="form-control" type="email" name="email" id="email" placeholder="Digite o e-mail">
+						<div class="input-group-addon" ><span class="glyphicon glyphicon-envelope" ></span></div>
+						<input class="form-control" type="email" name="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Seu email deve ser no formato: etc@exemplo.com" placeholder="Digite o e-mail" required>
 						<div class="input-group-addon"></div>
 					</div>
 				</div>
@@ -41,7 +41,7 @@
 					<label class="sr-only" for="senha"></label>
 					<div class="input-group">
 						<div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></div>
-							<input class="form-control" type="password" name="senha" id="senha" placeholder="Digite a senha">
+							<input class="form-control" type="password" name="senha" id="senha" pattern=".{8,}" title="Sua senha deve possuir 8 ou mais caracteres." placeholder="Digite a senha" required>
 						<div class="input-group-addon"></div>
 											
 					</div>
@@ -55,18 +55,10 @@
 				<div class="row">
 					<a href="cadastrar" id="cadastrar" class="btn btn-warning col-sm-6" type="button">Registrar-se</a>
 					<a href="reset" id="esqueciSenha" class="btn btn-link col-sm-6" type="button">Esqueceu a senha?</a>				
-				</div>		
-				<div id="erro" class="row alert alert-danger alert-dismissible" role="alert">
-					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<p id="erroText">Ops.. O campo <strong>e-mail</strong> é obrigatório.</p>
-				</div>			
-				<div id="erro2" class="row alert alert-danger alert-dismissible" role="alert">
-					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<p id="erroText2">Ops.. O campo <strong>senha</strong> é obrigatório.</p>
 				</div>
-				<div id="erro3" class="row alert alert-danger alert-dismissible" role="alert">
+				<div id="erroM" class="row alert alert-danger alert-dismissible" role="alert">
 					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<p id="erroText3">Ops.. O <strong>Email</strong> ou a <strong>Senha</strong> são inválidos.</p>
+					<p id="erroTextM"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Ops.. Os <strong>Campos</strong> em vermelho precisam ser preenchidos.</p>
 				</div>
 			</form>
 			
@@ -75,7 +67,6 @@
 
 <!-- jQuery (necessario para os plugins Javascript Bootstrap) -->
 <script src="js/jquery-2.2.3.js"></script>
-<script src="js/jquery.form-validator.min.js"></script>
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.js"></script>
 

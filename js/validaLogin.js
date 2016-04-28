@@ -32,6 +32,10 @@ var validaEmail = function(email){
 	return temp;
 }
 
+var validaSenha = function(senha){
+	
+}
+
 
 $(document).ready(function(){
 

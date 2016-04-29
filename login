@@ -25,7 +25,7 @@
 
 	<div class="vertical-center">
 		<div class="container">
-			<form class="form-horizontal col-sm-offset-4 col-sm-4" action="processaLogin.php" role="form" id="loginForm" method="POST">
+			<form class="form-horizontal col-sm-offset-4 col-sm-4" action="" role="form" id="loginForm" method="POST">
 				<a href="login">
 					<img alt="Brand" id="brand" class="img-responsive center-block" src="pictures/LogoCz2.png" width="200" height="200">
 				</a>
@@ -33,7 +33,7 @@
 					<label class="sr-only control-label" for="email"></label>
 					<div class="input-group">
 						<div class="input-group-addon" ><span class="glyphicon glyphicon-envelope" ></span></div>
-						<input class="form-control" type="email" name="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Seu email deve ser no formato: etc@exemplo.com" placeholder="Digite o e-mail" required>
+						<input class="form-control" type="email" name="email" id="email" data-required="true" data-pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Seu email deve ser no formato: etc@exemplo.com" placeholder="Digite o e-mail" required>
 						<div class="input-group-addon"></div>
 					</div>
 				</div>
@@ -41,7 +41,7 @@
 					<label class="sr-only" for="senha"></label>
 					<div class="input-group">
 						<div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></div>
-							<input class="form-control" type="password" name="senha" id="senha" pattern=".{8,}" title="Sua senha deve possuir 8 ou mais caracteres." placeholder="Digite a senha" required>
+							<input class="form-control" type="password" name="senha" id="senha" data-required="true" data-pattern=".{8,}" title="Sua senha deve possuir 8 ou mais caracteres." placeholder="Digite a senha" required>
 						<div class="input-group-addon"></div>
 											
 					</div>
@@ -60,14 +60,18 @@
 					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 					<p id="erroTextM"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Ops.. Os <strong>Campos</strong> em vermelho precisam ser preenchidos.</p>
 				</div>
+				<div id="erroInv" class="row alert alert-danger alert-dismissible" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<p id="erroText3">Ops.. O <strong>Email</strong> ou a <strong>Senha</strong> são inválidos.</p>
+				</div>
 			</form>
 			
 		</div>
 	</div>
 
 <!-- jQuery (necessario para os plugins Javascript Bootstrap) -->
-<script src="js/jquery-2.2.3.js"></script>
 <script src="js/jquery.min.js"></script>
+<script src="js/jquery-1.12.0.min.js"></script>
 <script src="js/bootstrap.js"></script>
 
 <!--Javascript para validar informações digitadas no login-->

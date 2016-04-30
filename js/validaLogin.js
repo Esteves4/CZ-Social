@@ -1,11 +1,13 @@
 var adicionaErro = function(componente){
 	componente.parent().removeClass("has-success");
 	componente.parent().addClass("has-error");
+
 }
 
 var adicionaSucesso = function(componente){
 	componente.parent().removeClass("has-error");
 	componente.parent().addClass("has-success");
+
 }
 
 var checaVazio = function(componente){
@@ -25,14 +27,17 @@ var validaEmail = function(email){
 	
 	if (temp == false){
 		adicionaErro(email);
+		email.parent().tooltip("show")
 	}else{
 		adicionaSucesso(email);
+		email.parent().tooltip("hide")
 	}
 	
 	return temp;
 }
 
 $(document).ready(function(){
+	$('[data-toggle="tooltip"]').tooltip()
 
     $("#entrar").click(function(){
 		var isValid = true;
@@ -55,7 +60,11 @@ $(document).ready(function(){
 		$.post("checaLogin.php", { email: email, senha: senha },  
 			function(result){   
 				if(result == 0){
-					document.location='secure.php';
+					$('#sucessoLogin').show();
+					window.setTimeout(function(){
+						document.location='secure.php';
+					}, 2000);
+					
 				}else{
 					adicionaErro($('#email'));
 					adicionaErro($('#senha'));
@@ -76,25 +85,4 @@ $(document).ready(function(){
 		var temp1 = checaVazio($("#senha"));
     });
 	
-	
-	
-	
-/*	$("#senha").change(function() {
-		var email = $('#email').val();
-		var senha = $('#senha').val();
-		$('#erro3').hide();
-			
-		$.post("checaLogin.php", { email: email, senha: senha },  
-			function(result){  
-				//if the result is not 0  
-				if(result != 0){ 
-					//show that the username is correct
-					$('#erro3').show();
-					isValid = false;
-					return isValid;
-				}
-			});
-		
-		
-	});*/
 });

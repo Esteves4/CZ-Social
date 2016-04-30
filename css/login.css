@@ -39,7 +39,7 @@ body{
 
 }
 
-#erroM, #erroInv{
+#erroM, #erroInv, #sucessoLogin{
 	display: none;
 }
 

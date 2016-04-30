@@ -31,9 +31,9 @@
 				</a>
 				<div class="row">
 					<label class="sr-only control-label" for="email"></label>
-					<div class="input-group">
+					<div class="input-group" data-toggle="tooltip" data-placement="right" title="Seu email deve ser no formato: etc@exemplo.com" data-trigger="manual" data-container="body">
 						<div class="input-group-addon" ><span class="glyphicon glyphicon-envelope" ></span></div>
-						<input class="form-control" type="email" name="email" id="email" data-required="true" data-pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Seu email deve ser no formato: etc@exemplo.com" placeholder="Digite o e-mail" required>
+						<input class="form-control" type="email" name="email" id="email" data-required="true" placeholder="Digite o e-mail" required>
 						<div class="input-group-addon"></div>
 					</div>
 				</div>
@@ -41,7 +41,7 @@
 					<label class="sr-only" for="senha"></label>
 					<div class="input-group">
 						<div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></div>
-							<input class="form-control" type="password" name="senha" id="senha" data-required="true" data-pattern=".{8,}" title="Sua senha deve possuir 8 ou mais caracteres." placeholder="Digite a senha" required>
+							<input class="form-control" type="password" name="senha" id="senha" data-required="true" placeholder="Digite a senha" required>
 						<div class="input-group-addon"></div>
 											
 					</div>
@@ -62,7 +62,10 @@
 				</div>
 				<div id="erroInv" class="row alert alert-danger alert-dismissible" role="alert">
 					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<p id="erroText3">Ops.. O <strong>Email</strong> ou a <strong>Senha</strong> são inválidos.</p>
+					<p id="erroText"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Ops.. O <strong>Email</strong> ou a <strong>Senha</strong> são inválidos.</p>
+				</div>
+				<div id="sucessoLogin" class="row alert alert-success" role="alert">
+					<p id="sucessoText"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><strong> Login</strong> realizado com sucesso.</p>
 				</div>
 			</form>
 			

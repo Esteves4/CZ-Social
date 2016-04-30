@@ -1,9 +1,89 @@
+var adicionaErro = function(componente){
+	componente.parent().removeClass("has-success");
+	componente.parent().addClass("has-error");
+
+}
+
+var adicionaSucesso = function(componente){
+	componente.parent().removeClass("has-error");
+	componente.parent().addClass("has-success");
+
+}
+
+var checaVazio = function(componente){
+	if( componente.val() == ""){
+		adicionaErro(componente);
+		$("#erroP").show();
+		return true;
+	}
+	if( componente.val() != ""){
+		adicionaSucesso(componente);
+		$("#erroP").hide();
+		return false;
+	}
+}
+
+var validaEmail = function(email){
+	var pattern = /^([a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+(\.[a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+)*|"((([ \t]*\r\n)?[ \t]+)?([\x01-\x08\x0b\x0c\x0e-\x1f\x7f\x21\x23-\x5b\x5d-\x7e\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|\\[\x01-\x09\x0b\x0c\x0d-\x7f\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))*(([ \t]*\r\n)?[ \t]+)?")@(([a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.)+([a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.?$/i;
+    var temp = pattern.test(email.val());
+	
+	if (temp == false){
+		adicionaErro(email);
+		email.parent().tooltip("show")
+	}else{
+		adicionaSucesso(email);
+		email.parent().tooltip("hide")
+	}
+	
+	return temp;
+}
+
+var checaEmail = function(email){
+	
+	$.post("checaEmail.php", { email: email.val() },  
+		function(result){  
+			//if the result is 1  
+			if(result == 0){  
+				//show that the username is available
+				adicionaSucesso(email);  				
+				$('#sucesso').show();
+				window.setTimeout(function(){
+						$('#sucesso').hide();
+					}, 2000);
+			}else{  
+				//show that the username is NOT available
+				adicionaErro(email);
+				$('#erroM').show();  
+			}
+		});
+}
+
+var checaSenhas = function(){
+	if( $("#confSenha").val() != $("#senha").val() ){
+		adicionaErro($("#senha"));
+		adicionaErro($("#confSenha"));
+		$("#icone").removeClass("glyphicon glyphicon-exclamation-sign");
+		$("#icone").addClass("glyphicon glyphicon-remove");
+		$("#group-conf-senha").tooltip("show")
+		return false;
+		
+	}else{
+		adicionaSucesso($("#senha"));
+		adicionaSucesso($("#confSenha"));
+		$("#icone").removeClass("glyphicon glyphicon-remove");
+		$("#icone").addClass("glyphicon glyphicon-ok");
+		$("#group-conf-senha").tooltip("hide")
+		return true;
+	}
+}
+
+
+
 $(document).ready(function(){ 
-	$(function () {
-	  $('[data-toggle="popover"]').popover("show")
-	});
-	
-	
+
+	$('[data-toggle="tooltip"]').tooltip()
+	$('[data-toggle="popover"]').popover("show")
+
 	$('#sandbox-container .input-group.date').datepicker({
 		format: "yyyy-mm-dd",
 		startView: 2,
@@ -12,128 +92,87 @@ $(document).ready(function(){
 		autoclose: true
     });
 		
-
 	$("#nome").change(function() {
-		if( $("#nome").val() == "" || $("#sobrenome").val() == "" ){
-			$("#group-nome").addClass("has-error");
-			$("#erro").show();
-		}else if( $("#nome").val() == "" && $("#sobrenome").val() == ""){
-			$("#group-nome").removeClass("has-error");
-			$("#erro").hide();
-		}			
+		checaVazio($("#nome"));
 	});
+	
 	$("#sobrenome").change(function() {
-		if( $("#nome").val() == "" || $("#sobrenome").val() == "" ){
-			$("#group-nome").addClass("has-error");
-			$("#erro").show();
-		}else if( $("#nome").val() != "" && $("#sobrenome").val() != ""){
-			$("#group-nome").removeClass("has-error");
-			$("#erro").hide();
-		}					
+		checaVazio($("#sobrenome"));
 	});
+	
 	$("#data").change(function() {
-		if( $("#data").val() == "" ){
-			$("#group-data").addClass("has-error");
+		var temp1 = checaVazio($("#data"));
+		
+		if( temp1 == true ){
 			$("#btn-data").removeClass("btn-default");
 			$("#btn-data").addClass("btn-danger");
-			$("#erro1").show();
-		}else if( $("#data").val() != "" ){
-			$("#group-data").removeClass("has-error");
+		}else{
 			$("#btn-data").removeClass("btn-danger");
-			$("#btn-data").addClass("btn-default");
-			$("#erro1").hide();
+			$("#btn-data").addClass("btn-success");
 		}					
 	});
+	
 	$("#email").change(function() {
-		if( $("#email").val() == "" ){
-			$("#group-email").addClass("has-error");
-			$('#erro6').hide();
-			$('#sucesso').hide();
-			$("#erro2").show();
-			return false;
-		}else if( $("#email").val() != "" ){
-			$("#group-email").removeClass("has-error");
-			$('#erro6').hide();			
-			$("#erro2").hide();
+		$('#sucesso').hide(); 
+		$('#erroM').hide();
+		
+		var temp1 = checaVazio($("#email"));
+		var temp2 = validaEmail($("#email"));
+		
+		if(temp2 == true){
+			checaEmail($("#email"));
 		}
 		
-		var email = $('#email').val();
-		
-		$.post("checaEmail.php", { email: email },  
-            function(result){  
-                //if the result is 1  
-                if(result == 0){  
-                    //show that the username is available  
-                    $('#sucesso').show(); 
-                }else{  
-                    //show that the username is NOT available
-                    $('#erro6').show();  
-                }
-			});
 	});
 	
 	$("#senha").change(function() {
-		if( $("#senha").val() == "" ){
-			$("#group-senha").addClass("has-error");
-			$("#erro3").show();
-		}else if( $("#senha").val() != "" ){
-			$("#group-senha").removeClass("has-error");
-			$("#erro3").hide();
-		}					
+		checaVazio($("#senha"));
 	});
+	
 	$("#confSenha").change(function() {
-		if( $("#confSenha").val() == "" || $("#confSenha").val() != $("#senha").val() ){
-			$("#group-conf-senha").addClass("has-error");
-			$("#icone").removeClass("glyphicon glyphicon-exclamation-sign");
-			$("#icone").addClass("glyphicon glyphicon-remove");
-			$("#erro4").show();
-		}else if( $("#confSenha").val() == $("#senha").val() ){
-			$("#group-conf-senha").removeClass("has-error");
-			$("#group-conf-senha").addClass("has-success");
-			$("#icone").removeClass("glyphicon glyphicon-remove");
-			$("#icone").addClass("glyphicon glyphicon-ok");
-			$("#erro4").hide();
-		}					
+		var temp1 = checaVazio($("#confSenha"));
+		
+		if( temp1 == false){
+			checaSenhas();
+		}
 	});
 	
 	
 	$("#registrar").click(function(){
-		var isValido = true;
+		checaVazio($("#nome"));
+		checaVazio($("#sobrenome"));
+		checaVazio($("#data"));
+		checaVazio($("#email"));
+		checaVazio($("#senha"));
+		checaVazio($("#confSenha"));
+	});
+	
+	$("#cadastroForm").submit(function(){
+		var nome = $('#nome').val();
+		var sobrenome = $('#sobrenome').val();
+		var data = $('#data').val();
+		var email = $('#email').val();
+		var senha = $('#senha').val();
+		var temp = checaSenhas();;
 		
-		if($("#nome").val() == "" || $("#sobrenome").val() == "" ){
-			$("#group-nome").addClass("has-error");
-			isValido = false;
-		}
-		if( $("#data").val() == ""){
-			$("#group-data").addClass("has-error");
-			$("#btn-data").removeClass("btn-default");
-			$("#btn-data").addClass("btn-danger");
-			isValido = false;			
-		}
-		if( $("#email").val() == ""){
-			$("#group-email").addClass("has-error");
-			isValido = false;			
-		}
-		if ( $("#senha").val() == "" ){
-			$("#group-senha").addClass("has-error");
-			isValido = false;
-		}
-		if ( $("#confSenha").val() == "" ){
-			$("#group-conf-senha").addClass("has-error");
-			isValido = false;
-		}
-		if($("#nome").val() == "" || $("#sobrenome").val() == "" || $("#data").val() == "" || $("#email").val() == "" ||  $("#senha").val() == "" || $("#confSenha").val() == "" ){
-			$("#erro5").show();
-			isValido = false;
-		}
-		if( $("#confSenha").val() != $("#senha").val()  ){
-			$("#erro4").show();
-			isValido = false;
-		}if($('#erro6').is(":visible")){
-			isValido = false;
+		if( temp == false){
+			return false;
 		}
 		
-		return isValido;
+		$.post("processaCadastro.php", {nome: nome, sobrenome: sobrenome, data: data, email: email, senha: senha },  
+			function(result){   
+				if(result == 0){
+					$('#sucessoCadastro').show();
+					window.setTimeout(function(){
+						document.location='login';
+					}, 2000);
+					
+				}else{
+					$('#erroC').show();
+				}
+			});
+		
+		return false;
 	});
 	
 });

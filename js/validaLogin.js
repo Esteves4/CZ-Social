@@ -13,10 +13,12 @@ var adicionaSucesso = function(componente){
 var checaVazio = function(componente){
 	if( componente.val() == ""){
 		adicionaErro(componente);
+		$("#erroP").show();
 		return true;
 	}
 	if( componente.val() != ""){
 		adicionaSucesso(componente);
+		$("#erroP").hide();
 		return false;
 	}
 }
@@ -41,15 +43,10 @@ $(document).ready(function(){
 
     $("#entrar").click(function(){
 		var isValid = true;
-		var temp1 = checaVazio($("#email"));
-		var temp2 = checaVazio($("#email"));
+		checaVazio($("#email"));
+		checaVazio($("#senha"));
 		validaEmail($("#email"));
-		checaSenha($("#senha"));
 		
-        if( temp1 == true || temp2 == true){
-			$("#erroM").show();
-		}
-	
 	});
 	
 	$("#loginForm").submit(function(){

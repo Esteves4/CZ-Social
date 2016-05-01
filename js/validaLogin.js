@@ -54,9 +54,9 @@ $(document).ready(function(){
 		var senha = $('#senha').val();
 		$('#erroInv').hide();
 		
-		$.post("checaLogin.php", { email: email, senha: senha },  
+		$.post("Controller/LoginController-handler.php", { email: email, senha: senha },  
 			function(result){   
-				if(result == 0){
+				if(result == true){
 					$('#sucessoLogin').show();
 					window.setTimeout(function(){
 						document.location='secure.php';

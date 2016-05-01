@@ -63,7 +63,16 @@ class DBAccess{
 		}
 	}
 	
-	
+	public function contaExiste($email,$senha){
+		$resultado = mysql_query("SELECT email FROM contas where email = '$email' and senha = '$senha'");
+		
+		if(mysql_num_rows($resultado) > 0){
+			return true;
+
+		}else{
+			return false;
+		}
+	}
 	
 }
 

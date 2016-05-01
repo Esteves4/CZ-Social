@@ -2,13 +2,14 @@
 class CadastroController{
 	private $db_model;
 	
-	public __construct(){
+	public function __construct(){
 		require_once("../Model/DBAccess_model.php");
-		$db_model = new DBAccess();
+		$this->db_model = new DBAccess();
 	}
 	
-	public adicionar($nome, $sobrenome, $dataN, $email, $senha){
-		$temp = $db_model->adicionaConta($nome, $sobrenome, $data, $email, md5($senha));
+	public function adicionar($nome, $sobrenome, $dataN, $email, $senha){
+		global $db_model;
+		$temp = $this->db_model->adicionaConta($nome, $sobrenome, $dataN, $email, md5($senha));
 		return $temp;
 	}
 }

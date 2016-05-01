@@ -81,8 +81,4 @@ $(document).ready(function(){
 	$("#senha").change(function(){
 		var temp1 = checaVazio($("#senha"));
     });
-<<<<<<< HEAD
-=======
-	
->>>>>>> refs/remotes/origin/master
 });

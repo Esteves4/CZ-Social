@@ -159,9 +159,9 @@ $(document).ready(function(){
 			return false;
 		}
 		
-		$.post("processaCadastro.php", {nome: nome, sobrenome: sobrenome, data: data, email: email, senha: senha },  
+		$.post("Controller/CadastroController-handler.php", {nome: nome, sobrenome: sobrenome, data: data, email: email, senha: senha },  
 			function(result){   
-				if(result == 0){
+				if(result == true){
 					$('#sucessoCadastro').show();
 					window.setTimeout(function(){
 						document.location='login';

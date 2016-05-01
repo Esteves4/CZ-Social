@@ -75,26 +75,4 @@ $(document).ready(function(){
 	$("#senha").change(function(){
 		var temp1 = checaVazio($("#senha"));
     });
-	
-	
-	
-	
-/*	$("#senha").change(function() {
-		var email = $('#email').val();
-		var senha = $('#senha').val();
-		$('#erro3').hide();
-			
-		$.post("checaLogin.php", { email: email, senha: senha },  
-			function(result){  
-				//if the result is not 0  
-				if(result != 0){ 
-					//show that the username is correct
-					$('#erro3').show();
-					isValid = false;
-					return isValid;
-				}
-			});
-		
-		
-	});*/
 });

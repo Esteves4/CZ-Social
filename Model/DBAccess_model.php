@@ -1,7 +1,7 @@
 <?php
 
 class DBAccess{
-	$connection;
+	private $connection;
 	
 	
 	//Construtor

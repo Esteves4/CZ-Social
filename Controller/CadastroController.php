@@ -12,6 +12,11 @@ class CadastroController{
 		$temp = $this->db_model->adicionaConta($nome, $sobrenome, $dataN, $email, md5($senha));
 		return $temp;
 	}
+	
+	public function checaEmail($email){
+		$temp = $this->db_model->emailExiste($email);
+		return $temp;
+	}
 }
 
 ?>

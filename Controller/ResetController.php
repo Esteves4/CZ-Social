@@ -14,7 +14,7 @@ class ResetController{
 		if($temp == true){
 			$to = $email;
 			$subject = "Email de Confirmação"; 
-			$message = "Clique no link para ativar sua conta."; 
+			$message = "Clique no link para redefinir sua senha.\n"."http://localhost/cz-social/reset?id=".md5($this->db_model->getID($email)); 
 			$mail_sent = @mail( $to, $subject, $message);
 			
 			return $mail_sent ?  true : "erro";

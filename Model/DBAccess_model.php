@@ -74,6 +74,14 @@ class DBAccess{
 		}
 	}
 	
+	public function getID($email){
+		$resultado = mysql_query("SELECT conta_id FROM contas where email = '$email'");
+		
+		$row = mysql_fetch_assoc($resultado);
+		
+		return $row['conta_id'];
+	}
+	
 }
 
 ?>

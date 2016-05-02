@@ -1,0 +1,105 @@
+body {
+	background-color: lightgray;
+	background-repeat: no-repeat;
+	background-position: center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+ .navbar-inverse{
+	background-image: linear-gradient(to bottom,#fff 0,#FEFEFE 100%);
+	border-color: black;
+	border-radius:0px;
+	margin-top: 20px;
+}
+
+.navbar-default .navbar-nav > li > a{
+	color: black;
+	font-family: arial;
+	font-size:15px;
+}
+
+#brand{
+	border: 2px solid black;
+}
+
+#perfil{
+	font-family: arial;
+	font-size:15px;
+}
+
+#divisao {
+	border: 1px solid black;
+	background-color: white;
+	height: 400px;
+	margin-top: 20px;
+}
+
+#imagem{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+#post{
+	margin-top:20px;
+	height: 400px;
+	width: 130px;
+ }
+
+ 
+ #comentarios{
+	position: absolute;
+	top: 170px;
+	width: 400px;
+	height: 230px;
+	background-color: white;
+	border: 1px solid gray;
+	box-shadow: 1px 1px 10px black;
+	 
+ }
+ 
+#foto{
+	position: absolute;
+	top: 0px;
+	left:0px;
+	min-height: 100px;
+	min-width: 100px;
+	max-height: 100px;
+	max-width: 100px;
+}
+
+#icones{
+	position: absolute;
+	display: inline-block;
+	top:100px;
+	left:10px;
+	height:80px;
+	width: 100px;
+}
+ 
+
+
+figure.foto-legenda figcaption{
+	opacity: 0;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background-color: rgba(0,0,0,0.6);
+	color: white;
+	font-weight: bold;
+	font-family: calibri;
+	width: 100%;
+	height: 100%;
+	padding: 10px;
+	box-sizing: border-box;
+	transition: opacity 1s;
+}
+
+figure.foto-legenda:hover figcaption {
+	opacity: 1;
+}

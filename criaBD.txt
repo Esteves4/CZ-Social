@@ -1,8 +1,8 @@
-drop database if exists czSocial;
-create database czSocial;
-use czSocial
+drop database if exists mwSocial;
+create database mwSocial;
+use mwSocial;
 
-alter database czsocial charset=utf8 COLLATE = utf8_unicode_ci;
+alter database mwSocial charset=utf8 COLLATE = utf8_unicode_ci;
 
 create table enderecos(endereco_id int AUTO_INCREMENT primary key, cidade varchar(20) not null, UF varchar(2) not null);
 create table fotos (foto_id int primary key AUTO_INCREMENT, imagem longblob); 

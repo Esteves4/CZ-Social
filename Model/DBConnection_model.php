@@ -10,7 +10,7 @@ class DBConnection{
 		$this->server = 'localhost';
 		$this->user = 'root';
 		$this->pass = '';
-		$this->db = 'czsocial';
+		$this->db = 'mwsocial';
 	}
 	
 	public function conectar(){

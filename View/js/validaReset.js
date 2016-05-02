@@ -68,12 +68,9 @@ $(document).ready(function(){
 					$('#group-email').hide();
 					$('#sucessoRedefinir').show();  
 					
-				}else if(result == "erro"){
+				}else if(result == 0){
 					$('#redefinir').button('reset')
 					$('erroC').show();
-					window.setTimeout(function(){
-							$('erroC').hide();
-						}, 5000);
 					
 				}else{
 					$('#redefinir').button('reset')

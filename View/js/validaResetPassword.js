@@ -42,8 +42,6 @@ var checaSenhas = function(){
 	}
 }
 
-
-
 $(document).ready(function(){ 
 
 	$('[data-toggle="tooltip"]').tooltip()
@@ -60,6 +58,11 @@ $(document).ready(function(){
 		}
 	});
 	
+	$("#email").change(function() { 
+		var temp1 = checaVazio($("#email"));
+		
+	});
+	
 	
 	$("#redefinir").click(function(){
 		checaVazio($("#senha"));
@@ -67,6 +70,7 @@ $(document).ready(function(){
 	});
 	
 	$("#resetPasswordForm").submit(function(){
+		var email = $('#email').val();
 		var senha = $('#senha').val();
 		var temp = checaSenhas();
 		
@@ -74,7 +78,7 @@ $(document).ready(function(){
 			return false;
 		}
 		
-		$.post("Controller/ResetPasswordController-handler.php", {senha: senha },  
+		$.post("Controller/ResetPasswordController-handler.php", {email: email, senha: senha },  
 			function(result){   
 				if(result == true){
 					$('#group-senha').hide();

@@ -1,23 +1,22 @@
 <?php
 
-if((!isset ($_GET['email']) == true) and (!isset ($_GET['id']) == true)){
+if(isset ($_GET['id']) == true){
 	session_start();
 
 
-	require_once("ResetPasswordController.php");
+	require_once("Controller/ResetPasswordController.php");
 
 	$control = new ResetPasswordController();
 
-	$email = mysql_real_escape_string($_GET['email']);
 	$id = mysql_real_escape_string($_GET['id']);
 
 	$resultado = $control->checaReset($id);
 	
-	if($resultado == true ){
-		setcookie('email',$email);
-	}else{
-		header("Location:login");
+	if($resultado == false ){
+		header("Location:login?err=1");
 	}
+}else{
+	header("Location:login?err=2");
 }
 
 ?>
@@ -56,6 +55,12 @@ if((!isset ($_GET['email']) == true) and (!isset ($_GET['id']) == true)){
 				<a href="login">
 					<img alt="Brand" id="login" class="img-responsive center-block" src="View/pictures/LogoCz2.png" width="200" height="200">
 				</a>
+				<div class="row">
+						<div class="input-group" id="group-email" data-toggle="tooltip" data-placement="right" title="Confirme seu email." data-trigger="hover" data-container="body" >
+							<input type="email" id="email" name="email" class="form-control" placeholder="Email" aria-describedby="addon3" required>
+							<div class="input-group-addon" id="addon2"><span class="glyphicon glyphicon-envelope"></span></div>
+						</div>
+				</div>
 				<div class="row">
 						<div class="input-group" id="group-senha" data-toggle="tooltip" data-placement="right" title="Digite a nova senha aqui." data-trigger="hover" data-container="body">
 							<input type="password" id="senha" name="senha"class="form-control" placeholder="Senha" aria-describedby="addon4" required>

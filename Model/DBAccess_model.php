@@ -88,8 +88,8 @@ class DBAccess{
 		return $row['conta_id'];
 	}
 	
-	public function permiteReset($id_md5,$email){
-		$resultado = mysql_query("SELECT * FROM reset where reset_id = '$id_md5' and email='$email'");
+	public function permiteReset($id_md5){
+		$resultado = mysql_query("SELECT * FROM reset where reset_id = '$id_md5'");
 		
 		if(mysql_num_rows($resultado) > 0){
 			return true;

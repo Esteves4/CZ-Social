@@ -60,7 +60,7 @@ class DBAccess{
 	}
 	
 	public function emailExiste($email){
-		$resultado = mysql_query("SELECT email FROM contas where email = '$email'");
+		$resultado = mysql_query("SELECT email FROM contas WHERE email = '$email'");
 
 		if(mysql_num_rows($resultado) > 0){
 			return true;
@@ -70,7 +70,7 @@ class DBAccess{
 	}
 	
 	public function contaExiste($email,$senha){
-		$resultado = mysql_query("SELECT email FROM contas where email = '$email' and senha = '$senha'");
+		$resultado = mysql_query("SELECT email FROM contas WHERE email = '$email' AND senha = '$senha'");
 		
 		if(mysql_num_rows($resultado) > 0){
 			return true;
@@ -81,7 +81,7 @@ class DBAccess{
 	}
 	
 	public function getID($email){
-		$resultado = mysql_query("SELECT conta_id FROM contas where email = '$email'");
+		$resultado = mysql_query("SELECT conta_id FROM contas WHERE email = '$email'");
 		
 		$row = mysql_fetch_assoc($resultado);
 		
@@ -89,7 +89,7 @@ class DBAccess{
 	}
 	
 	public function permiteReset($id_md5){
-		$resultado = mysql_query("SELECT * FROM reset where reset_id = '$id_md5'");
+		$resultado = mysql_query("SELECT * FROM reset WHERE reset_id = '$id_md5'");
 		
 		if(mysql_num_rows($resultado) > 0){
 			return true;
@@ -100,13 +100,13 @@ class DBAccess{
 	}
 	
 	public function resetSenha($email,$senha){
-		$resultado = mysql_query("UPDATE contas SET senha = '$senha' where email='$email'");
+		$resultado = mysql_query("UPDATE contas SET senha = '$senha' WHERE email='$email'");
 		
 		return $resultado;
 	}
 	
 	public function apagaReset($email){
-		$resultado = mysql_query("DELETE from reset where email='$email'");
+		$resultado = mysql_query("DELETE FROM reset WHERE email='$email'");
 		
 		return $resultado;
 	}

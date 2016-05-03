@@ -4,7 +4,7 @@ if(isset ($_GET['id']) == true){
 	session_start();
 
 
-	require_once("Controller/ResetPasswordController.php");
+	require_once("../Controller/ResetPasswordController.php");
 
 	$control = new ResetPasswordController();
 
@@ -13,7 +13,7 @@ if(isset ($_GET['id']) == true){
 	$resultado = $control->checaReset($id);
 	
 	if($resultado == false ){
-		header("Location:login?err=1");
+		header("Location:../login?err=1");
 	}
 }else{
 	header("Location:login?err=2");
@@ -34,12 +34,12 @@ if(isset ($_GET['id']) == true){
 	<meta name="viewport" content="width=device-width, inicial-scale=1">
 	
 	<!-- Bootstrap -->
-	<link href="View/css/bootstrap.css" rel="stylesheet">
-	<link href="View/css/style.css" rel="stylesheet">
-	<link href="View/css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
 	
 	<!-- Css -->
-	<link rel="stylesheet" href="View/css/resetPassword.css">
+	<link rel="stylesheet" href="css/resetPassword.css">
 	
 	<!-- Fonte -->
 	<link href='https://fonts.googleapis.com/css?family=Lato:400,300,100,700,900' rel='stylesheet' type='text/css'>
@@ -53,7 +53,7 @@ if(isset ($_GET['id']) == true){
 
 			<form class="form-horizontal col-sm-offset-4 col-sm-4" action="" id="resetPasswordForm" method="POST" role="form">
 				<a href="login">
-					<img alt="Brand" id="login" class="img-responsive center-block" src="View/pictures/LogoCz2.png" width="200" height="200">
+					<img alt="Brand" id="login" class="img-responsive center-block" src="pictures/LogoCz2.png" width="200" height="200">
 				</a>
 				<div class="row">
 						<div class="input-group" id="group-email" data-toggle="tooltip" data-placement="right" title="Confirme seu email." data-trigger="hover" data-container="body" >
@@ -91,14 +91,14 @@ if(isset ($_GET['id']) == true){
 			</form>
 
 <!-- jQuery (necessario para os plugins Javascript Bootstrap) -->
-<script src="View/js/jquery.min.js"></script>
-<script src="View/js/jquery-1.12.0.min.js"></script>
-<script src="View/js/jquery-2.2.3.js"></script>
-<script src="View/js/bootstrap.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-1.12.0.min.js"></script>
+<script src="js/jquery-2.2.3.js"></script>
+<script src="js/bootstrap.js"></script>
 
 
 <!--Javascript para validar informações digitadas no login-->
-<script src="View/js/validaResetPassword.js"></script>
+<script src="js/validaResetPassword.js"></script>
 
 </body>
 </html>

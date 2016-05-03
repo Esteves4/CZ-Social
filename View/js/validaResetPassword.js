@@ -78,14 +78,16 @@ $(document).ready(function(){
 			return false;
 		}
 		
-		$.post("Controller/ResetPasswordController-handler.php", {email: email, senha: senha },  
+		$.post("../Controller/ResetPasswordController-handler.php", {email: email, senha: senha },  
 			function(result){   
 				if(result == true){
+					$('#group-email').hide();
 					$('#group-senha').hide();
 					$('#group-conf-senha').hide();
+					$('#redefinir').hide();
 					$('#sucessoRedefinir').show();
 					window.setTimeout(function(){
-						document.location='login';
+						document.location='../login';
 					}, 4000);
 					
 				}else{

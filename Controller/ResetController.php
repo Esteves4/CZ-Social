@@ -22,7 +22,7 @@ class ResetController{
 						<p> Mas não tem problema, estamos aqui para solucionar isso. </p>
 						<p> ######################################################################################## </p>
 						<p> Para redefinir sua senha, basta acessar o link:</p>
-						<p>'.'http://localhost/cz-social/resetPassword.php?id='.$id.'</p>
+						<p>'.'http://localhost/cz-social/view/resetPassword.php?id='.$id.'</p>
 						<p> ######################################################################################## </p>
 						<p> Agradecemos o contato e procuramos sempre lhe oferecer o melhor serviço.</p>
 						<br>

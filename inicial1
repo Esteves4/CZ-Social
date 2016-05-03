@@ -8,13 +8,12 @@
 	<meta name="viewport" content="width=device-width, inicial-scale=1">
 	
 	<!-- Bootstrap -->
-	<link href="css/bootstrap.css" rel="stylesheet">
-	<link href="css/style.css" rel="stylesheet">
-	<link href="css/bootstrap-datepicker.standalone.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+	<link href="View/css/bootstrap.css" rel="stylesheet">
+	<link href="View/css/style.css" rel="stylesheet">
+	<link href="View/css/bootstrap-theme.min.css" rel="stylesheet">
 	
 	<!-- Css -->
-	<link rel="stylesheet" href="css/inicial1.css">
+	<link rel="stylesheet" href="View/css/inicial1.css">
 	
 	<!-- Fonte -->
 	<link href='https://fonts.googleapis.com/css?family=Lato:400,300,100,700,900' rel='stylesheet' type='text/css'>
@@ -31,7 +30,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-	<img alt="Brand" id="brand" class="img-responsive img-circle" src="pictures/perfil.png" width="54">
+	<img alt="Brand" id="brand" class="img-responsive img-circle" src="View/pictures/perfil.png" width="54">
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
@@ -50,82 +49,23 @@
   </div>
 </nav>
  <div class="container-fluid col-sm-offset-2" id="layout">
-	<div class="col-sm-7" id="divisao">
+	<div class="col-sm-5 col-xs-7" id="divisao">
 		<figure class="foto-legenda">
-			<img alt="Brand" id="imagem" class="img-responsive center-block" src="pictures/background41.png">
+			<img alt="Brand" id="imagem" class="img-responsive center-block" src="View/pictures/background41.png">
 			<figcaption>
 				<h5></br></br>Gostei muito de conhecer o parque do Pequeno Príncipe, tudo muito fofo e realmente infantil. Espero algum dia levar minhas crianças pra conhecer tamanha beleza e simplicidade, pois como diz a raposa: "O essencial é invisível aos olhos." Livro excelente, recomendo!</h5>
 			</figcaption>
 		</figure>
 	</div>
-	<div class="col-sm-1" id="post">
-		<div class="col-sm-1" id="post1">
-			<img alt="Brand" id="foto" class="img-responsive img-thumbnail center-block" src="pictures/perfil1.png">
+	<div class="col-sm-3 col-xs-3" id="post">
+		<div class="col-sm-1 col-xs-1" id="post1">
+			<img alt="Brand" id="foto" class="img-responsive img-thumbnail center-block" src="View/pictures/perfil1.png">
 		</div>
-		<div class="col-sm-3" id="icones">
+		<div class="col-sm-4 col-xs-4" id="icones">
 			<span class="btn glyphicon glyphicon-star"></span><span class="badge">5</span>
 			<span class="btn glyphicon glyphicon-pencil"></span><span class="badge">5</span>
 		</div>
-		<div class="col-sm-3" id="comentarios">
-			<p>COMENTÁRIOS</p>
-		</div>
-	</div>
-	<div class="col-sm-7" id="divisao">
-		<figure class="foto-legenda">
-			<img alt="Brand" id="imagem" class="img-responsive center-block" src="pictures/background39.png">
-			<figcaption>
-				<h5></br></br>Gostei muito de conhecer o parque do Pequeno Príncipe, tudo muito fofo e realmente infantil. Espero algum dia levar minhas crianças pra conhecer tamanha beleza e simplicidade, pois como diz a raposa: "O essencial é invisível aos olhos." Livro excelente, recomendo!</h5>
-			</figcaption>
-		</figure>
-	</div>
-	<div class="col-sm-1" id="post">
-		<div class="col-sm-1" id="post1">
-			<img alt="Brand" id="foto" class="img-responsive img-thumbnail center-block" src="pictures/perfil2.png">
-		</div>
-	<div class="col-sm-3" id="icones">
-			<span id="star" class="btn glyphicon glyphicon-star col-sm-3"></span>
-			<span id= "pencil" class="btn glyphicon glyphicon-pencil"></span>
-		</div>
-		<div class="col-sm-3" id="comentarios">
-			<p>COMENTÁRIOS</p>
-		</div>
-	</div><div class="col-sm-7" id="divisao">
-		<figure class="foto-legenda">
-			<img alt="Brand" id="imagem" class="img-responsive center-block" src="pictures/background40.png">
-			<figcaption>
-				<h5></br></br>Gostei muito de conhecer o parque do Pequeno Príncipe, tudo muito fofo e realmente infantil. Espero algum dia levar minhas crianças pra conhecer tamanha beleza e simplicidade, pois como diz a raposa: "O essencial é invisível aos olhos." Livro excelente, recomendo!</h5>
-			</figcaption>
-		</figure>
-	</div>
-	<div class="col-sm-1" id="post">
-		<div class="col-sm-1" id="post1">
-			<img alt="Brand" id="foto" class="img-responsive img-thumbnail center-block" src="pictures/perfil3.png">
-		</div>
-	<div class="col-sm-3" id="icones">
-			<span id="star" class="btn glyphicon glyphicon-star col-sm-3"></span>
-			<span id= "pencil" class="btn glyphicon glyphicon-pencil"></span>
-		</div>
-		<div class="col-sm-3" id="comentarios">
-			<p>COMENTÁRIOS</p>
-		</div>
-	</div>
-	<div class="col-sm-7" id="divisao">
-		<figure class="foto-legenda">
-			<img alt="Brand" id="imagem" class="img-responsive center-block" src="pictures/background38.png">
-			<figcaption>
-				<h5></br></br>Gostei muito de conhecer o parque do Pequeno Príncipe, tudo muito fofo e realmente infantil. Espero algum dia levar minhas crianças pra conhecer tamanha beleza e simplicidade, pois como diz a raposa: "O essencial é invisível aos olhos." Livro excelente, recomendo!</h5>
-			</figcaption>
-		</figure>
-	</div>
-	<div class="col-sm-1" id="post">
-		<div class="col-sm-1" id="post1">
-			<img alt="Brand" id="foto" class="img-responsive img-thumbnail center-block" src="pictures/perfil4.png">
-		</div>
-		<div class="col-sm-3" id="icones">
-			<span class="btn glyphicon glyphicon-star"></span><span class="badge">5</span>
-			<span class="btn glyphicon glyphicon-pencil"></span><span class="badge">5</span>
-		</div>
-		<div class="col-sm-3" id="comentarios">
+		<div class="col-sm-12 col-xs-12" id="comentarios">
 			<p>COMENTÁRIOS</p>
 		</div>
 	</div>
@@ -135,8 +75,10 @@
 
 
 <!-- jQuery (necessario para os plugins Javascript Bootstrap) -->
-<script src="js/jquery-2.2.3.js"></script>
-<script src="js/bootstrap.js"></script>
+<script src="View/js/jquery.min.js"></script>
+<script src="View/js/jquery-1.12.0.min.js"></script>
+<script src="View/js/jquery-2.2.3.js"></script>
+<script src="View/js/bootstrap.js"></script>
 
 
 </body>

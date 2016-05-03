@@ -36,7 +36,7 @@
 						</div>
 				</div>
 				<div class="row">
-					<button class="btn btn-success btn-block col-sm-6" autocomplete="off" data-loading-text="Checando Email.." id="redefinir" type="submit">Redefinir</button>
+					<button class="btn btn-success btn-block col-sm-6" autocomplete="off" data-loading-text="Checando Email.." id="enviar" type="submit">Enviar</button>
 				</div>
 				<div id="erroC" class="row alert alert-danger alert-dismissible" role="alert">
 					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -45,7 +45,7 @@
 				<div id="erroM" class="row alert alert-danger" role="alert">
 					<p id="erroText6"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Ops.. O <strong>Email</strong> digitado não está cadastrado.</p>
 				</div>
-				<div id="sucessoRedefinir" class="row alert alert-success" role="alert">
+				<div id="sucessoEnviar" class="row alert alert-success" role="alert">
 					<p id="sucessoText2"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Verifique sua <strong>caixa de email</strong> e siga as instruções para redefinir sua senha</p>
 				</div>
 				<div id="sucessoInfo" class="row alert alert-info" role="alert">

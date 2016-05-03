@@ -53,6 +53,12 @@ class DBAccess{
 		return $resultado;
 	}
 	
+	public function adicionaReset($id,$email){
+		$resultado = mysql_query("INSERT INTO reset(reset_id, email) VALUES('$id','$email')");
+		
+		return $resultado;
+	}
+	
 	public function emailExiste($email){
 		$resultado = mysql_query("SELECT email FROM contas where email = '$email'");
 
@@ -82,6 +88,28 @@ class DBAccess{
 		return $row['conta_id'];
 	}
 	
+	public function permiteReset($id_md5,$email){
+		$resultado = mysql_query("SELECT * FROM reset where reset_id = '$id_md5' and email='$email'");
+		
+		if(mysql_num_rows($resultado) > 0){
+			return true;
+
+		}else{
+			return false;
+		}
+	}
+	
+	public function resetSenha($email,$senha){
+		$resultado = mysql_query("UPDATE contas SET senha = '$senha' where email='$email'");
+		
+		return $resultado;
+	}
+	
+	public function apagaReset($email){
+		$resultado = mysql_query("DELETE from reset where email='$email'");
+		
+		return $resultado;
+	}
 }
 
 ?>

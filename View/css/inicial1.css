@@ -33,8 +33,12 @@ body {
 #divisao {
 	border: 1px solid black;
 	background-color: white;
-	height: 400px;
+	height: 100%;
 	margin-top: 20px;
+}
+
+#layout{
+	height: 300px;
 }
 
 #imagem{
@@ -47,21 +51,18 @@ body {
 
 #post{
 	margin-top:20px;
-	height: 400px;
-	width: 130px;
- }
+}
 
  
  #comentarios{
 	position: absolute;
 	top: 170px;
-	width: 400px;
-	height: 230px;
+	height: 20vh;
 	background-color: white;
 	border: 1px solid gray;
 	box-shadow: 1px 1px 10px black;
-	 
- }
+	
+}
  
 #foto{
 	position: absolute;

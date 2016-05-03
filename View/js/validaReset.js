@@ -51,7 +51,7 @@ $(document).ready(function(){
 		
 	});
 	
-	$("#redefinir").click(function(){
+	$("#enviar").click(function(){
 		$('#sucessoInfo').hide(); 
 		checaVazio($("#email"));
 	});
@@ -59,21 +59,21 @@ $(document).ready(function(){
 	$("#resetForm").submit(function(){
 		var email = $('#email').val();
 		
-		$('#redefinir').button('loading')
+		$('#enviar').button('loading')
 		
 		$.post("Controller/ResetController-handler.php", {email: email},  
 			function(result){   
 				if(result == true){
-					$('#redefinir').hide();
+					$('#enviar').hide();
 					$('#group-email').hide();
-					$('#sucessoRedefinir').show();  
+					$('#sucessoEnviar').show();  
 					
 				}else if(result == 0){
-					$('#redefinir').button('reset')
+					$('#enviar').button('reset')
 					$('erroC').show();
 					
 				}else{
-					$('#redefinir').button('reset')
+					$('#enviar').button('reset')
 					adicionaErro($('#email'));  				
 					$('#erroM').show();
 					window.setTimeout(function(){

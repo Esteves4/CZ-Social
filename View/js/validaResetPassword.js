@@ -87,7 +87,7 @@ $(document).ready(function(){
 					$('#redefinir').hide();
 					$('#sucessoRedefinir').show();
 					window.setTimeout(function(){
-						document.location='../login';
+						document.location='login';
 					}, 4000);
 					
 				}else{

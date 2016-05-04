@@ -8,12 +8,12 @@
 	<meta name="viewport" content="width=device-width, inicial-scale=1">
 	
 	<!-- Bootstrap -->
-	<link href="View/css/bootstrap.css" rel="stylesheet">
-	<link href="View/css/style.css" rel="stylesheet">
-	<link href="View/css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
 
 	<!-- Css -->
-	<link rel="stylesheet" href="View/css/login.css">
+	<link rel="stylesheet" href="css/login.css">
 	
 	<!-- Fonte -->
 	<link href='https://fonts.googleapis.com/css?family=Lato:400,300,100,700,900' rel='stylesheet' type='text/css'>
@@ -27,7 +27,7 @@
 		<div class="container">
 			<form class="form-horizontal col-sm-offset-4 col-sm-4" action="" role="form" id="loginForm" method="POST">
 				<a href="login">
-					<img alt="Brand" id="brand" class="img-responsive center-block" src="View/pictures/LogoCz2.png" width="200" height="200">
+					<img alt="Brand" id="brand" class="img-responsive center-block" src="pictures/LogoCz2.png" width="200" height="200">
 				</a>
 				<div class="row">
 					<label class="sr-only control-label" for="email"></label>
@@ -70,12 +70,12 @@
 	</div>
 
 <!-- jQuery (necessario para os plugins Javascript Bootstrap) -->
-<script src="View/js/jquery.min.js"></script>
-<script src="View/js/jquery-1.12.0.min.js"></script>
-<script src="View/js/bootstrap.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-1.12.0.min.js"></script>
+<script src="js/bootstrap.js"></script>
 
 <!--Javascript para validar informações digitadas no login-->
-<script src="View/js/validaLogin.js"></script>
+<script src="js/validaLogin.js"></script>
 
 </body>
 </html>

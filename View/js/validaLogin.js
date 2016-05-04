@@ -54,7 +54,7 @@ $(document).ready(function(){
 		var senha = $('#senha').val();
 		$('#erroInv').hide();
 		
-		$.post("Controller/LoginController-handler.php", { email: email, senha: senha },  
+		$.post("../Controller/LoginController-handler.php", { email: email, senha: senha },  
 			function(result){   
 				if(result == true){
 					$('#sucessoLogin').show();

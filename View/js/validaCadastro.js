@@ -40,7 +40,7 @@ var validaEmail = function(email){
 
 var checaEmail = function(email){
 	
-	$.post("Controller/CadastroController-handler.php", { email: email.val() },  
+	$.post("../Controller/CadastroController-handler.php", { email: email.val() },  
 		function(result){  
 			//if the result is 1  
 			if(result == false){  
@@ -159,7 +159,7 @@ $(document).ready(function(){
 			return false;
 		}
 		
-		$.post("Controller/CadastroController-handler.php", {nome: nome, sobrenome: sobrenome, data: data, email: email, senha: senha },  
+		$.post("../Controller/CadastroController-handler.php", {nome: nome, sobrenome: sobrenome, data: data, email: email, senha: senha },  
 			function(result){   
 				if(result == true){
 					$('#sucessoCadastro').show();

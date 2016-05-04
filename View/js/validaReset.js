@@ -61,7 +61,7 @@ $(document).ready(function(){
 		
 		$('#enviar').button('loading')
 		
-		$.post("Controller/ResetController-handler.php", {email: email},  
+		$.post("../Controller/ResetController-handler.php", {email: email},  
 			function(result){   
 				if(result == true){
 					$('#enviar').hide();

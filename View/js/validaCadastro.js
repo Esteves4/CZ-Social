@@ -40,10 +40,10 @@ var validaEmail = function(email){
 
 var checaEmail = function(email){
 	
-	$.post("checaEmail.php", { email: email.val() },  
+	$.post("../Controller/CadastroController-handler.php", { email: email.val() },  
 		function(result){  
 			//if the result is 1  
-			if(result == 0){  
+			if(result == false){  
 				//show that the username is available
 				adicionaSucesso(email);  				
 				$('#sucesso').show();
@@ -62,7 +62,7 @@ var checaSenhas = function(){
 	if( $("#confSenha").val() != $("#senha").val() ){
 		adicionaErro($("#senha"));
 		adicionaErro($("#confSenha"));
-		$("#icone").removeClass("glyphicon glyphicon-exclamation-sign");
+		$("#icone").removeClass();
 		$("#icone").addClass("glyphicon glyphicon-remove");
 		$("#group-conf-senha").tooltip("show")
 		return false;
@@ -70,7 +70,7 @@ var checaSenhas = function(){
 	}else{
 		adicionaSucesso($("#senha"));
 		adicionaSucesso($("#confSenha"));
-		$("#icone").removeClass("glyphicon glyphicon-remove");
+		$("#icone").removeClass();
 		$("#icone").addClass("glyphicon glyphicon-ok");
 		$("#group-conf-senha").tooltip("hide")
 		return true;
@@ -153,15 +153,15 @@ $(document).ready(function(){
 		var data = $('#data').val();
 		var email = $('#email').val();
 		var senha = $('#senha').val();
-		var temp = checaSenhas();;
+		var temp = checaSenhas();
 		
 		if( temp == false){
 			return false;
 		}
 		
-		$.post("processaCadastro.php", {nome: nome, sobrenome: sobrenome, data: data, email: email, senha: senha },  
+		$.post("../Controller/CadastroController-handler.php", {nome: nome, sobrenome: sobrenome, data: data, email: email, senha: senha },  
 			function(result){   
-				if(result == 0){
+				if(result == true){
 					$('#sucessoCadastro').show();
 					window.setTimeout(function(){
 						document.location='login';

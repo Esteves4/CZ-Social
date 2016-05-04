@@ -47,9 +47,6 @@
 					</div>
 				</div>
 				<div class="row">
-					<label id="remember"><input name="conectado" value="true" type="checkbox"> Manter conectado</label>
-				</div>
-				<div class="row">
 					<button id="entrar" class="btn btn-info btn-block" type="submit">Entrar</button>
 				</div>		
 				<div class="row">

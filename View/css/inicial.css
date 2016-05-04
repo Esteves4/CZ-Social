@@ -1,0 +1,85 @@
+body {
+	background-color: lightgray;
+	background-repeat: no-repeat;
+	background-position: center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+ .navbar-inverse{
+	background-image: linear-gradient(to bottom,#fff 0,#FEFEFE 100%);
+	border-color: black;
+	border-radius:0px;
+	margin-top: 20px;
+}
+
+.navbar-default .navbar-nav > li > a{
+	color: black;
+	font-family: arial;
+	font-size:15px;
+}
+
+#brand{
+	border: 2px solid black;
+}
+
+.thumbnail{
+	position: inherit;
+}
+
+.h5{
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.thumbnail figcaption{
+	opacity: 0;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background-color: rgba(0,0,0,0.6);
+	color: white;
+	font-weight: bold;
+	font-family: calibri;
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	transition: opacity 1s;
+	padding-right: 25px;
+	padding-left: 25px;
+
+}
+
+.thumbnail:hover figcaption {
+	opacity: 1;
+
+}
+
+.thumbnail:focus figcaption {
+	opacity: 1;
+
+}
+
+
+#inicial{
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#foto{
+	display: block;
+	width: 130px;
+	height: 130px;
+}
+#post{
+	display: relative
+	
+}
+
+#coment{
+	background-color: white;
+	width: auto;
+	height: auto;
+}

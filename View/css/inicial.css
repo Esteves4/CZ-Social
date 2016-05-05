@@ -93,6 +93,8 @@ body {
 	height: 300px;
 	overflow: scroll;
 	background-color: rgba(0,0,0,0.6);
+	display: none;
+	margin-left: 15px;
 }
 
 

@@ -90,9 +90,8 @@ body {
 }
 
 #comentarios{
-	height: 100%;
+	height: 300px;
 	overflow: scroll;
-	position: absolute;
 	background-color: rgba(0,0,0,0.6);
 }
 

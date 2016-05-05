@@ -68,96 +68,21 @@
 			<div class="container-fluid col-sm-12 col-xs-12" id="comentarios">
 				<div class="row">
 						<div class="media">
-						  <div class="media-left">
-							<a href="#">
-							  <img alt="Brand" id="perfilComent" class="media-object img-responsive img-thumbnail" src="pictures/perfil1.png">
-							</a>
-						  </div>
-						  <div class="media-body">
-							<p> This is um comentário 
-							 This is um comentário 
-							 This is um comentário 
-							 This is um comentário 
-							 This is um comentário 
-							 This is um comentário 
-							 This is um comentário 
-							 This is um comentário 
-							 This is um comentário  This is um comentário 
-							 This is um comentário 
-							 This is um comentário 
-							 This is um comentário  This is um comentário  This is um comentário  This is um comentário  This is um comentário </p>
-						  </div>
-						</div>
-				</div>
-				<div class="row">
-						<div class="media">
-						  <div class="media-left">
-							<a href="#">
-							  <img alt="Brand" id="perfilComent" class="media-object img-responsive img-thumbnail" src="pictures/perfil1.png">
-							</a>
-						  </div>
-						  <div class="media-body">
-							<h4 class="media-heading">Lucas Esteves</h4>
-							<p> This is um comentário 
-							 This is um comentário 
-							 This is um comentário 
-							 This is um comentário 
-							 This is um comentário 
-							 This is um comentário 
-							 This is um comentário 
-							 This is um comentário 
-							 This is um comentário  This is um comentário 
-							 This is um comentário 
-							 This is um comentário 
-							 This is um comentário  This is um comentário  This is um comentário  This is um comentário  This is um comentário </p>
-						  </div>
-						</div>
-				</div>
-				<div class="row">
-						<div class="media">
-						  <div class="media-left">
-							<a href="#">
-							  <img alt="Brand" id="perfilComent" class="media-object img-responsive img-thumbnail" src="pictures/perfil1.png">
-							</a>
-						  </div>
-						  <div class="media-body">
-							<p> This is um comentário 
-							 This is um comentário 
-							 This is um comentário 
-							 This is um comentário 
-							 This is um comentário 
-							 This is um comentário 
-							 This is um comentário 
-							 This is um comentário 
-							 This is um comentário  This is um comentário 
-							 This is um comentário 
-							 This is um comentário 
-							 This is um comentário  This is um comentário  This is um comentário  This is um comentário  This is um comentário </p>
-						  </div>
+							<div class="media-left">
+								<a href="#">
+								<img alt="Brand" id="perfilComent" class="media-object img-responsive img-thumbnail" src="pictures/perfil1.png">
+								</a>
+							</div>
+							<div class="media-body">
+								<p> This is um comentário 
+								This is um comentário </p>
+							</div>
 						</div>
 				</div>
 		</div>
 		</div>
 		
 	</div>
-	<div class="container-fluid col-sm-6" id="layout">
-		<div class="row">
-			<div class="col-sm-8">
-				<a href="#" class="thumbnail">
-					<img alt="publicacao" id="imagem" class="img-responsive center-block" src="pictures/background36.png">
-					<figcaption>
-						<h5></br></br>Gostei muito de conhecer o parque do Pequeno Príncipe, tudo muito fofo e realmente infantil. Espero algum dia levar minhas crianças pra conhecer tamanha beleza e simplicidade, pois como diz a raposa: "O essencial é invisível aos olhos." Livro excelente, recomendo!</h5>
-					</figcaption>
-				</a>
-			</div>
-			<div class="col-sm-4" id="post">
-					<img alt="Brand" id="foto" class="img-responsive img-thumbnail" src="pictures/perfil1.png">
-					<span class="btn glyphicon glyphicon-star"></span><span class="badge">5</span>
-					<span class="btn glyphicon glyphicon-pencil"></span><span class="badge">5</span>
-			</div>
-		</div>
-	</div>
-	
 </div>
 	
 

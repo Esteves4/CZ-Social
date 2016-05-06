@@ -139,8 +139,8 @@ class DBAccess{
 		return $resultado;
 	}
 	
-	public functon ativarConta($email){
-		$resultado = mysql_query("UPDATE contas SET status = 1 WHERE email='$email'");
+	public function ativarConta($email){
+		$resultado = mysql_query("UPDATE contas SET status = 'T' WHERE email='$email'");
 		
 		return $resultado;
 	}

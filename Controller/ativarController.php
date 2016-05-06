@@ -14,7 +14,8 @@ class ativarController{
 		return $resultado;
 	}
 	
-	public function ativarConta($email){
+	public function ativarConta($id){
+		$email = $this->db_model->getAtivarEmail($id);
 		$resultado = $this->db_model->ativarConta($email);
 		
 		return $resultado;

@@ -8,6 +8,20 @@ if((!isset ($_SESSION['email']) == true) and (!isset ($_SESSION['senha']) == tru
 	header("Location:login");
 }
 
+if(isset($_SESSION['email']) == true){
+	require_once("../Controller/ativarController.php");
+
+	$control = new ativarController();
+	$email = $_SESSION['email'];
+	
+	$resultado = $control->checaStatus($email);
+	
+	if ($resultado == 'F'){
+		header("Location:login");
+	}
+
+}
+
 $logado = $_SESSION['email'];
 //if logout then destroy the session and redirect the user
 if(isset($_GET['logout'])){

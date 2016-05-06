@@ -1,7 +1,6 @@
 
 $(document).ready(function(){ 
-	$('#comentarioBTN').click(function(){
+	$('.btn').click(function(){
 		$('#comentarios').toggle();
-		$('#template').clone().appendTo("#template");
 	});
 });

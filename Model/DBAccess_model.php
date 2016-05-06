@@ -41,6 +41,18 @@ class DBAccess{
 		return mysql_insert_id();
 	}
 	
+	public function adicionaReset($id,$email){
+		$resultado = mysql_query("INSERT INTO reset(reset_id, email) VALUES('$id','$email')");
+		
+		return $resultado;
+	}
+	
+	public function adicionaAtivar($id,$email){
+		$resultado = mysql_query("INSERT INTO ativar(ativar_id, email) VALUES('$id','$email')");
+		
+		return $resultado;
+	}
+	
 	private function criaMural($conta){
 		$resultado = mysql_query("INSERT INTO murais(conta_id) VALUES('$conta')");
 		
@@ -49,12 +61,6 @@ class DBAccess{
 	
 	public function criaPublicacao($mural, $texto, $id_foto){
 		$resultado = mysql_query("INSERT INTO publicacoes(mural_id, texto, foto_id, data_criacao) VALUES('$mural', '$texto', 'id_foto', curdate())");
-		
-		return $resultado;
-	}
-	
-	public function adicionaReset($id,$email){
-		$resultado = mysql_query("INSERT INTO reset(reset_id, email) VALUES('$id','$email')");
 		
 		return $resultado;
 	}
@@ -88,6 +94,14 @@ class DBAccess{
 		return $row['conta_id'];
 	}
 	
+	public  function getAtivarEmail($id){
+		$resultado = mysql_query("SELECT email FROM ativar WHERE ativar_id = '$id'");
+		
+		$row = mysql_fetch_assoc($resultado);
+		
+		return $row['email'];
+	}
+	
 	public function permiteReset($id_md5){
 		$resultado = mysql_query("SELECT * FROM reset WHERE reset_id = '$id_md5'");
 		
@@ -99,6 +113,14 @@ class DBAccess{
 		}
 	}
 	
+	public function checaStatus($email){
+		$resultado = mysql_query("SELECT status FROM contas WHERE email = '$email'");
+		
+		$row = mysql_fetch_assoc($resultado);
+		
+		return $row['status'];
+	}
+	
 	public function resetSenha($email,$senha){
 		$resultado = mysql_query("UPDATE contas SET senha = '$senha' WHERE email='$email'");
 		
@@ -107,6 +129,18 @@ class DBAccess{
 	
 	public function apagaReset($email){
 		$resultado = mysql_query("DELETE FROM reset WHERE email='$email'");
+		
+		return $resultado;
+	}
+	
+	public function apagaAtivar($email){
+		$resultado = mysql_query("DELETE FROM ativar WHERE email='$email'");
+		
+		return $resultado;
+	}
+	
+	public functon ativarConta($email){
+		$resultado = mysql_query("UPDATE contas SET status = 1 WHERE email='$email'");
 		
 		return $resultado;
 	}

@@ -5,7 +5,7 @@ session_start();
 if((!isset ($_SESSION['email']) == true) and (!isset ($_SESSION['senha']) == true)){
 	unset($_SESSION['email']);
 	unset($_SESSION['senha']);
-	header("Location:login");
+	header("Location:login.php?status=forbidden");
 }
 
 if(isset($_SESSION['email']) == true){
@@ -17,7 +17,7 @@ if(isset($_SESSION['email']) == true){
 	$resultado = $control->checaStatus($email);
 	
 	if ($resultado == 'F'){
-		header("Location:login");
+		header("Location:login?status=ativar_required");
 	}
 
 }

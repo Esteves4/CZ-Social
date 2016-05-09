@@ -1,11 +1,11 @@
 <?php
-  require("conecta.php");
-  $nomeEvento = $_POST['nome_evento'];
-  $descricaoEvento = $_POST['descricao_evento'];
+  	require_once("../Model/DBConnection_model.php");
+	$connection = new DBConnection();
+	$connection -> conectar();
+  
+  
   $imagem = $_FILES['imagem']['tmp_name'];
   $tamanho = $_FILES['imagem']['size'];
-  $tipo = $_FILES['imagem']['type'];
-  $nome = $_FILES['imagem']['name'];
    
   if ( $imagem != "none" )
   {
@@ -14,7 +14,7 @@
       $conteudo = addslashes($conteudo);
       fclose($fp);
    
-  $queryInsercao = "INSERT INTO fotos VALUES (null,'$nome','$tamanho', '$tipo','$conteudo')";
+  $queryInsercao = "INSERT INTO fotos VALUES (null, '$conteudo')";
    
    mysql_query($queryInsercao) or die("Algo deu errado ao inserir o registro. Tente novamente.");
   echo 'Registro inserido com sucesso!'; 
@@ -25,6 +25,6 @@
    }
   else
       print "Não foi possível carregar a imagem.";
-  header('Location: imagens.html');
+  header('Location: ver_imagem.php');
    
  ?>

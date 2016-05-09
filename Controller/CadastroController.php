@@ -42,7 +42,7 @@ class CadastroController{
 				$this->db_model->adicionaAtivar($id,$email);
 			}
 			
-			return $mail_sent ?  true : 0;
+			return $mail_sent;
 		}
 		
 		

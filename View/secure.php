@@ -16,7 +16,7 @@ if(isset($_SESSION['email']) == true){
 	
 	$resultado = $control->checaStatus($email);
 	
-	if ($resultado == 'F'){
+	if ($resultado != 'T'){
 		header("Location:login?status=ativar_required");
 	}
 

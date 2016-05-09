@@ -86,6 +86,57 @@ class DBAccess{
 		}
 	}
 	
+	public function getNome($email){
+		$resultado = mysql_query("SELECT nome FROM contas WHERE email = '$email'");
+		
+		$row = mysql_fetch_assoc($resultado);
+		
+		return $row['nome'];
+	}
+	
+		
+	public function getSobrenome($email){
+		$resultado = mysql_query("SELECT sobrenome FROM contas WHERE email = '$email'");
+		
+		$row = mysql_fetch_assoc($resultado);
+		
+		return $row['sobrenome'];
+	}
+	
+	public function getDataN($email){
+		$resultado = mysql_query("SELECT data_nascimento FROM contas WHERE email = '$email'");
+		
+		$row = mysql_fetch_assoc($resultado);
+		
+		return $row['data_nascimento'];
+	}
+	
+	public function getPerfilID($email){
+		$resultado = mysql_query("SELECT perfil_id FROM contas WHERE email = '$email'");
+		
+		$row = mysql_fetch_assoc($resultado);
+		
+		return $row['perfil_id'];
+		
+	}
+	
+	public function getFotoPerfilID($id_perfil){
+		$resultado = mysql_query("SELECT perf_foto FROM perfis WHERE perfil_id = '$id_perfil'");
+		
+		$row = mysql_fetch_assoc($resultado);
+		
+		return $row['perf_foto'];
+	}
+	
+	public function getFoto($id_foto){
+		$resultado = mysql_query("SELECT imagem FROM fotos WHERE foto_id = '$id_foto'");
+		
+		$row = mysql_fetch_assoc($resultado);
+		
+		return $row['imagem'];
+		
+	}
+	
 	public function getID($email){
 		$resultado = mysql_query("SELECT conta_id FROM contas WHERE email = '$email'");
 		
@@ -100,6 +151,18 @@ class DBAccess{
 		$row = mysql_fetch_assoc($resultado);
 		
 		return $row['email'];
+	}
+	
+	public function getEstados(){
+		$resultado = mysql_query("SELECT estado_id, estado_nome FROM estados");
+		
+		return $resultado;
+	}
+	
+	public function getCidades($estado_id){
+		$resultado = mysql_query("SELECT cidade_id, cidade_nome FROM cidades WHERE estado_id = '$estado_id' ORDER BY cidade_nome");
+		
+		return $resultado;
 	}
 	
 	public function permiteReset($id_md5){

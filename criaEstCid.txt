@@ -1,4 +1,9 @@
-﻿
+﻿drop database if exists mwsocial;
+create database mwsocial;
+use mwsocial;
+
+alter database mwSocial charset=utf8 COLLATE = utf8_unicode_ci;
+
 DROP TABLE IF EXISTS cidades;
 DROP TABLE IF EXISTS estados;CREATE TABLE estados(estado_id int(11) NOT NULL AUTO_INCREMENT, estado_nome varchar(115) NOT NULL, estado_sigla char(2) COLLATE utf8_unicode_ci NOT NULL, PRIMARY KEY (estado_id));
 CREATE TABLE cidades (cidade_id int(11) NOT NULL AUTO_INCREMENT,cidade_nome varchar(225) NOT NULL, estado_id int(11) NOT NULL, PRIMARY KEY (cidade_id), FOREIGN KEY (estado_id) REFERENCES estados(estado_id));

@@ -159,6 +159,8 @@ $(document).ready(function(){
 			return false;
 		}
 		
+		$('#registrar').button('loading')
+		
 		$.post("../Controller/CadastroController-handler.php", {nome: nome, sobrenome: sobrenome, data: data, email: email, senha: senha },  
 			function(result){   
 				if(result == true){

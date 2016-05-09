@@ -55,6 +55,28 @@ class PerfilController{
 		
 		return  base64_encode($data);
 	}
+	
+	public function atualizaNome($nome,$email){
+		$temp = $this->db_model->setNome($nome,$email);
+		
+		return $temp;
+	}
+	
+	public function atualizaSobrenome($sobrenome,$email){
+		$temp = $this->db_model->setSobrenome($sobrenome,$email);
+		
+		return $temp;
+	}
+	
+	public function atualizaDataN($dataN,$email){
+		$temp = $this->db_model->setDataN($dataN,$email);
+		
+		return $temp;
+	}
+	
+	public function criaPerfil($email,$sexo,$cidade_id,$imagem_URL){
+		
+	}
 }
 
 ?>

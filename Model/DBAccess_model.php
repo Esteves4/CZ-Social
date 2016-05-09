@@ -18,7 +18,7 @@ class DBAccess{
 	}
 	
 	public function adicionaPerfil($sexo, $formacao, $id_foto, $interessado, $id_end){
-		$resultado = mysql_query("INSERT INTO perfis(sexo,formacao,perf_foto,interessado,endereco_id) VALUES('$sexo','$formacao','$id_foto','$interessado','$id_end')");
+		$resultado = mysql_query("INSERT INTO perfis(sexo,perf_foto,endereco_id) VALUES('$sexo','$id_foto','$id_end')");
 		
 		return $resultado;
 	}
@@ -161,6 +161,24 @@ class DBAccess{
 	
 	public function getCidades($estado_id){
 		$resultado = mysql_query("SELECT cidade_id, cidade_nome FROM cidades WHERE estado_id = '$estado_id' ORDER BY cidade_nome");
+		
+		return $resultado;
+	}
+	
+	public function setNome($nome,$email){
+		$resultado = mysql_query("UPDATE contas set nome = '$nome' where email = '$email'");
+		
+		return $resultado;
+	}
+	
+	public function setSobrenome($sobrenome,$email){
+		$resultado = mysql_query("UPDATE contas set sobrenome = '$sobrenome' where email = '$email'");
+		
+		return $resultado;
+	}
+	
+	public function setDataN($data,$email){
+		$resultado = mysql_query("UPDATE contas set data_nascimento = '$data' where email = '$email'");
 		
 		return $resultado;
 	}

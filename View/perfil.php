@@ -1,3 +1,9 @@
+<?php
+session_start();
+$email = $_SESSION['email'];
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <html>
@@ -40,8 +46,8 @@
 			require_once("../Controller/PerfilController.php");
 			$control = new PerfilController();
 			
-			$nome = $control->getNome("lucas.esteves.rocha@gmail.com");
-			$sobrenome = $control->getSobrenome("lucas.esteves.rocha@gmail.com");
+			$nome = $control->getNome($email );
+			$sobrenome = $control->getSobrenome($email);
 			
 			echo $nome .' '. $sobrenome;
 		?>
@@ -67,12 +73,12 @@
 				<div class="row" >
 					<div class="input-group" id="group-nome">
 						<input type="text" id="nome" name="nome" class="form-control" placeholder="Nome" value="<?php
-							$nome = $control->getNome("lucas.esteves.rocha@gmail.com");
+							$nome = $control->getNome($email);
 							
 							echo $nome;
 						?>">
 						<input type="text" id="sobrenome" name="sobrenome" class="form-control" placeholder="Sobrenome" value="<?php
-							$sobrenome = $control->getSobrenome("lucas.esteves.rocha@gmail.com");;
+							$sobrenome = $control->getSobrenome($email );;
 							
 							echo $sobrenome;
 						?>">
@@ -82,7 +88,7 @@
 				<div class="row" id="sandbox-container">
 						<div class="input-group date" id="group-data">
 							<input type="text" class="form-control" id="data" name="dataN" placeholder="Data de Nascimento" aria-describedby="addon2" required  value="<?php
-								$sobrenome = $control->getData("lucas.esteves.rocha@gmail.com");
+								$sobrenome = $control->getData($email);
 								
 								echo $sobrenome;
 							?>">
@@ -114,7 +120,7 @@
 				</div>
 				
 				<div class="row">
-					<button id="salvar" class="btn btn-success btn-block" type="submit">Salvar</button>
+					<button id="salvar" class="btn btn-success btn-block" type="submit" autocomplete="off" data-loading-text="Registrando ..." >Salvar</button>
 				</div>	
 					
 </div>

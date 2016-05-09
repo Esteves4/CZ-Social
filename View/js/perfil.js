@@ -33,13 +33,15 @@ $(document).ready(function(){
         $('#cidades').load('../Controller/PerfilController-handler.php?estado_id='+$('#estados').val() );
     });
 	
-	$('#salvar').click(function() {
+	$('#perfilForm').submit(function() {
 		var imageData = $('#image-cropper').cropit('export');
 		var nome = $('#nome').val();
 		var sobrenome = $('#sobrenome').val();
 		var data = $('#data').val();
 		var sexo = $('#sexo').val();
 		var cidade_id = $('#cidades').val();
+	  
+		$('#registrar').button('loading')
 	  
 		$.post("../Controller/PerfilController-handler.php", {nome: nome, sobrenome: sobrenome, data: data, sexo: sexo, cidade_id: cidade_id, imagem_URL:  imageData},  
 			function(result){   

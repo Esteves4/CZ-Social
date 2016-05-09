@@ -1,6 +1,6 @@
 <?php
 require_once("PerfilController.php");
-
+session_start();
 $control = new PerfilController();
 
 if (getenv("REQUEST_METHOD") == "GET"){
@@ -21,12 +21,24 @@ if (getenv("REQUEST_METHOD") == "POST"){
 	$dataN = mysql_real_escape_string($_POST['data']);
 	$sexo = mysql_real_escape_string($_POST['sexo']);
 	$cidade_id = mysql_real_escape_string($_POST['cidade_id']);
-	$imagem_URL = $_POST['imagem_URL']
+	$email = $_SESSION['email'];
+	
+	$url = $_POST['imagem_URL'];
+	$img = str_replace('data:image/png;base64,', '', $url);
+	$img = str_replace(' ', '+', $img);
+	$imagem = base64_decode($img);
+	
+	
+	$fp = fopen($imagem, "rb");
+	$conteudo = fread($fb);
+	$conteudo = addslashes($conteudo);
+	fclose($fp);
+	
 	
 	$control->atualizaNome($nome,$email);
 	$control->atualizaSobrenome($sobrenome,$email);
 	$control->atualizaDataN($dataN,$email);
-	$control->criaPerfil($email,$sexo,$cidade_id,$imagem_URL);
+	$control->criaPerfil($email,$sexo,$cidade_id,$conteudo);
 	
 }
 

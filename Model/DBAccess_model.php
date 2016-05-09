@@ -17,10 +17,10 @@ class DBAccess{
 		return $resultado;
 	}
 	
-	public function adicionaPerfil($sexo, $formacao, $id_foto, $interessado, $id_end){
+	public function adicionaPerfil($sexo,$id_foto,$id_end){
 		$resultado = mysql_query("INSERT INTO perfis(sexo,perf_foto,endereco_id) VALUES('$sexo','$id_foto','$id_end')");
 		
-		return $resultado;
+		return mysql_insert_id();
 	}
 	
 	public function adicionaAmigo($id_conta, $id_amigo){
@@ -179,6 +179,12 @@ class DBAccess{
 	
 	public function setDataN($data,$email){
 		$resultado = mysql_query("UPDATE contas set data_nascimento = '$data' where email = '$email'");
+		
+		return $resultado;
+	}
+	
+	public function setPerfilID($email,$id_perfil){
+		$resultado = mysql_query("UPDATE contas set perfil_id = '$id_perfil' where email = '$email'");
 		
 		return $resultado;
 	}

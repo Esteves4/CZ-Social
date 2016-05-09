@@ -5,7 +5,6 @@ class PerfilController{
 	public function __construct(){
 		require_once("../Model/DBAccess_model.php");
 		$this->db_model = new DBAccess();
-		session_start();	
 	}
 	
 	public function getNome($email){
@@ -74,8 +73,13 @@ class PerfilController{
 		return $temp;
 	}
 	
-	public function criaPerfil($email,$sexo,$cidade_id,$imagem_URL){
+	public function criaPerfil($email,$sexo,$cidade_id,$imagem){
 		
+		$id_imagem = $this->db_model->adicionaFotos($imagem);
+		$id_perfil = $this->db_model->adicionaPerfil($sexo,$id_imagem,$cidade_id);
+		$temp = $this->db_model->setPerfilID($email,$id_perfil);
+		
+		return $temp;
 	}
 }
 

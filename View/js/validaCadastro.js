@@ -166,7 +166,7 @@ $(document).ready(function(){
 				if(result == true){
 					$('#sucessoCadastro').show();
 					window.setTimeout(function(){
-						document.location='login';
+						document.location='login.php';
 					}, 2000);
 					
 				}else{

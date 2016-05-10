@@ -17,10 +17,10 @@ if(isset ($_GET['id']) == true){
 	}
 	
 	if($resultado == false ){
-		header("Location:../login?err=1");
+		header("Location:../login.php?err=1");
 	}
 }else{
-	header("Location:login?err=2");
+	header("Location:login.php?err=2");
 }
 
 ?>
@@ -55,7 +55,7 @@ if(isset ($_GET['id']) == true){
 	<div class="vertical-center">
 		<div class="container">
 			<form class="form-horizontal col-sm-offset-4 col-sm-4" action="" id="resetPasswordForm" method="POST" role="form">
-				<a href="login">
+				<a href="login.php">
 					<img alt="Brand" id="login" class="img-responsive center-block" src="pictures/LogoCz2.png" width="200" height="200">
 				</a>
 				<div id="sucessoAtivar" class="row alert alert-success" role="alert">

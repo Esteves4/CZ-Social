@@ -13,18 +13,9 @@
       $conteudo = fread($fp, $tamanho);
       $conteudo = addslashes($conteudo);
       fclose($fp);
+   echo $imagem;
    
   $queryInsercao = "INSERT INTO fotos VALUES (null, '$conteudo')";
-   
-   mysql_query($queryInsercao) or die("Algo deu errado ao inserir o registro. Tente novamente.");
-  echo 'Registro inserido com sucesso!'; 
-  if(mysql_affected_rows($conexao) > 0)
-       print "A imagem foi salva na base de dados.";
-   else
-       print "Não foi possível salvar a imagem na base de dados.";
-   }
-  else
-      print "Não foi possível carregar a imagem.";
-  header('Location: ver_imagem.php');
+  }
    
  ?>

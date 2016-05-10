@@ -22,23 +22,16 @@ if (getenv("REQUEST_METHOD") == "POST"){
 	$sexo = mysql_real_escape_string($_POST['sexo']);
 	$cidade_id = mysql_real_escape_string($_POST['cidade_id']);
 	$email = $_SESSION['email'];
+	$imagem = $_POST['imagemBLOB'];
 	
-	$url = $_POST['imagem_URL'];
-	$img = str_replace('data:image/png;base64,', '', $url);
-	$img = str_replace(' ', '+', $img);
-	$imagem = base64_decode($img);
+	$uri = substr($imagem,strpos($imagem,",")+1);
 	
-	
-	$fp = fopen($imagem, "rb");
-	$conteudo = fread($fb);
-	$conteudo = addslashes($conteudo);
-	fclose($fp);
-	
+	$datadecoded = base64_decode($uri);
 	
 	$control->atualizaNome($nome,$email);
 	$control->atualizaSobrenome($sobrenome,$email);
 	$control->atualizaDataN($dataN,$email);
-	$control->criaPerfil($email,$sexo,$cidade_id,$conteudo);
+	$control->criaPerfil($email,$sexo,$cidade_id,$datadecoded);
 	
 }
 

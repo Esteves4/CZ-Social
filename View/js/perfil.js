@@ -1,22 +1,11 @@
-function dataURItoBlob(dataURI) {
-    // convert base64 to raw binary data held in a string
-    var byteString = atob(dataURI.split(',')[1]);
-
-    // separate out the mime component
-    var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
-
-    // write the bytes of the string to an ArrayBuffer
-    var arrayBuffer = new ArrayBuffer(byteString.length);
-    var _ia = new Uint8Array(arrayBuffer);
-    for (var i = 0; i < byteString.length; i++) {
-        _ia[i] = byteString.charCodeAt(i);
+var dataURLtoBlob = function (dataurl) {
+    var arr = dataurl.split(','), mime = arr[0].match(/:(.*?);/)[1],
+        bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
+    while(n--){
+        u8arr[n] = bstr.charCodeAt(n);
     }
-
-    var dataView = new DataView(arrayBuffer);
-    var blob = new Blob([dataView], { type: mimeString });
-    return blob;
+    return new Blob([u8arr], {type: 'image/jpeg'});
 }
-
 
 
 $(document).ready(function(){ 
@@ -34,16 +23,22 @@ $(document).ready(function(){
     });
 	
 	$('#perfilForm').submit(function() {
-		var imageData = $('#image-cropper').cropit('export');
+		var imageURL = $('#image-cropper').cropit('export',{type: 'image/jpeg'});
 		var nome = $('#nome').val();
 		var sobrenome = $('#sobrenome').val();
 		var data = $('#data').val();
 		var sexo = $('#sexo').val();
 		var cidade_id = $('#cidades').val();
+		
+		var blob = dataURLtoBlob(imageURL);
+		
+		var fd = new FormData();
+		
+		fd.append("imagem", blob);
 	  
 		$('#registrar').button('loading')
 	  
-		$.post("../Controller/PerfilController-handler.php", {nome: nome, sobrenome: sobrenome, data: data, sexo: sexo, cidade_id: cidade_id, imagem_URL:  imageData},  
+		$.post("../Controller/PerfilController-handler.php", {nome: nome, sobrenome: sobrenome, data: data, sexo: sexo, cidade_id: cidade_id, imagemBLOB: fd},  
 			function(result){   
 				if(result == true){
 					$('#sucessoPerfil').show();

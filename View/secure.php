@@ -17,7 +17,7 @@ if(isset($_SESSION['email']) == true){
 	$resultado = $control->checaStatus($email);
 	
 	if ($resultado != 'T'){
-		header("Location:login?status=ativar_required");
+		header("Location:login.php?status=ativar_required");
 	}
 
 }
@@ -26,7 +26,7 @@ $logado = $_SESSION['email'];
 //if logout then destroy the session and redirect the user
 if(isset($_GET['logout'])){
   session_destroy();
-  header("Location:login");
+  header("Location:login.php");
 }
 echo " <a href='secure.php?logout'><b>Logout<b></a> ";
 echo " <div align='center'>You Are inside secured Page</a> ";

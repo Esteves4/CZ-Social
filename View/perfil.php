@@ -37,14 +37,22 @@ $email = $_SESSION['email'];
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-	<img alt="Brand" id="brand" class="img-responsive img-circle" src="pictures/200x200.jpg" width="54">
+	<img alt="Brand" id="brand" class="img-responsive img-circle" src="<?php
+		require_once("../Controller/PerfilController.php");
+		$control = new PerfilController();
+		
+		$fotoPATH = $control->getFotoPerfil($email);
+		
+		$imgSRC = substr($fotoPATH,31);
+		
+		echo $imgSRC;
+
+	?>" width="54">
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li><a href="perfil" id="imagem">
 		<?php
-			require_once("../Controller/PerfilController.php");
-			$control = new PerfilController();
 			
 			$nome = $control->getNome($email );
 			$sobrenome = $control->getSobrenome($email);

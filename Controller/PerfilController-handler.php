@@ -23,15 +23,20 @@ if (getenv("REQUEST_METHOD") == "POST"){
 	$cidade_id = mysql_real_escape_string($_POST['cidade_id']);
 	$email = $_SESSION['email'];
 	$imagem = $_POST['imagemBLOB'];
+	$id = $control->getID($email);
 	
-	$uri = substr($imagem,strpos($imagem,",")+1);
+	$path = $_SERVER['DOCUMENT_ROOT'].'/cz-social/View/pictures/users/'.md5(rand()+$id).'.png';
 	
-	$datadecoded = base64_decode($uri);
+	
+	list($meta, $content) = explode(',', $imagem);
+	$content = base64_decode($content);
+
+	file_put_contents($path, $content);
 	
 	$control->atualizaNome($nome,$email);
 	$control->atualizaSobrenome($sobrenome,$email);
 	$control->atualizaDataN($dataN,$email);
-	$control->criaPerfil($email,$sexo,$cidade_id,$datadecoded);
+	$control->criaPerfil($email,$sexo,$cidade_id,$path);
 	
 }
 

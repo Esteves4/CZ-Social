@@ -41,18 +41,18 @@ class PerfilController{
 	
 	public function getFotoPerfil($email){
 		$id_perfil = $this->db_model->getPerfilID($email);
+		
 		$id_foto = $this->db_model->getFotoPerfilID($id_perfil);
-		$blob = $this->db_model->getFoto($id_foto);
 		
+		$caminho = $this->db_model->getFoto($id_foto);
 		
-		$foto = imagecreatefromstring($blob);
+		return  $caminho;
+	}
+	
+	public function getID($email){
+		$temp = $this->db_model->getID($email);
 		
-		ob_start();
-		imagejpeg($foto, null, 80);
-		$data = ob_get_contents();
-		ob_end_clean();
-		
-		return  base64_encode($data);
+		return $temp;
 	}
 	
 	public function atualizaNome($nome,$email){

@@ -1,12 +1,3 @@
-var dataURLtoBlob = function (dataurl) {
-    var arr = dataurl.split(','), mime = arr[0].match(/:(.*?);/)[1],
-        bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
-    while(n--){
-        u8arr[n] = bstr.charCodeAt(n);
-    }
-    return new Blob([u8arr], {type: 'image/jpeg'});
-}
-
 
 $(document).ready(function(){ 
 	
@@ -29,16 +20,10 @@ $(document).ready(function(){
 		var data = $('#data').val();
 		var sexo = $('#sexo').val();
 		var cidade_id = $('#cidades').val();
-		
-		var blob = dataURLtoBlob(imageURL);
-		
-		var fd = new FormData();
-		
-		fd.append("imagem", blob);
 	  
 		$('#registrar').button('loading')
 	  
-		$.post("../Controller/PerfilController-handler.php", {nome: nome, sobrenome: sobrenome, data: data, sexo: sexo, cidade_id: cidade_id, imagemBLOB: fd},  
+		$.post("../Controller/PerfilController-handler.php", {nome: nome, sobrenome: sobrenome, data: data, sexo: sexo, cidade_id: cidade_id, imagemBLOB: imageURL},  
 			function(result){   
 				if(result == true){
 					$('#sucessoPerfil').show();

@@ -37,22 +37,14 @@ $email = $_SESSION['email'];
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-	<img alt="Brand" id="brand" class="img-responsive img-circle" src="<?php
-		require_once("../Controller/PerfilController.php");
-		$control = new PerfilController();
-		
-		$fotoPATH = $control->getFotoPerfil($email);
-		
-		$imgSRC = substr($fotoPATH,31);
-		
-		echo $imgSRC;
-
-	?>" width="54">
+	<img alt="Brand" id="brand" class="img-responsive img-circle" src="pictures/200x200.jpg" width="54">
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li><a href="perfil" id="imagem">
 		<?php
+			require_once("../Controller/PerfilController.php");
+			$control = new PerfilController();
 			
 			$nome = $control->getNome($email );
 			$sobrenome = $control->getSobrenome($email);
@@ -73,9 +65,19 @@ $email = $_SESSION['email'];
 		<div class="container">
 			<form class="form-horizontal col-sm-offset-4 col-sm-4" action="" id="perfilForm" method="POST" role="form" enctype="multipart/form-data">
 				<div class="row" id="image-cropper">
-					<img class="cropit-preview img-responsive img-thumbnail center-block">
-					<input type="range" class="cropit-image-zoom-input" />
-					<input type="file" class="cropit-image-input" />
+					<label for="ImgInput" id="profileIMG">
+						<img class="cropit-preview img-responsive img-thumbnail center-block">
+					</label>	
+										
+						<div class="slider-wrapper input-group">
+							<div class="input-group-addon"><span class="glyphicon glyphicon-minus-sign"></span></div>
+							<input type="range" class="cropit-image-zoom-input form-control"/>
+							<div class="input-group-addon"><span class="glyphicon glyphicon-plus-sign"></span></div>
+						</div>
+
+
+					
+					<input type="file" id="ImgInput" class="cropit-image-input" />
 				</div>
 				
 				<div class="row" >

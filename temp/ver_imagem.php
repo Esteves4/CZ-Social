@@ -17,3 +17,14 @@ src="data:image/jpg;base64,<?php
 					echo $foto;
 				
 				?>"
+<?php
+		require_once("../Controller/PerfilController.php");
+		$control = new PerfilController();
+		
+		$fotoPATH = $control->getFotoPerfil($email);
+		
+		$imgSRC = substr($fotoPATH,31);
+		
+		echo $imgSRC;
+
+	?>

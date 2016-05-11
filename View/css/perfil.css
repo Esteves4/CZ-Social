@@ -25,7 +25,13 @@ body {
 	border: 2px solid black;
 }
 
+#profileIMG{
+	display: block;
+}
 
+#ImgInput{
+	display: none;
+}
 
 .row{
 	margin: 5px;

@@ -9,6 +9,8 @@ $(document).ready(function(){
 		autoclose: true
     });
 
+	/* Colocar funções AJAX invés de colocar PHP no meio do HTML*/
+	
 	$('#estados').change(function(){
         $('#cidades').load('../Controller/PerfilController-handler.php?estado_id='+$('#estados').val() );
     });

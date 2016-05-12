@@ -86,6 +86,18 @@ class DBAccess{
 		}
 	}
 	
+	public function perfilExiste($email){
+		$resultado = mysql_query("SELECT perfil_id FROM contas WHERE email = '$email'");
+						
+		$row = mysql_fetch_assoc($resultado);
+		
+		if($row['perfil_id'] == "null"){
+			return false;
+		}else{
+			return $row['perfil_id'];
+		}
+	}
+	
 	public function getNome($email){
 		$resultado = mysql_query("SELECT nome FROM contas WHERE email = '$email'");
 		
@@ -111,8 +123,36 @@ class DBAccess{
 		return $row['data_nascimento'];
 	}
 	
+	public function getSexo($id_perfil){
+		$resultado = mysql_query("SELECT sexo FROM perfis WHERE perfil_id = '$id_perfil'");
+		
+		$row = mysql_fetch_assoc($resultado);
+		
+		return $row['sexo'];
+	}
+	
+	public function getEstadoID($cidade_id){
+		$resultado = mysql_query("SELECT estado_id FROM cidades WHERE cidade_id = '$cidade_id'");
+		
+		$row = mysql_fetch_assoc($resultado);
+		
+		return $row['estado_id'];
+	}
+	
+	public function getCidadeID($id_perfil){
+		$resultado = mysql_query("SELECT endereco_id FROM perfis WHERE perfil_id = '$id_perfil'");
+		
+		$row = mysql_fetch_assoc($resultado);
+		
+		return $row['endereco_id'];
+	}
+	
 	public function getPerfilID($email){
 		$resultado = mysql_query("SELECT perfil_id FROM contas WHERE email = '$email'");
+		
+		if($resultado == false){
+			return $resultado;
+		}
 		
 		$row = mysql_fetch_assoc($resultado);
 		
@@ -185,6 +225,12 @@ class DBAccess{
 	
 	public function setPerfilID($email,$id_perfil){
 		$resultado = mysql_query("UPDATE contas set perfil_id = '$id_perfil' where email = '$email'");
+		
+		return $resultado;
+	}
+	
+	public function updatePerfil($perfil_id,$sexo,$cidade_id){
+		$resultado = mysql_query("UPDATE perfis set sexo = '$sexo', endereco_id = '$cidade_id' where perfil_id = '$perfil_id'");
 		
 		return $resultado;
 	}

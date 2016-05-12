@@ -33,6 +33,10 @@ body {
 	display: none;
 }
 
+#sucessoPerfil, #erroC{
+	display: none;
+}
+
 .row{
 	margin: 5px;
 }

@@ -27,6 +27,44 @@ class PerfilController{
 		return $temp;
 	}
 	
+	public function getSexo($email){
+		$id_perfil = $this->db_model->getPerfilID($email);
+		
+		if($id_perfil == false){
+			return 'null';
+		}
+		
+		$temp = $this->db_model->getSexo($id_perfil);
+		
+		return $temp;
+	}
+	
+	public function getEstado($email){
+		$id_perfil = $this->db_model->getPerfilID($email);
+		
+		if($id_perfil == false){
+			return 'null';
+		}
+		
+		$temp = $this->db_model->getCidadeID($id_perfil);
+		$temp2 = $this->db_model->getEstadoID($temp);
+		
+		return $temp2;
+	}
+	
+	public function getCidade($email){
+		$id_perfil = $this->db_model->getPerfilID($email);
+		
+		if($id_perfil == false){
+			return 'null';
+		}
+		
+		$temp = $this->db_model->getCidadeID($id_perfil);
+		
+		return $temp;
+	}
+	
+	
 	public function getEstados(){
 		$temp = $this->db_model->getEstados();
 		
@@ -73,11 +111,22 @@ class PerfilController{
 		return $temp;
 	}
 	
-	public function criaPerfil($email,$sexo,$cidade_id,$imagem){
+	public function atualizaPerfil($perfil_id,$sexo,$cidade_id){
+		$temp = $this->db_model->updatePerfil($perfil_id,$sexo,$cidade_id);
 		
+		return $temp;
+	}
+	
+	public function criaPerfil($email,$sexo,$cidade_id,$imagem){
 		$id_imagem = $this->db_model->adicionaFotos($imagem);
 		$id_perfil = $this->db_model->adicionaPerfil($sexo,$id_imagem,$cidade_id);
 		$temp = $this->db_model->setPerfilID($email,$id_perfil);
+		
+		return $temp;
+	}
+	
+	public function checaPerfil($email){
+		$temp = $this->db_model->perfilExiste($email);
 		
 		return $temp;
 	}

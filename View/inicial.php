@@ -1,3 +1,19 @@
+<?php
+session_start();
+
+if((!isset ($_SESSION['email']) == true) and (!isset ($_SESSION['senha']) == true)){
+	unset($_SESSION['email']);
+	unset($_SESSION['senha']);
+	header("Location:login.php?status=forbidden");
+}
+
+if(isset($_GET['logout'])){
+  session_destroy();
+  header("Location:login.php");
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <html>
@@ -43,7 +59,7 @@
 		<li><a href="novidades"><span class="glyphicon glyphicon-question-sign"></span>&nbsp; Novidades&nbsp;<span class="badge">5</span></a></li>
 		<li><a href="pesquisa"><span class="glyphicon glyphicon-search"></span>&nbsp; Pesquisa</a></li>
 		<li><a href="configuracoes"><span class="glyphicon glyphicon-cog"></span>&nbsp; Configurações</a></li>
-		<li><a href="login"><span class="glyphicon glyphicon-log-in"></span>&nbsp; Sair</a></li>
+		<li><a href='inicial.php?logout'><span class="glyphicon glyphicon-log-in"></span>&nbsp; Sair</a></li>
       </ul>
     </div>
   </div>

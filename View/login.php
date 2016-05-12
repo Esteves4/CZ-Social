@@ -20,6 +20,9 @@ if(isset($_GET['status']) == true){
 	
 }
 
+if(isset($_SESSION['email']) == true){
+	header("Location:secure.php");
+}
 
 ?>
 

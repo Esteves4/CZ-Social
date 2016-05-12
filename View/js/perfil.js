@@ -1,5 +1,37 @@
+var nomeSobrenome =  function(){
+	$.post("../Controller/PerfilController-handler.php", {funcao: 'nomePerfil'},  
+		function(result){   
+			$('#nomePerfil').append(result);
+		});
+}
+
+var estados = function(){
+	$('#estados').load('../Controller/PerfilController-handler.php?funcao=estados');
+}
+
+var cidades = function(){
+	$('#cidades').load('../Controller/PerfilController-handler.php?estado_id='+$('#estados').val()+'&funcao=cidades');
+}
+
+var atualizaInput = function(elemento,funcao){
+	$.post("../Controller/PerfilController-handler.php", {funcao: funcao},  
+	function(result){   
+		elemento.val(result);
+		
+	});
+}
+	
+var atualizaFoto = function(){
+	$.post("../Controller/PerfilController-handler.php", {funcao: 'foto'},  
+		function(result){
+		$("#brand").attr("src",result);
+		$('#image-cropper').cropit('imageSrc', result);			
+	});
+}
+
 
 $(document).ready(function(){ 
+	
 	
 	$('#sandbox-container .input-group.date').datepicker({
 		format: "yyyy-mm-dd",
@@ -10,9 +42,26 @@ $(document).ready(function(){
     });
 
 	/* Colocar funções AJAX invés de colocar PHP no meio do HTML*/
+	estados();
+	nomeSobrenome();
+	atualizaInput($('#nome'),'nomeInput');
+	atualizaInput($('#sobrenome'),'sobrenomeInput');
+	atualizaInput($('#data'),'dataInput');
+	atualizaInput($("#sexo"),'sexoInput');
+	atualizaInput($("#estados"),'estadoInput');
+	atualizaFoto();
 	
+	window.setTimeout(function(){
+		cidades();
+	}, 3000);
+
+	window.setTimeout(function(){
+		atualizaInput($("#cidades"),'cidadeInput');
+	}, 4000);
+	
+				
 	$('#estados').change(function(){
-        $('#cidades').load('../Controller/PerfilController-handler.php?estado_id='+$('#estados').val() );
+		cidades();
     });
 	
 	$('#perfilForm').submit(function() {
@@ -25,12 +74,12 @@ $(document).ready(function(){
 	  
 		$('#registrar').button('loading')
 	  
-		$.post("../Controller/PerfilController-handler.php", {nome: nome, sobrenome: sobrenome, data: data, sexo: sexo, cidade_id: cidade_id, imagemBLOB: imageURL},  
+		$.post("../Controller/PerfilController-handler.php", {nome: nome, sobrenome: sobrenome, data: data, sexo: sexo, cidade_id: cidade_id, imagemBLOB: imageURL, funcao: 'salvarPerfil'},  
 			function(result){   
 				if(result == true){
 					$('#sucessoPerfil').show();
 					window.setTimeout(function(){
-						document.location='inicial';
+						document.location='inicial.php';
 					}, 2000);
 					
 				}else{
@@ -43,7 +92,6 @@ $(document).ready(function(){
 	
 	
 	$('#image-cropper').cropit();
-	$('#image-cropper').cropit('imageSrc', 'pictures/200x200.jpg');
 	$('#image-cropper').cropit({ imageState: { src: { imageSrc } } });
 	
 

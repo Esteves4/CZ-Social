@@ -1,6 +1,17 @@
 <?php
 session_start();
-$email = $_SESSION['email'];
+
+if((!isset ($_SESSION['email']) == true) and (!isset ($_SESSION['senha']) == true)){
+	unset($_SESSION['email']);
+	unset($_SESSION['senha']);
+	header("Location:login.php?status=forbidden");
+}
+
+if(isset($_GET['logout'])){
+  session_destroy();
+  header("Location:login.php");
+}
+
 ?>
 
 
@@ -37,26 +48,15 @@ $email = $_SESSION['email'];
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-	<img alt="Brand" id="brand" class="img-responsive img-circle" src="pictures/200x200.jpg" width="54">
+	<img alt="Brand" id="brand" class="img-responsive img-circle" width="54">
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="perfil" id="imagem">
-		<?php
-			require_once("../Controller/PerfilController.php");
-			$control = new PerfilController();
-			
-			$nome = $control->getNome($email );
-			$sobrenome = $control->getSobrenome($email);
-			
-			echo $nome .' '. $sobrenome;
-		?>
-		
-		</a></li>
+        <li><a href="perfil" id="nomePerfil"></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
 		
-		<li><a href="login"><span class="glyphicon glyphicon-log-out"></span>&nbsp; Sair</a></li>
+		<li><a href='perfil.php?logout'><span class="glyphicon glyphicon-log-out"></span>&nbsp; Sair</a></li>
       </ul>
     </div>
   </div>
@@ -66,7 +66,7 @@ $email = $_SESSION['email'];
 			<form class="form-horizontal col-sm-offset-4 col-sm-4" action="" id="perfilForm" method="POST" role="form" enctype="multipart/form-data">
 				<div class="row" id="image-cropper">
 					<label for="ImgInput" id="profileIMG">
-						<img class="cropit-preview img-responsive img-thumbnail center-block">
+						<img class="cropit-preview img-responsive img-thumbnail center-block" id="imagemPerfil">
 					</label>	
 										
 						<div class="slider-wrapper input-group">
@@ -74,34 +74,19 @@ $email = $_SESSION['email'];
 							<input type="range" class="cropit-image-zoom-input form-control"/>
 							<div class="input-group-addon"><span class="glyphicon glyphicon-plus-sign"></span></div>
 						</div>
-
-
 					
 					<input type="file" id="ImgInput" class="cropit-image-input" />
-				</div>
-				
-				<div class="row" >
+				</div>				
+				<div class="row">
 					<div class="input-group" id="group-nome">
-						<input type="text" id="nome" name="nome" class="form-control" placeholder="Nome" value="<?php
-							$nome = $control->getNome($email);
-							
-							echo $nome;
-						?>">
-						<input type="text" id="sobrenome" name="sobrenome" class="form-control" placeholder="Sobrenome" value="<?php
-							$sobrenome = $control->getSobrenome($email );;
-							
-							echo $sobrenome;
-						?>">
+						<input type="text" id="nome" name="nome" class="form-control" placeholder="Nome" value="">
+						<input type="text" id="sobrenome" name="sobrenome" class="form-control" placeholder="Sobrenome" value="">
 						<div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
 					</div>
 				</div>
 				<div class="row" id="sandbox-container">
 						<div class="input-group date" id="group-data">
-							<input type="text" class="form-control" id="data" name="dataN" placeholder="Data de Nascimento" aria-describedby="addon2" required  value="<?php
-								$sobrenome = $control->getData($email);
-								
-								echo $sobrenome;
-							?>">
+							<input type="text" class="form-control" id="data" name="dataN" placeholder="Data de Nascimento" aria-describedby="addon2" required  value="">
 							<div class="input-group-btn" id="addon2"><button type="button" class="btn btn-default" id="btn-data" data-toggle="popover" data-trigger="hover" data-container="body" data-placement="right" data-content="Clique aqui para escolher a data."><span class="glyphicon glyphicon-calendar"></span></button></div>
 							<select class="form-control" id="sexo">
 								<option value="null">Sexo</option>
@@ -113,28 +98,24 @@ $email = $_SESSION['email'];
 				<div class="row">
 					<div class="input-group">
 						<select class="form-control" name="estados" id="estados">
-							<option value="0">Escolha um estado</option>
-							<?php 
-								$resultado = $control->getEstados();
-								
-								while($row = mysql_fetch_array($resultado) ){
-									echo "<option value='".$row['estado_id']."'>".$row['estado_nome']."</option>";
-							 
-								}
-							?>
-							</select>
+						</select>
 						<select class="form-control" name="cidades" id="cidades">
-							<option value="0">Escolha uma Cidade</option>
+							<option value="null">Escolha uma Cidade</option>
 						</select>
 					</div>
 				</div>
-				
 				<div class="row">
 					<button id="salvar" class="btn btn-success btn-block" type="submit" autocomplete="off" data-loading-text="Registrando ..." >Salvar</button>
 				</div>	
-					
-</div>
-</div>
+				<div id="sucessoPerfil" class="row alert alert-success" role="alert">
+					<p id="sucessoText"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><strong> Perfil</strong> salvo com sucesso.</p>
+				</div>
+				<div id="erroC" class="row alert alert-danger alert-dismissible" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<p id="erroTextP"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Ops.. Ocorreu um <strong>erro</strong>. Tente Novamente.</p>
+				</div>				
+			</div>
+		</div>
 </div>
 
 <!-- jQuery (necessario para os plugins Javascript Bootstrap) -->

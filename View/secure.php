@@ -10,24 +10,26 @@ if((!isset ($_SESSION['email']) == true) and (!isset ($_SESSION['senha']) == tru
 
 if(isset($_SESSION['email']) == true){
 	require_once("../Controller/ativarController.php");
-
+	require_once("../Controller/perfilController.php");
+	
 	$control = new ativarController();
+	$control2 = new PerfilController();
+	
 	$email = $_SESSION['email'];
 	
 	$resultado = $control->checaStatus($email);
+	$resultado2 = $control2->checaPerfil($email);
 	
 	if ($resultado != 'T'){
 		header("Location:login.php?status=ativar_required");
 	}
+	
+	if ($resultado2 == false){
+		header("Location:perfil.php");
+	}else{
+		header("Location:inicial.php");
+	}
 
 }
 
-$logado = $_SESSION['email'];
-//if logout then destroy the session and redirect the user
-if(isset($_GET['logout'])){
-  session_destroy();
-  header("Location:login.php");
-}
-echo " <a href='secure.php?logout'><b>Logout<b></a> ";
-echo " <div align='center'>You Are inside secured Page</a> ";
  ?>

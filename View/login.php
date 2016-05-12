@@ -1,3 +1,32 @@
+
+<?php
+
+if(isset($_GET['status']) == true){
+	$status = $_GET['status'];
+	
+	if ($status == 'forbidden'){
+		echo '<div class="row alert alert-danger alert-dismissible" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<p id="sucessoText"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> É necessário realizar o login primeiro.</p>
+			  </div>';
+	}
+	
+	if ($status == 'ativar_required'){
+		echo '<div class="row alert alert-danger alert-dismissible" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<p id="sucessoText"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> É necessário ativar a sua conta. Cheque seu email.</p>
+			  </div>';
+	}
+	
+}
+
+if(isset($_SESSION['email']) == true){
+	header("Location:secure.php");
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <html>

@@ -18,14 +18,20 @@ class DBConnection{
 		
 		$conexao = mysql_connect($this->server, $this->user, $this->pass);
 		
-	  if($conexao)
-	  {
-	  $baseSelecionada = mysql_select_db($this->db);
-	  if (!$baseSelecionada) {
-		  die ('Não foi possível conectar a base de dados: ' . mysql_error());
-	  } } else {
-		  die('Não conectado : ' . mysql_error());
-	  }
+		if($conexao) {
+			mysql_query("SET NAMES 'utf8'");
+			mysql_query('SET character_set_connection=utf8');
+			mysql_query('SET character_set_client=utf8');
+			mysql_query('SET character_set_results=utf8');
+			$baseSelecionada = mysql_select_db($this->db);
+			
+			if (!$baseSelecionada) {
+				die ('Não foi possível conectar a base de dados: ' . mysql_error());
+			} 
+			
+		} else {
+			die('Não conectado : ' . mysql_error());
+		}
 	}
 	
 }

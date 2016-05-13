@@ -46,11 +46,11 @@ if(isset($_GET['logout'])){
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-	<img alt="Brand" id="brand" class="img-responsive img-circle" src="pictures/perfil.png" width="54">
+	<img alt="Brand" id="brand" class="img-responsive img-circle" width="54">
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="perfil" id="perfil">Amanda Andrade</a></li>
+        <li><a href="perfil" id="nomePerfil"></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
 		<li><a href="inicial"><span class="glyphicon glyphicon-home"></span>&nbsp; Home</a></li>
@@ -65,41 +65,62 @@ if(isset($_GET['logout'])){
   </div>
 </nav>
 
-<div class="row" id="template">
-	<div class="container-fluid col-sm-6" id="parte1">
-		<div class="row">
-			<div class="col-sm-8">
-				<a href="#" class="thumbnail">
-					<img alt="publicacao" id="imagem" class="img-responsive center-block" src="pictures/background2.png">
-					<figcaption>
-						<h5></br></br>Gostei muito de conhecer o parque do Pequeno Príncipe, tudo muito fofo e realmente infantil. Espero algum dia levar minhas crianças pra conhecer tamanha beleza e simplicidade, pois como diz a raposa: "O essencial é invisível aos olhos." Livro excelente, recomendo!</h5>
-					</figcaption>
-				</a>
-			</div>
-			<div class="col-sm-4" id="post">
-					<img alt="Brand" id="foto" class="img-responsive img-thumbnail" src="pictures/perfil1.png">
-					<span class="btn glyphicon glyphicon-star"></span><span class="badge">5</span>
-					<span id="comentarioBTN" class="btn glyphicon glyphicon-pencil"></span><span class="badge">5</span>
-			</div>
-			<div class="container-fluid col-sm-12 col-xs-12" id="comentarios">
-				<div class="row">
-						<div class="media">
-							<div class="media-left">
-								<a href="#">
-								<img alt="Brand" id="perfilComent" class="media-object img-responsive img-thumbnail" src="pictures/perfil1.png">
-								</a>
-							</div>
-							<div class="media-body">
-								<p> This is um comentário 
-								This is um comentário </p>
-							</div>
-						</div>
+<div class="container-fluid col-sm-4" id="post">
+	<div class="col-sm-12 col-xs-12" id="postagem">
+		<img alt="Brand" id="foto" class="img-responsive img-circle" src="pictures/perfil1.png">
+		<a href="#" class="thumbnail">
+			<img alt="publicacao" id="imagem" class="img-responsive center-block" src="pictures/background2.png">
+			<figcaption>
+				<h5></br></br>Gostei muito de conhecer o parque do Pequeno Príncipe, tudo muito fofo e realmente infantil. Espero algum dia levar minhas crianças pra conhecer tamanha beleza e simplicidade, pois como diz a raposa: "O essencial é invisível aos olhos." Livro excelente, recomendo!</h5>
+			</figcaption>
+		</a>
+		<div id="comentarios">
+			<div class="media">
+				<div class="media-left">
+					<a href="#">
+					<img alt="Brand" id="perfilComent" class="media-object img-responsive img-thumbnail img-circle" src="pictures/perfil1.png">
+					</a>
+				</div>
+				<div class="media-body">
+					Isso é um comentário.
 				</div>
 			</div>
+			<div class="media">
+				<div class="media-left">
+					<a href="#">
+					<img alt="Brand" id="perfilComent" class="media-object img-responsive img-thumbnail img-circle" src="pictures/perfil1.png">
+					</a>
+				</div>
+				<div class="media-body">
+					Isso é um comentário.
+				</div>
+			</div>
+			<div class="media">
+				<div class="media-left">
+					<a href="#">
+					<img alt="Brand" id="perfilComent" class="media-object img-responsive img-thumbnail img-circle" src="pictures/perfil1.png">
+					</a>
+				</div>
+				<div class="media-body">
+					Isso é um comentário.
+				</div>
+			</div>
+		
 		</div>
+		<div class="input-group" id="group-comentario">
+			<input type="text" class="form-control" placeholder="Insira seu comentário"></input>
+			<div class="input-group-btn" id="addon2"><button type="button" class="btn btn-default" id="btn-comentario"><span class="glyphicon glyphicon-send"></span></button></div>
+		</div>
+			
+	
 	</div>
 	
+
 </div>
+
+
+
+
 	
 
 <!-- jQuery (necessario para os plugins Javascript Bootstrap) -->

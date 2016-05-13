@@ -20,15 +20,17 @@ if(isset($_SESSION['email']) == true){
 	$resultado = $control->checaStatus($email);
 	$resultado2 = $control2->checaPerfil($email);
 	
-	if ($resultado != 'T'){
-		header("Location:login.php?status=ativar_required");
-	}
-	
 	if ($resultado2 == false){
 		header("Location:perfil.php");
 	}else{
 		header("Location:inicial.php");
 	}
+	
+	if ($resultado != 'T'){
+		header("Location:login.php?status=ativar_required");
+	}
+	
+
 
 }
 

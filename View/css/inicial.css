@@ -8,7 +8,11 @@ body {
 	background-size: cover;
 }
 
- .navbar-inverse{
+p{
+	margin: 0px;
+}
+
+.navbar-inverse{
 	background-image: linear-gradient(to bottom,#fff 0,#FEFEFE 100%);
 	border-color: black;
 	border-radius:0px;
@@ -21,12 +25,9 @@ body {
 	font-size:15px;
 }
 
-#brand{
-	border: 2px solid black;
-}
-
 .thumbnail{
 	position: inherit;
+	padding: 0px;
 }
 
 .h5{
@@ -62,48 +63,61 @@ body {
 
 }
 
+.media{
+	margin-bottom: 5px;
+}
+
+.media-body{
+	background-color: white;
+	vertical-align: middle;
+}
+
+.row{
+	padding: 10px;
+}
+
+#brand{
+	border: 2px solid black;
+}
+
+#post{
+	margin-bottom: 30px;
+}
 
 #inicial{
 	padding-left: 10px;
 	padding-right: 10px;
 }
 
-#foto{
-	display: block;
-	width: 130px;
-	height: 130px;
-}
-#post{
-	display: relative
-	
+#postagem{
+	padding-top: 10px;
+	background-color: rgb(255, 255, 255);
+	border: 1px solid #ddd;
+	border-radius: 5px;
 }
 
-#coment{
-	background-color: white;
-	width: auto;
-	height: auto;
+#group-comentario{
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+#foto{
+	margin-bottom: 2px;
+	display: block;
+	width: 65px;
+	height: 65px;
 }
 
 #perfilComent{
-	width: 70px;
-	height: 70px;
+	padding: 0px;
+	width: 40px;
+	height: 40px;
 }
 
 #comentarios{
-	height: 300px;
-	overflow: scroll;
-	background-color: rgba(0,0,0,0.6);
-	display: none;
-	margin-left: 15px;
+	height: 100px;
+	overflow: auto;
 }
 
 
 
-.media-body{
-	background-color: white;
-	padding: 20px;
-}
-
-.row{
-	padding: 10px;
-}

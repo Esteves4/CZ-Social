@@ -27,11 +27,14 @@ body {
 
 #profileIMG{
 	display: block;
+	cursor: pointer;
 }
 
 #ImgInput{
 	display: none;
 }
+
+
 
 #sucessoPerfil, #erroC{
 	display: none;

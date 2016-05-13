@@ -36,7 +36,7 @@ if(isset($_GET['logout'])){
 	<!-- Fonte -->
 	<link href='https://fonts.googleapis.com/css?family=Lato:400,300,100,700,900' rel='stylesheet' type='text/css'>
 	
-	<title> Perfil </title>
+	<title> Editar Perfil </title>
 </head>
 
 <body>

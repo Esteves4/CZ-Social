@@ -56,7 +56,7 @@ if(isset ($_GET['id']) == true){
 		<div class="container">
 			<form class="form-horizontal col-sm-offset-4 col-sm-4" action="" id="resetPasswordForm" method="POST" role="form">
 				<a href="login.php">
-					<img alt="Brand" id="login" class="img-responsive center-block" src="pictures/LogoCz2.png" width="200" height="200">
+					<img alt="Brand" id="login" class="img-responsive center-block" src="pictures/vdc5.png" width="200" height="200">
 				</a>
 				<div id="sucessoAtivar" class="row alert alert-success" role="alert">
 					<p id="sucessoText"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Sua <strong>conta</strong> foi ativada.</p>

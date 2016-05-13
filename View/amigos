@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, inicial-scale=1">
+	
+	<!-- Bootstrap -->
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+	
+	<!-- Css -->
+	<link rel="stylesheet" href="css/amigos.css">
+	
+	<!-- Fonte -->
+	<link href='https://fonts.googleapis.com/css?family=Lato:400,300,100,700,900' rel='stylesheet' type='text/css'>
+	
+	<title> Amigos </title>
+</head>
+
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+	<img alt="Brand" id="brand" class="img-responsive img-circle" src="pictures/perfil.png" width="54">
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="perfil" id="perfil">Amanda Andrade</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+		<li><a href="inicial"><span class="glyphicon glyphicon-home"></span>&nbsp; Home</a></li>
+		<li><a href="postar"><span class="glyphicon glyphicon-camera"></span>&nbsp; Postar</a></li>
+		<li><a href="amigos"><span class="glyphicon glyphicon-user"></span>&nbsp; Amigos</a></li>
+		<li><a href="novidades"><span class="glyphicon glyphicon-exclamation-sign"></span>&nbsp; Novidades&nbsp;<span class="badge">5</span></a></li>
+		<li><a href="pesquisa"><span class="glyphicon glyphicon-search"></span>&nbsp; Pesquisa</a></li>
+		<li><a href="configuracoes"><span class="glyphicon glyphicon-edit"></span>&nbsp; Editar Perfil</a></li>
+		<li><a href="login"><span class="glyphicon glyphicon-log-in"></span>&nbsp; Sair</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container-fluid" id="amigos">
+	<div>
+		<p><h3></p></h3>	
+	</div>
+</div>
+<div class="container-fluid col-sm-offset-2 col-sm-10">
+<div class="col-sm-2" id="post">
+	<a href="#"><img id="foto" class="img-responsive img-circle center-block" src="pictures/perfil1.png">
+	<h4>Lucas Esteves</h4></a>
+</div>
+<div class="col-sm-2">
+	<a href="#"><img id="foto" class="img-responsive img-circle center-block" src="pictures/perfil2.png">
+	<h4>Matheus Sousa</h4>
+</div>
+<div class="col-sm-2">
+	<a href="#"><img id="foto" class="img-responsive img-circle center-block" src="pictures/perfil3.png">
+	<h4>Érica Luanna</h4>
+</div>
+<div class="col-sm-2">
+	<a href="#"><img id="foto" class="img-responsive img-circle center-block" src="pictures/perfil4.png">
+	<h4>Levy Cristian</h4>
+</div>
+<div class="col-sm-2">
+	<a href="#"><img id="foto" class="img-responsive img-circle center-block" src="pictures/perfil5.png">
+	<h4>Melissa Souza</h4></a>
+</div>
+</div>
+<div class="container-fluid col-sm-offset-2 col-sm-10">
+<div class="col-sm-2" id="post">
+	<a href="#"><img id="foto" class="img-responsive img-circle center-block" src="pictures/perfil6.png">
+	<h4>Gabrielle Almeida</h4></a>
+</div>
+<div class="col-sm-2">
+	<a href="#"><img id="foto" class="img-responsive img-circle center-block" src="pictures/perfil7.png">
+	<h4>Ivana Feitosa</h4></a>
+</div>
+<div class="col-sm-2">
+	<a href="#"><img id="foto" class="img-responsive img-circle center-block" src="pictures/perfil.png">
+	<h4>Amanda Andrade</h4></a>
+</div>
+<div class="col-sm-2">
+	<a href="#"><img id="foto" class="img-responsive img-circle center-block" src="pictures/perfil9.png">
+	<h4>Renne Sampaio</h4></a>
+</div>
+<div class="col-sm-2">
+	<a href="#"><img id="foto" class="img-responsive img-circle center-block" src="pictures/perfil10.png">
+	<h4>Levi Gonçalves</h4></a>
+</div>
+
+				
+	
+	</div>
+</div>
+	
+
+
+<!-- jQuery (necessario para os plugins Javascript Bootstrap) -->
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-1.12.0.min.js"></script>
+<script src="js/jquery-2.2.3.js"></script>
+<script src="js/bootstrap.js"></script>
+
+
+</body>
+</html>

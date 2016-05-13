@@ -53,7 +53,7 @@ if(isset ($_GET['id']) == true){
 
 			<form class="form-horizontal col-sm-offset-4 col-sm-4" action="" id="resetPasswordForm" method="POST" role="form">
 				<a href="login">
-					<img alt="Brand" id="login" class="img-responsive center-block" src="pictures/LogoCz2.png" width="200" height="200">
+					<img alt="Brand" id="login" class="img-responsive center-block" src="pictures/vdc5.png" width="200" height="200">
 				</a>
 				<div class="row">
 						<div class="input-group" id="group-email" data-toggle="tooltip" data-placement="right" title="Confirme seu email." data-trigger="hover" data-container="body" >

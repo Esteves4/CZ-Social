@@ -20,6 +20,22 @@ $(document).ready(function(){
 		$('#comentarios').toggle();
 	});
 	
+	$('#icone_postar').click(function() {
+		$('#black').show();
+		$('#novo_post').animate({
+		  left: "0px"
+		}, 200);
+		
+	});
+	
+	$('#cancelar').click(function() {
+		$('#black').hide();
+		$('#novo_post').animate({
+		  left: "-450px"
+		}, 200);
+	});
+
+	
 	$('#image-cropper').cropit();
 	$('#image-cropper').cropit('imageSrc', "pictures/landscape.png");
 	$('#image-cropper').cropit({ imageState: { src: { imageSrc } } });

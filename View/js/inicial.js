@@ -21,6 +21,7 @@ $(document).ready(function(){
 	});
 	
 	$('#icone_postar').click(function() {
+		$('#menu_toggle').click();
 		$('#black').show();
 		$('#novo_post').animate({
 		  left: "0px"
@@ -37,6 +38,6 @@ $(document).ready(function(){
 
 	
 	$('#image-cropper').cropit();
-	$('#image-cropper').cropit('imageSrc', "pictures/landscape.png");
+	$('#image-cropper').cropit('imageSrc', "pictures/landscape.jpg");
 	$('#image-cropper').cropit({ imageState: { src: { imageSrc } } });
 });

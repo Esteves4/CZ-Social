@@ -1,5 +1,5 @@
 body{
-	background-image: url('../pictures/background3.png');
+	background-image: url('../pictures/background37.png');
 	background-color: white;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -22,7 +22,7 @@ body{
 
 }
 
-#entrar, #cadastrar, #esqueciSenha{
+#entrar, #cadastrar{
 	
 	font-size: 14px;
 	color: white;

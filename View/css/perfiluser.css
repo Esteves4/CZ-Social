@@ -1,0 +1,183 @@
+body {
+	background-color: lightgray;
+	background-repeat: no-repeat;
+	background-position: center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+ .navbar-inverse{
+	background-image: linear-gradient(to bottom,#fff 0,#FEFEFE 100%);
+	border-color: black;
+	border-radius:0px;
+	margin-top: 20px;
+}
+
+.navbar-default .navbar-nav > li > a{
+	color: black;
+	font-family: arial;
+	font-size:15px;
+}
+.media-body{
+	background-color: white;
+	padding: 20px;
+}
+
+
+#imagem{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+#post{
+	margin-top:20px;
+	height: 400px;
+	width: 130px;
+ }
+
+ 
+ #perfil{
+	background-color: #FFF;
+	border: 1px solid #808080;
+	box-shadow: 1px 1px 10px #000;
+	position: absolute;
+	top: 80px%;
+	max-width: 350px;
+	min-width: auto;
+	max-height: 650px;
+	min-height: auto;
+	width: 100%;
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	height: 550px;
+	margin-left: 20px;
+	
+ }
+  
+#foto{
+	position: absolute;
+	top: 0px;
+	left:0px;
+	min-height: 100px;
+	min-width: 100px;
+	max-height: 100px;
+	max-width: 100px;
+}
+#foto_perfil{
+	width: 100%;
+	max-width: 150px;
+	min-width: auto;
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	position: relative;
+	margin-top: 10px;
+	overflow: hidden;
+	height: 150px;
+	clear: both;
+	top: 2%;
+	left: 25%;
+
+	
+	
+	
+}
+
+#icones{
+	position: absolute;
+	display: inline-block;
+	top:100px;
+	left:10px;
+	height:80px;
+	width: 100px;
+}
+ 
+ #Nome_Usuario{
+	
+	position: relative;
+    left: auto;
+    top: auto;
+}
+
+h3{
+	text-align: center;
+}
+ 
+
+
+figure.foto-legenda figcaption{
+	opacity: 0;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background-color: rgba(0,0,0,0.6);
+	color: white;
+	font-weight: bold;
+	font-family: calibri;
+	width: 100%;
+	height: 100%;
+	padding: 10px;
+	box-sizing: border-box;
+	transition: opacity 1s;
+}
+
+
+.thumbnail{
+	position: inherit;
+}
+
+.h5{
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.thumbnail figcaption{
+	opacity: 0;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background-color: rgba(0,0,0,0.6);
+	color: white;
+	font-weight: bold;
+	font-family: calibri;
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	transition: opacity 1s;
+	padding-right: 25px;
+	padding-left: 25px;
+
+}
+
+.thumbnail:hover figcaption {
+	opacity: 1;
+
+}
+
+.thumbnail:focus figcaption {
+	opacity: 1;
+
+}
+
+
+#barra{
+	
+	
+	
+}
+#perfilComent{
+	width: 70px;
+	height: 70px;
+}
+
+#comentarios{
+	height: 300px;
+	overflow: scroll;
+	background-color: rgba(0,0,0,0.6);
+	display: none;
+	margin-left: 15px;
+}

@@ -1,0 +1,57 @@
+body {
+	background-color: lightgray;
+	background-repeat: no-repeat;
+	background-position: center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+ .navbar-inverse{
+	background-image: linear-gradient(to bottom,#fff 0,#FEFEFE 100%);
+	border-color: black;
+	border-radius:0px;
+	margin-top: 20px;
+}
+
+
+.navbar-default .navbar-nav > li > a{
+	color: black;
+	font-family: arial;
+	font-size:15px;
+}
+
+
+.thumbnail{
+	position: inherit;
+}
+
+#foto{
+	display: block;
+	width: 150px;
+	height: 150px;
+	margin-top:30px;
+	
+}
+
+#post {
+	position: relative;
+	
+}
+
+h3{
+	text-align: center;
+	font-size: 50px;
+	font-weight: bolder;
+	color: black;
+	font-family: comic sans ms
+}
+
+h4{
+	text-align: center;
+	color: black;
+	font-size: 18px;
+	font-family: arial;
+	
+}

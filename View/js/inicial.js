@@ -19,4 +19,8 @@ $(document).ready(function(){
 	$('#comentarioBTN').click(function(){
 		$('#comentarios').toggle();
 	});
+	
+	$('#image-cropper').cropit();
+	$('#image-cropper').cropit('imageSrc', "pictures/landscape.png");
+	$('#image-cropper').cropit({ imageState: { src: { imageSrc } } });
 });

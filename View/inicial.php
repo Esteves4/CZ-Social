@@ -65,6 +65,28 @@ if(isset($_GET['logout'])){
   </div>
 </nav>
 
+
+<div class="col-sm-4 col-xs-12" id="novo_post">	
+	<div class="row" id="image-cropper">
+		<label for="ImgInput" id="profileIMG">
+			<img class="cropit-preview img-responsive img-thumbnail center-block" id="imagemPerfil">
+		</label>		
+		<div class="slider-wrapper input-group" id="zoom">
+			<div class="input-group-addon"><span class="glyphicon glyphicon-minus-sign"></span></div>
+			<input type="range" class="cropit-image-zoom-input form-control"/>
+			<div class="input-group-addon"><span class="glyphicon glyphicon-plus-sign"></span></div>
+		</div>
+		
+		<input type="file" id="ImgInput" class="cropit-image-input"/>
+	</div>		
+
+	<input type="text" class="form-control" id="legenda" placeholder="Legenda"></input> 
+	
+	<div class="row">
+		<button id="Postar" class="btn btn-success btn-block" >Postar</button>
+	</div>	
+</div>
+
 <div class="container-fluid col-sm-4" id="post">
 	<div class="col-sm-12 col-xs-12" id="postagem">
 		<img alt="Brand" id="foto" class="img-responsive img-circle" src="pictures/perfil1.png">
@@ -128,6 +150,7 @@ if(isset($_GET['logout'])){
 <script src="js/jquery-1.12.0.min.js"></script>
 <script src="js/jquery-2.2.3.js"></script>
 <script src="js/bootstrap.js"></script>
+<script src="js/jquery.cropit.js"></script>
 <script src="js/inicial.js"></script>
 
 

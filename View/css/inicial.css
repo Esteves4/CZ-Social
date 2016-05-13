@@ -76,6 +76,32 @@ p{
 	padding: 10px;
 }
 
+#profileIMG{
+	display: block;
+	cursor: pointer;
+}
+
+#ImgInput{
+	display: none;
+}
+
+#zoom{
+	margin-left: 26px;
+	margin-right: 26px;
+}
+
+#novo_post{
+	padding: 10px;
+	z-index: 100000;
+	background-color: rgb(255, 255, 255);
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	position: fixed;
+}
+
+#brand{
+	border: 2px solid black;
+}
 
 #post{
 	margin-bottom: 30px;
@@ -116,5 +142,11 @@ p{
 	overflow: auto;
 }
 
+
+.cropit-preview {
+  /* You can specify preview size in CSS */
+  width: 385.6px;
+  height: 289.2px;
+}
 
 

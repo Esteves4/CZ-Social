@@ -95,7 +95,7 @@ if (getenv("REQUEST_METHOD") == "POST"){
 		$dataN = mysql_real_escape_string($_POST['data']);
 		$sexo = mysql_real_escape_string($_POST['sexo']);
 		$cidade_id = mysql_real_escape_string($_POST['cidade_id']);
-		$imagem = $_POST['imagemBLOB'];
+		$imagem = $_POST['imagem'];
 		$id = $control->getID($email);
 		
 		$path = $_SERVER['DOCUMENT_ROOT'].'/cz-social/View/pictures/users/'.md5($id).'.png';
@@ -114,6 +114,11 @@ if (getenv("REQUEST_METHOD") == "POST"){
 		
 		if($perfil_id == false){
 			$temp = $control->criaPerfil($email,$sexo,$cidade_id,$path);
+			
+			if($temp == true){
+				$control->criaMural($id);
+			}
+			
 			echo $temp;
 		}else{
 			$temp = $control->atualizaPerfil($perfil_id,$sexo,$cidade_id);

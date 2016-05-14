@@ -29,9 +29,11 @@ p{
 	font-size:15px;
 }
 
+
 .thumbnail{
 	position: inherit;
 	padding: 0px;
+	margin-bottom: 0px;
 }
 
 .h5{
@@ -79,6 +81,26 @@ p{
 .row{
 	padding: 10px;
 }
+
+.glyphicon-heart{
+	color: red;
+}
+
+.glyphicon-heart:hover{
+	color: red;
+}
+
+#sucessoPostar, #erroC{
+	display: none;
+	margin-left: -5px;
+	margin-right: -5px;
+}
+
+#curtir, #comentar{
+	padding: 5px;
+	margin: 5px;
+}
+
 
 #black{
 	height:100vh;
@@ -151,9 +173,15 @@ p{
 
 #foto{
 	margin-bottom: 2px;
-	display: block;
+	display: inline;
 	width: 65px;
 	height: 65px;
+}
+
+#usuarioPost{
+	color: black;
+	margin-left: 5px;
+	display: inline;
 }
 
 #perfilComent{
@@ -163,6 +191,7 @@ p{
 }
 
 #comentarios{
+	/*display: none;*/ /*  Ativar somente se ajeitar o bug dos posts .*/
 	height: 100px;
 	overflow: auto;
 }

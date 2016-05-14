@@ -66,7 +66,7 @@ if(isset($_GET['logout'])){
 </nav>
 
 
-<div class="col-sm-4 col-xs-12" id="novo_post">	
+<form class="form-horizontal col-sm-4 col-xs-12" id="novo_post" action="" method="POST" role="form" enctype="multipart/form-data">	
 	<div class="row" id="image-cropper">
 		<label for="ImgInput" id="profileIMG">
 			<img class="cropit-preview img-responsive img-thumbnail center-block" id="imagemPerfil">
@@ -83,23 +83,40 @@ if(isset($_GET['logout'])){
 	<input type="text" class="form-control" id="legenda" placeholder="Legenda"></input> 
 	
 	<div class="row">
-		<button id="Postar" class="btn btn-success btn-block" >Postar</button>
+		<button id="postar" class="btn btn-success btn-block" type="submit" autocomplete="off" data-loading-text="Postando..." >Postar</button>
 	</div>
+	
+	<div id="sucessoPostar" class="row alert alert-info" role="alert">
+		<p id="sucessoText"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><strong> Postagem</strong> realizada com sucesso.</p>
+	</div>
+	<div id="erroC" class="row alert alert-danger alert-dismissible" role="alert">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<p id="erroTextP"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Ops.. Ocorreu um <strong>erro</strong>. Tente Novamente.</p>
+	</div>	
+	
 	<a id="cancelar" > <span class="glyphicon glyphicon-option-horizontal"></span></a>
 
-</div>
+
+</form>
 
 <div id="black" class="col-sm-12"></div>
 <div class="container-fluid col-sm-4" id="post">
 	<div class="col-sm-12 col-xs-12" id="postagem">
-		<img alt="Brand" id="foto" class="img-responsive img-circle" src="pictures/perfil1.png">
+		<a href="#">
+			<img alt="Brand" id="foto" class="img-responsive img-circle" src="pictures/perfil1.png">
+			<p id="usuarioPost"> Lucas Esteves </p>
+		</a>
 		<a href="#" class="thumbnail">
 			<img alt="publicacao" id="imagem" class="img-responsive center-block" src="pictures/background2.png">
 			<figcaption>
 				<h5></br></br>Gostei muito de conhecer o parque do Pequeno Príncipe, tudo muito fofo e realmente infantil. Espero algum dia levar minhas crianças pra conhecer tamanha beleza e simplicidade, pois como diz a raposa: "O essencial é invisível aos olhos." Livro excelente, recomendo!</h5>
 			</figcaption>
 		</a>
-		<div id="comentarios">
+		
+		<span class="btn btn-lg glyphicon glyphicon-heart-empty" id="curtir" ></span><span class="badge">5</span>
+		<!--<span class="btn btn-lg glyphicon glyphicon-comment" id="comentar" ></span><span class="badge">5</span> Buga os posts -->
+					
+		<div class="comentarios" id="comentarios">
 			<div class="media">
 				<div class="media-left">
 					<a href="#">
@@ -143,7 +160,301 @@ if(isset($_GET['logout'])){
 
 </div>
 
+<div class="container-fluid col-sm-4" id="post">
+	<div class="col-sm-12 col-xs-12" id="postagem">
+		<a href="#">
+			<img alt="Brand" id="foto" class="img-responsive img-circle" src="pictures/perfil1.png">
+			<p id="usuarioPost"> Lucas Esteves </p>
+		</a>
+		<a href="#" class="thumbnail">
+			<img alt="publicacao" id="imagem" class="img-responsive center-block" src="pictures/background2.png">
+			<figcaption>
+				<h5></br></br>Gostei muito de conhecer o parque do Pequeno Príncipe, tudo muito fofo e realmente infantil. Espero algum dia levar minhas crianças pra conhecer tamanha beleza e simplicidade, pois como diz a raposa: "O essencial é invisível aos olhos." Livro excelente, recomendo!</h5>
+			</figcaption>
+		</a>
+		
+		<span class="btn btn-lg glyphicon glyphicon-heart-empty" id="curtir" ></span><span class="badge">5</span>
+		<!--<span class="btn btn-lg glyphicon glyphicon-comment" id="comentar" ></span><span class="badge">5</span> Buga os posts -->
+					
+		<div class="comentarios" id="comentarios">
+			<div class="media">
+				<div class="media-left">
+					<a href="#">
+					<img alt="Brand" id="perfilComent" class="media-object img-responsive img-thumbnail img-circle" src="pictures/perfil1.png">
+					</a>
+				</div>
+				<div class="media-body">
+					Isso é um comentário.
+				</div>
+			</div>
+			<div class="media">
+				<div class="media-left">
+					<a href="#">
+					<img alt="Brand" id="perfilComent" class="media-object img-responsive img-thumbnail img-circle" src="pictures/perfil1.png">
+					</a>
+				</div>
+				<div class="media-body">
+					Isso é um comentário.
+				</div>
+			</div>
+			<div class="media">
+				<div class="media-left">
+					<a href="#">
+					<img alt="Brand" id="perfilComent" class="media-object img-responsive img-thumbnail img-circle" src="pictures/perfil1.png">
+					</a>
+				</div>
+				<div class="media-body">
+					Isso é um comentário.
+				</div>
+			</div>
+		
+		</div>
+		<div class="input-group" id="group-comentario">
+			<input type="text" class="form-control" placeholder="Insira seu comentário"></input>
+			<div class="input-group-btn" id="addon2"><button type="button" class="btn btn-default" id="btn-comentario"><span class="glyphicon glyphicon-send"></span></button></div>
+		</div>
+			
+	
+	</div>
+	
 
+</div>
+<div class="container-fluid col-sm-4" id="post">
+	<div class="col-sm-12 col-xs-12" id="postagem">
+		<a href="#">
+			<img alt="Brand" id="foto" class="img-responsive img-circle" src="pictures/perfil1.png">
+			<p id="usuarioPost"> Lucas Esteves </p>
+		</a>
+		<a href="#" class="thumbnail">
+			<img alt="publicacao" id="imagem" class="img-responsive center-block" src="pictures/background2.png">
+			<figcaption>
+				<h5></br></br>Gostei muito de conhecer o parque do Pequeno Príncipe, tudo muito fofo e realmente infantil. Espero algum dia levar minhas crianças pra conhecer tamanha beleza e simplicidade, pois como diz a raposa: "O essencial é invisível aos olhos." Livro excelente, recomendo!</h5>
+			</figcaption>
+		</a>
+		
+		<span class="btn btn-lg glyphicon glyphicon-heart-empty" id="curtir" ></span><span class="badge">5</span>
+		<!--<span class="btn btn-lg glyphicon glyphicon-comment" id="comentar" ></span><span class="badge">5</span> Buga os posts -->
+					
+		<div class="comentarios" id="comentarios">
+			<div class="media">
+				<div class="media-left">
+					<a href="#">
+					<img alt="Brand" id="perfilComent" class="media-object img-responsive img-thumbnail img-circle" src="pictures/perfil1.png">
+					</a>
+				</div>
+				<div class="media-body">
+					Isso é um comentário.
+				</div>
+			</div>
+			<div class="media">
+				<div class="media-left">
+					<a href="#">
+					<img alt="Brand" id="perfilComent" class="media-object img-responsive img-thumbnail img-circle" src="pictures/perfil1.png">
+					</a>
+				</div>
+				<div class="media-body">
+					Isso é um comentário.
+				</div>
+			</div>
+			<div class="media">
+				<div class="media-left">
+					<a href="#">
+					<img alt="Brand" id="perfilComent" class="media-object img-responsive img-thumbnail img-circle" src="pictures/perfil1.png">
+					</a>
+				</div>
+				<div class="media-body">
+					Isso é um comentário.
+				</div>
+			</div>
+		
+		</div>
+		<div class="input-group" id="group-comentario">
+			<input type="text" class="form-control" placeholder="Insira seu comentário"></input>
+			<div class="input-group-btn" id="addon2"><button type="button" class="btn btn-default" id="btn-comentario"><span class="glyphicon glyphicon-send"></span></button></div>
+		</div>
+			
+	
+	</div>
+	
+
+</div>
+<div class="container-fluid col-sm-4" id="post">
+	<div class="col-sm-12 col-xs-12" id="postagem">
+		<a href="#">
+			<img alt="Brand" id="foto" class="img-responsive img-circle" src="pictures/perfil1.png">
+			<p id="usuarioPost"> Lucas Esteves </p>
+		</a>
+		<a href="#" class="thumbnail">
+			<img alt="publicacao" id="imagem" class="img-responsive center-block" src="pictures/background2.png">
+			<figcaption>
+				<h5></br></br>Gostei muito de conhecer o parque do Pequeno Príncipe, tudo muito fofo e realmente infantil. Espero algum dia levar minhas crianças pra conhecer tamanha beleza e simplicidade, pois como diz a raposa: "O essencial é invisível aos olhos." Livro excelente, recomendo!</h5>
+			</figcaption>
+		</a>
+		
+		<span class="btn btn-lg glyphicon glyphicon-heart-empty" id="curtir" ></span><span class="badge">5</span>
+		<!--<span class="btn btn-lg glyphicon glyphicon-comment" id="comentar" ></span><span class="badge">5</span> Buga os posts -->
+					
+		<div class="comentarios" id="comentarios">
+			<div class="media">
+				<div class="media-left">
+					<a href="#">
+					<img alt="Brand" id="perfilComent" class="media-object img-responsive img-thumbnail img-circle" src="pictures/perfil1.png">
+					</a>
+				</div>
+				<div class="media-body">
+					Isso é um comentário.
+				</div>
+			</div>
+			<div class="media">
+				<div class="media-left">
+					<a href="#">
+					<img alt="Brand" id="perfilComent" class="media-object img-responsive img-thumbnail img-circle" src="pictures/perfil1.png">
+					</a>
+				</div>
+				<div class="media-body">
+					Isso é um comentário.
+				</div>
+			</div>
+			<div class="media">
+				<div class="media-left">
+					<a href="#">
+					<img alt="Brand" id="perfilComent" class="media-object img-responsive img-thumbnail img-circle" src="pictures/perfil1.png">
+					</a>
+				</div>
+				<div class="media-body">
+					Isso é um comentário.
+				</div>
+			</div>
+		
+		</div>
+		<div class="input-group" id="group-comentario">
+			<input type="text" class="form-control" placeholder="Insira seu comentário"></input>
+			<div class="input-group-btn" id="addon2"><button type="button" class="btn btn-default" id="btn-comentario"><span class="glyphicon glyphicon-send"></span></button></div>
+		</div>
+			
+	
+	</div>
+	
+
+</div>
+<div class="container-fluid col-sm-4" id="post">
+	<div class="col-sm-12 col-xs-12" id="postagem">
+		<a href="#">
+			<img alt="Brand" id="foto" class="img-responsive img-circle" src="pictures/perfil1.png">
+			<p id="usuarioPost"> Lucas Esteves </p>
+		</a>
+		<a href="#" class="thumbnail">
+			<img alt="publicacao" id="imagem" class="img-responsive center-block" src="pictures/background2.png">
+			<figcaption>
+				<h5></br></br>Gostei muito de conhecer o parque do Pequeno Príncipe, tudo muito fofo e realmente infantil. Espero algum dia levar minhas crianças pra conhecer tamanha beleza e simplicidade, pois como diz a raposa: "O essencial é invisível aos olhos." Livro excelente, recomendo!</h5>
+			</figcaption>
+		</a>
+		
+		<span class="btn btn-lg glyphicon glyphicon-heart-empty" id="curtir" ></span><span class="badge">5</span>
+		<!--<span class="btn btn-lg glyphicon glyphicon-comment" id="comentar" ></span><span class="badge">5</span> Buga os posts -->
+					
+		<div class="comentarios" id="comentarios">
+			<div class="media">
+				<div class="media-left">
+					<a href="#">
+					<img alt="Brand" id="perfilComent" class="media-object img-responsive img-thumbnail img-circle" src="pictures/perfil1.png">
+					</a>
+				</div>
+				<div class="media-body">
+					Isso é um comentário.
+				</div>
+			</div>
+			<div class="media">
+				<div class="media-left">
+					<a href="#">
+					<img alt="Brand" id="perfilComent" class="media-object img-responsive img-thumbnail img-circle" src="pictures/perfil1.png">
+					</a>
+				</div>
+				<div class="media-body">
+					Isso é um comentário.
+				</div>
+			</div>
+			<div class="media">
+				<div class="media-left">
+					<a href="#">
+					<img alt="Brand" id="perfilComent" class="media-object img-responsive img-thumbnail img-circle" src="pictures/perfil1.png">
+					</a>
+				</div>
+				<div class="media-body">
+					Isso é um comentário.
+				</div>
+			</div>
+		
+		</div>
+		<div class="input-group" id="group-comentario">
+			<input type="text" class="form-control" placeholder="Insira seu comentário"></input>
+			<div class="input-group-btn" id="addon2"><button type="button" class="btn btn-default" id="btn-comentario"><span class="glyphicon glyphicon-send"></span></button></div>
+		</div>
+			
+	
+	</div>
+	
+
+</div>
+<div class="container-fluid col-sm-4" id="post">
+	<div class="col-sm-12 col-xs-12" id="postagem">
+		<a href="#">
+			<img alt="Brand" id="foto" class="img-responsive img-circle" src="pictures/perfil1.png">
+			<p id="usuarioPost"> Lucas Esteves </p>
+		</a>
+		<a href="#" class="thumbnail">
+			<img alt="publicacao" id="imagem" class="img-responsive center-block" src="pictures/background2.png">
+			<figcaption>
+				<h5></br></br>Gostei muito de conhecer o parque do Pequeno Príncipe, tudo muito fofo e realmente infantil. Espero algum dia levar minhas crianças pra conhecer tamanha beleza e simplicidade, pois como diz a raposa: "O essencial é invisível aos olhos." Livro excelente, recomendo!</h5>
+			</figcaption>
+		</a>
+		
+		<span class="btn btn-lg glyphicon glyphicon-heart-empty" id="curtir" ></span><span class="badge">5</span>
+		<!--<span class="btn btn-lg glyphicon glyphicon-comment" id="comentar" ></span><span class="badge">5</span> Buga os posts -->
+					
+		<div class="comentarios" id="comentarios">
+			<div class="media">
+				<div class="media-left">
+					<a href="#">
+					<img alt="Brand" id="perfilComent" class="media-object img-responsive img-thumbnail img-circle" src="pictures/perfil1.png">
+					</a>
+				</div>
+				<div class="media-body">
+					Isso é um comentário.
+				</div>
+			</div>
+			<div class="media">
+				<div class="media-left">
+					<a href="#">
+					<img alt="Brand" id="perfilComent" class="media-object img-responsive img-thumbnail img-circle" src="pictures/perfil1.png">
+					</a>
+				</div>
+				<div class="media-body">
+					Isso é um comentário.
+				</div>
+			</div>
+			<div class="media">
+				<div class="media-left">
+					<a href="#">
+					<img alt="Brand" id="perfilComent" class="media-object img-responsive img-thumbnail img-circle" src="pictures/perfil1.png">
+					</a>
+				</div>
+				<div class="media-body">
+					Isso é um comentário.
+				</div>
+			</div>
+		
+		</div>
+		<div class="input-group" id="group-comentario">
+			<input type="text" class="form-control" placeholder="Insira seu comentário"></input>
+			<div class="input-group-btn" id="addon2"><button type="button" class="btn btn-default" id="btn-comentario"><span class="glyphicon glyphicon-send"></span></button></div>
+		</div>
+			
+	
+	</div>
+	
+
+</div>
 
 
 	

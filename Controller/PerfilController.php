@@ -130,6 +130,12 @@ class PerfilController{
 		
 		return $temp;
 	}
+	
+	public function criaMural($id_conta){
+		$temp = $this->db_model->criaMural($id_conta);
+		
+		return $temp;
+	}
 }
 
 ?>

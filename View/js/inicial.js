@@ -29,6 +29,17 @@ $(document).ready(function(){
 		
 	});
 	
+	$('.glyphicon-heart-empty').click(function(){
+		$(this).toggleClass('glyphicon-heart-empty');
+		$(this).toggleClass('glyphicon-heart');
+	});
+
+	$('.glyphicon-comment').click(function(){
+		var divParent = $(this).parent();
+		var divChildren = divParent.children("div.comentarios");
+		divChildren.toggle();
+	});
+	
 	$('#cancelar').click(function() {
 		$('#black').hide();
 		$('#novo_post').animate({
@@ -36,6 +47,31 @@ $(document).ready(function(){
 		}, 200);
 	});
 
+	$('#novo_post').submit(function() {
+		var imageURL = $('#image-cropper').cropit('export',{type: 'image/jpeg'});
+		var texto = $('#legenda').val();
+	  
+		$('#postar').button('loading')
+	  
+		$.post("../Controller/InicialController-handler.php", {imagem: imageURL, texto: texto, funcao: 'postar'},  
+			function(result){   
+				if(result == true){
+					$('#sucessoPostar').show();
+					$('#image-cropper').cropit('imageSrc', "pictures/landscape.jpg");
+					$('#novo_post')[0].reset();
+					$('#postar').button('reset')
+					window.setTimeout(function(){
+						$('#cancelar').trigger('click');
+						$('#sucessoPostar').hide();
+					}, 2000);
+					
+				}else{
+					$('#erroC').show();
+				}
+			});
+			
+		return false;
+	});
 	
 	$('#image-cropper').cropit();
 	$('#image-cropper').cropit('imageSrc', "pictures/landscape.jpg");

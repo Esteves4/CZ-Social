@@ -56,11 +56,11 @@ class DBAccess{
 	private function criaMural($conta){
 		$resultado = mysql_query("INSERT INTO murais(conta_id) VALUES('$conta')");
 		
-		return mysql_insert_id();
+		return $resultado;
 	}
 	
 	public function criaPublicacao($mural, $texto, $id_foto){
-		$resultado = mysql_query("INSERT INTO publicacoes(mural_id, texto, foto_id, data_criacao) VALUES('$mural', '$texto', 'id_foto', curdate())");
+		$resultado = mysql_query("INSERT INTO publicacoes(mural_id, texto, foto_id, data_criacao) VALUES('$mural', '$texto', '$id_foto', NOW())");
 		
 		return $resultado;
 	}
@@ -96,6 +96,14 @@ class DBAccess{
 		}else{
 			return $row['perfil_id'];
 		}
+	}
+	
+	public function getMuralID($id_conta){
+		$resultado = mysql_query("SELECT mural_id FROM murais WHERE conta_id = '$id_conta'");
+						
+		$row = mysql_fetch_assoc($resultado);
+		
+		return $row['mural_id'];
 	}
 	
 	public function getNome($email){

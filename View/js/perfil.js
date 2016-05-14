@@ -74,7 +74,7 @@ $(document).ready(function(){
 	  
 		$('#registrar').button('loading')
 	  
-		$.post("../Controller/PerfilController-handler.php", {nome: nome, sobrenome: sobrenome, data: data, sexo: sexo, cidade_id: cidade_id, imagemBLOB: imageURL, funcao: 'salvarPerfil'},  
+		$.post("../Controller/PerfilController-handler.php", {nome: nome, sobrenome: sobrenome, data: data, sexo: sexo, cidade_id: cidade_id, imagem: imageURL, funcao: 'salvarPerfil'},  
 			function(result){   
 				if(result == true){
 					$('#sucessoPerfil').show();

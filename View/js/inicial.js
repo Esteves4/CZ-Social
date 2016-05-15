@@ -1,20 +1,26 @@
 var nomeSobrenome =  function(){
-	$.post("../Controller/PerfilController-handler.php", {funcao: 'nomePerfil'},  
+	$.post("../Controller/InicialController-handler.php", {funcao: 'nomePerfil'},  
 		function(result){   
 			$('#nomePerfil').append(result);
 		});
 }
 
+var getPosts = function(quantidade){
+	$('#publicacoes').load("../Controller/InicialController-handler.php?quantidadePosts="+quantidade+"&funcao=getPosts");
+}
+
 var atualizaFoto = function(){
-	$.post("../Controller/PerfilController-handler.php", {funcao: 'foto'},  
+	$.post("../Controller/InicialController-handler.php", {funcao: 'foto'},  
 		function(result){
 		$("#brand").attr("src",result);		
 	});
 }
 
+
 $(document).ready(function(){
 	nomeSobrenome();
 	atualizaFoto();
+	getPosts(5);
 	
 	$('#comentarioBTN').click(function(){
 		$('#comentarios').toggle();
@@ -29,11 +35,32 @@ $(document).ready(function(){
 		
 	});
 	
-	$('.glyphicon-heart-empty').click(function(){
+	$(document).on("click",'.glyphicon-heart-empty',function(){
 		$(this).toggleClass('glyphicon-heart-empty');
 		$(this).toggleClass('glyphicon-heart');
 	});
-
+	
+	$(document).on("click",'.glyphicon-heart',function(){
+		$(this).toggleClass('glyphicon-heart-empty');
+		$(this).toggleClass('glyphicon-heart');
+	});
+	
+	$(document).on("click",'.enviar',function(){
+		var legenda = $(this).val();
+		
+		$.post("../Controller/InicialController-handler.php", {texto: legenda, funcao: 'comentar'},  
+			function(result){   
+				if(result == true){
+					
+				}else{
+					alert("Ocorreu um erro tente novamente");
+				}
+			});
+		
+		$(this).reset();
+		
+	});
+	
 	$('.glyphicon-comment').click(function(){
 		var divParent = $(this).parent();
 		var divChildren = divParent.children("div.comentarios");
@@ -63,6 +90,7 @@ $(document).ready(function(){
 					window.setTimeout(function(){
 						$('#cancelar').trigger('click');
 						$('#sucessoPostar').hide();
+						getPosts(5);
 					}, 2000);
 					
 				}else{

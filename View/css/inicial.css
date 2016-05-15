@@ -83,11 +83,11 @@ p{
 }
 
 .glyphicon-heart{
-	color: red;
+	color: blue;
 }
 
 .glyphicon-heart:hover{
-	color: red;
+	color: blue;
 }
 
 #sucessoPostar, #erroC{

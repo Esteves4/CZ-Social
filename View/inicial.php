@@ -100,67 +100,13 @@ if(isset($_GET['logout'])){
 </form>
 
 <div id="black" class="col-sm-12"></div>
-<div class="container-fluid col-sm-4" id="post">
-	<div class="col-sm-12 col-xs-12" id="postagem">
-		<a href="#">
-			<img alt="Brand" id="foto" class="img-responsive img-circle" src="pictures/perfil1.png">
-			<p id="usuarioPost"> Lucas Esteves </p>
-		</a>
-		<a href="#" class="thumbnail">
-			<img alt="publicacao" id="imagem" class="img-responsive center-block" src="pictures/background2.png">
-			<figcaption>
-				<h5></br></br>Gostei muito de conhecer o parque do Pequeno Príncipe, tudo muito fofo e realmente infantil. Espero algum dia levar minhas crianças pra conhecer tamanha beleza e simplicidade, pois como diz a raposa: "O essencial é invisível aos olhos." Livro excelente, recomendo!</h5>
-			</figcaption>
-		</a>
-		
-		<span class="btn btn-lg glyphicon glyphicon-heart-empty" id="curtir" ></span><span class="badge">5</span>
-		<!--<span class="btn btn-lg glyphicon glyphicon-comment" id="comentar" ></span><span class="badge">5</span> Buga os posts -->
-					
-		<div class="comentarios" id="comentarios">
-			<div class="media">
-				<div class="media-left">
-					<a href="#">
-					<img alt="Brand" id="perfilComent" class="media-object img-responsive img-thumbnail img-circle" src="pictures/perfil1.png">
-					</a>
-				</div>
-				<div class="media-body">
-					Isso é um comentário.
-				</div>
-			</div>
-			<div class="media">
-				<div class="media-left">
-					<a href="#">
-					<img alt="Brand" id="perfilComent" class="media-object img-responsive img-thumbnail img-circle" src="pictures/perfil1.png">
-					</a>
-				</div>
-				<div class="media-body">
-					Isso é um comentário.
-				</div>
-			</div>
-			<div class="media">
-				<div class="media-left">
-					<a href="#">
-					<img alt="Brand" id="perfilComent" class="media-object img-responsive img-thumbnail img-circle" src="pictures/perfil1.png">
-					</a>
-				</div>
-				<div class="media-body">
-					Isso é um comentário.
-				</div>
-			</div>
-		
-		</div>
-		<div class="input-group" id="group-comentario">
-			<input type="text" class="form-control" placeholder="Insira seu comentário"></input>
-			<div class="input-group-btn" id="addon2"><button type="button" class="btn btn-default" id="btn-comentario"><span class="glyphicon glyphicon-send"></span></button></div>
-		</div>
-	</div>
-</div>
+<div id="publicacoes"></div>
 
 	
 
 <!-- jQuery (necessario para os plugins Javascript Bootstrap) -->
 <script src="js/jquery.min.js"></script>
-<script src="js/jquery-1.12.0.min.js"></script>
+<script src="js/jquery-1.7.js"></script>
 <script src="js/jquery-2.2.3.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src="js/jquery.cropit.js"></script>

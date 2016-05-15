@@ -168,6 +168,19 @@ class DBAccess{
 		
 	}
 	
+	public function getPerfilID_conta($conta_id){
+		$resultado = mysql_query("SELECT perfil_id FROM contas WHERE conta_id = '$conta_id'");
+		
+		if($resultado == false){
+			return $resultado;
+		}
+		
+		$row = mysql_fetch_assoc($resultado);
+		
+		return $row['perfil_id'];
+		
+	}
+	
 	public function getFotoPerfilID($id_perfil){
 		$resultado = mysql_query("SELECT perf_foto FROM perfis WHERE perfil_id = '$id_perfil'");
 		
@@ -209,6 +222,18 @@ class DBAccess{
 	
 	public function getCidades($estado_id){
 		$resultado = mysql_query("SELECT cidade_id, cidade_nome FROM cidades WHERE estado_id = '$estado_id' ORDER BY cidade_nome");
+		
+		return $resultado;
+	}
+	
+	public function getPublicacoes($mural_id, $quantidade){
+		$resultado = mysql_query("SELECT publicacao_id, texto, foto_id FROM publicacoes WHERE mural_id = '$mural_id' ORDER BY data_criacao DESC LIMIT ". intval($quantidade) ."");
+		
+		return $resultado;
+	}
+	
+	public function getComentarios($publicacao_id){
+		$resultado = mysql_query("SELECT comentario, conta_id FROM comentarios WHERE publicacao_id = '$publicacao_id' ORDER BY data_criacao DESC ");
 		
 		return $resultado;
 	}

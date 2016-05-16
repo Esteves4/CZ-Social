@@ -53,11 +53,11 @@ $(document).ready(function(){
 	
 	window.setTimeout(function(){
 		cidades();
-	}, 3000);
+	}, 2000);
 
 	window.setTimeout(function(){
 		atualizaInput($("#cidades"),'cidadeInput');
-	}, 4000);
+	}, 2000);
 	
 				
 	$('#estados').change(function(){

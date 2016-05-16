@@ -64,7 +64,7 @@ $(document).ready(function(){
 		
 	});
 	
-	$('.glyphicon-comment').click(function(){
+	$(document).on('click', '.glyphicon-comment', function(){
 		var divParent = $(this).parent();
 		var divChildren = divParent.children("div.comentarios");
 		divChildren.toggle();

@@ -115,10 +115,6 @@ if (getenv("REQUEST_METHOD") == "POST"){
 		if($perfil_id == false){
 			$temp = $control->criaPerfil($email,$sexo,$cidade_id,$path);
 			
-			if($temp == true){
-				$control->criaMural($id);
-			}
-			
 			echo $temp;
 		}else{
 			$temp = $control->atualizaPerfil($perfil_id,$sexo,$cidade_id);

@@ -52,13 +52,14 @@ if(isset($_GET['logout'])){
       <ul class="nav navbar-nav">
         <li><a href="perfil" id="nomePerfil"></a></li>
       </ul>
+
       <ul class="nav navbar-nav navbar-right">
-		<li><a href="inicial"><span class="glyphicon glyphicon-home"></span>&nbsp; Home</a></li>
+		<li><a href="inicial.php"><span class="glyphicon glyphicon-home"></span>&nbsp; Home</a></li>
 		<li ><a id="icone_postar"><span class="glyphicon glyphicon-camera"></span>&nbsp; Postar</a></li>
 		<li><a href="amigos"><span class="glyphicon glyphicon-user"></span>&nbsp; Amigos</a></li>
 		<li><a href="novidades"><span class="glyphicon glyphicon-exclamation-sign"></span>&nbsp; Novidades&nbsp;<span class="badge">5</span></a></li>
-		<li><a href="pesquisa"><span class="glyphicon glyphicon-search"></span>&nbsp; Pesquisa</a></li>
-		<li><a href="configuracoes"><span class="glyphicon glyphicon-edit"></span>&nbsp; Editar Perfil</a></li>
+		<li><a href="pesquisar"><span class="glyphicon glyphicon-search"></span>&nbsp; Pesquisar</a></li>
+		<li><a href="perfil.php"><span class="glyphicon glyphicon-edit"></span>&nbsp; Editar Perfil</a></li>
 		<li><a href='inicial.php?logout'><span class="glyphicon glyphicon-log-in"></span>&nbsp; Sair</a></li>
       </ul>
     </div>

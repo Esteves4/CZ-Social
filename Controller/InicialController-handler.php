@@ -60,7 +60,7 @@ if (getenv("REQUEST_METHOD") == "GET"){
 				<div class="col-sm-12 col-xs-12" id="postagem">
 					<a href="#">
 						<img alt="Brand" id="foto" class="img-responsive img-circle" src='. $imgSRC .'>
-						<p id="usuarioPost">'. $nome . $sobrenome .'  </p>
+						<p id="usuarioPost">'. $nome . ' ' . $sobrenome .'  </p>
 					</a>
 					<a href="#" class="thumbnail">
 						<img alt="publicacao" id="imagem" class="img-responsive center-block" src='. $imgSRC_2 .'>
@@ -70,7 +70,7 @@ if (getenv("REQUEST_METHOD") == "GET"){
 					</a>
 					
 					<span class="btn btn-lg glyphicon glyphicon-heart-empty" id="curtir" ></span><span class="badge">5</span>
-					<!--<span class="btn btn-lg glyphicon glyphicon-comment" id="comentar" ></span><span class="badge">5</span> Buga os posts -->
+					<span class="btn btn-lg glyphicon glyphicon-comment" id="comentar" ></span><span class="badge">5</span>
 								
 					<div class="comentarios" id="comentarios">
 						

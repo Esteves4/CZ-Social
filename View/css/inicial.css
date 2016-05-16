@@ -191,7 +191,7 @@ p{
 }
 
 #comentarios{
-	/*display: none;*/ /*  Ativar somente se ajeitar o bug dos posts .*/
+	display: none; /*  Ativar somente se ajeitar o bug dos posts .*/
 	height: 100px;
 	overflow: auto;
 }

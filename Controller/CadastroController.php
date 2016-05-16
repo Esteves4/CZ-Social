@@ -11,8 +11,11 @@ class CadastroController{
 		global $db_model;
 		$temp = $this->db_model->adicionaConta($nome, $sobrenome, $dataN, $email, md5($senha));
 		
+		
 		if($temp == true){
-			$id = md5(rand()+$this->db_model->getID($email));
+			$id_conta = $this->db_model->getID($email);
+			$mural = $this->db_model->criaMural($id_conta);
+			$id = md5(rand()+ $id_conta);
 			
 			
 			$to = $email;

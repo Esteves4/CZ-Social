@@ -59,8 +59,8 @@ class DBAccess{
 		return $resultado;
 	}
 	
-	private function criaMural($conta){
-		$resultado = mysql_query("INSERT INTO murais(conta_id) VALUES('$conta')");
+	public function criaMural($conta){
+		$resultado = mysql_query("INSERT INTO murais VALUES(null, '$conta')");
 		
 		return $resultado;
 	}

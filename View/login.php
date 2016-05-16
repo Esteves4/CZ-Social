@@ -45,7 +45,7 @@ if(isset($_SESSION['email']) == true){
 	<link rel="stylesheet" href="css/login.css">
 	
 	<!-- Fonte -->
-	<link href='https://fonts.googleapis.com/css?family=Lato:400,300,100,700,900' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Muli:400,400italic' rel='stylesheet' type='text/css'>
 	
 	<title> Login </title>
 </head>

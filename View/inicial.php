@@ -32,7 +32,7 @@ if(isset($_GET['logout'])){
 	<link rel="stylesheet" href="css/inicial.css">
 	
 	<!-- Fonte -->
-	<link href='https://fonts.googleapis.com/css?family=Lato:400,300,100,700,900' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Muli:400,400italic' rel='stylesheet' type='text/css'>
 	
 	<title> Página Inicial </title>
 </head>
@@ -50,12 +50,11 @@ if(isset($_GET['logout'])){
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="perfil" id="nomePerfil"></a></li>
+        <li><a href="perfilUser" id="nomePerfil"></a></li>
       </ul>
-
       <ul class="nav navbar-nav navbar-right">
 		<li><a href="inicial.php"><span class="glyphicon glyphicon-home"></span>&nbsp; Home</a></li>
-		<li ><a id="icone_postar"><span class="glyphicon glyphicon-camera"></span>&nbsp; Postar</a></li>
+		<li><a id="icone_postar"><span class="glyphicon glyphicon-camera"></span>&nbsp; Postar</a></li>
 		<li><a href="amigos"><span class="glyphicon glyphicon-user"></span>&nbsp; Amigos</a></li>
 		<li><a href="novidades"><span class="glyphicon glyphicon-exclamation-sign"></span>&nbsp; Novidades&nbsp;<span class="badge">5</span></a></li>
 		<li><a href="pesquisar"><span class="glyphicon glyphicon-search"></span>&nbsp; Pesquisar</a></li>

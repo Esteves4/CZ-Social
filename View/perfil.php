@@ -34,7 +34,7 @@ if(isset($_GET['logout'])){
 	<link rel="stylesheet" href="css/perfil.css">
 	
 	<!-- Fonte -->
-	<link href='https://fonts.googleapis.com/css?family=Lato:400,300,100,700,900' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Muli:400,400italic' rel='stylesheet' type='text/css'>
 	
 	<title> Editar Perfil </title>
 </head>
@@ -52,7 +52,7 @@ if(isset($_GET['logout'])){
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="perfil" id="nomePerfil"></a></li>
+        <li><a id="nomePerfil"></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
 		

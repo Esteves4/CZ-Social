@@ -6,6 +6,7 @@ body{
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+	font-family: 'Muli', sans-serif;
 
 }
 
@@ -32,7 +33,6 @@ body{
 	min-height: 100vh;
 	align-items: center;
 	display: flex;
-	font-family: 'Lato', sans-serif;
   
 }
 

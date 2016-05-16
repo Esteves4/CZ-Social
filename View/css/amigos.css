@@ -6,6 +6,7 @@ body {
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+	font-family: 'Muli', sans-serif;
 }
 
  .navbar-inverse{
@@ -18,7 +19,6 @@ body {
 
 .navbar-default .navbar-nav > li > a{
 	color: black;
-	font-family: arial;
 	font-size:15px;
 }
 
@@ -45,13 +45,11 @@ h3{
 	font-size: 50px;
 	font-weight: bolder;
 	color: black;
-	font-family: comic sans ms
 }
 
 h4{
 	text-align: center;
 	color: black;
 	font-size: 18px;
-	font-family: arial;
 	
 }

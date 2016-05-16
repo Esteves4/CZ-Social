@@ -36,7 +36,7 @@ if(isset($_GET['logout'])){
 	<!-- Fonte -->
 	<link href='https://fonts.googleapis.com/css?family=Lato:400,300,100,700,900' rel='stylesheet' type='text/css'>
 	
-	<title> Perfil </title>
+	<title> Editar Perfil </title>
 </head>
 
 <body>
@@ -62,61 +62,63 @@ if(isset($_GET['logout'])){
   </div>
 </nav>
 <div class="vertical-center">
-		<div class="container">
-			<form class="form-horizontal col-sm-offset-4 col-sm-4" action="" id="perfilForm" method="POST" role="form" enctype="multipart/form-data">
-				<div class="row" id="image-cropper">
-					<label for="ImgInput" id="profileIMG">
-						<img class="cropit-preview img-responsive img-thumbnail center-block" id="imagemPerfil">
-					</label>	
-										
-						<div class="slider-wrapper input-group">
-							<div class="input-group-addon"><span class="glyphicon glyphicon-minus-sign"></span></div>
-							<input type="range" class="cropit-image-zoom-input form-control"/>
-							<div class="input-group-addon"><span class="glyphicon glyphicon-plus-sign"></span></div>
-						</div>
-					
-					<input type="file" id="ImgInput" class="cropit-image-input" />
-				</div>				
-				<div class="row">
-					<div class="input-group" id="group-nome">
-						<input type="text" id="nome" name="nome" class="form-control" placeholder="Nome" value="">
-						<input type="text" id="sobrenome" name="sobrenome" class="form-control" placeholder="Sobrenome" value="">
-						<div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
+	<div class="container">
+		<form class="form-horizontal col-sm-offset-4 col-sm-4" action="" id="perfilForm" method="POST" role="form" enctype="multipart/form-data">
+			<div class="row" id="image-cropper">
+				<label for="ImgInput" id="profileIMG">
+					<img class="cropit-preview img-responsive img-thumbnail center-block" id="imagemPerfil">
+				</label>	
+									
+					<div class="slider-wrapper input-group">
+						<div class="input-group-addon"><span class="glyphicon glyphicon-minus-sign"></span></div>
+						<input type="range" class="cropit-image-zoom-input form-control"/>
+						<div class="input-group-addon"><span class="glyphicon glyphicon-plus-sign"></span></div>
 					</div>
+				
+				<input type="file" id="ImgInput" class="cropit-image-input" />
+			</div>				
+			<div class="row">
+				<div class="input-group" id="group-nome">
+					<input type="text" id="nome" name="nome" class="form-control" placeholder="Nome" value="">
+					<input type="text" id="sobrenome" name="sobrenome" class="form-control" placeholder="Sobrenome" value="">
+					<div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
 				</div>
-				<div class="row" id="sandbox-container">
-						<div class="input-group date" id="group-data">
-							<input type="text" class="form-control" id="data" name="dataN" placeholder="Data de Nascimento" aria-describedby="addon2" required  value="">
-							<div class="input-group-btn" id="addon2"><button type="button" class="btn btn-default" id="btn-data" data-toggle="popover" data-trigger="hover" data-container="body" data-placement="right" data-content="Clique aqui para escolher a data."><span class="glyphicon glyphicon-calendar"></span></button></div>
-							<select class="form-control" id="sexo">
-								<option value="null">Sexo</option>
-								<option value="F">Feminino</option>
-								<option value="M">Masculino</option>
-							</select>
-						</div>
-				</div>
-				<div class="row">
-					<div class="input-group">
-						<select class="form-control" name="estados" id="estados">
-						</select>
-						<select class="form-control" name="cidades" id="cidades">
-							<option value="null">Escolha uma Cidade</option>
-						</select>
-					</div>
-				</div>
-				<div class="row">
-					<button id="salvar" class="btn btn-success btn-block" type="submit" autocomplete="off" data-loading-text="Registrando ..." >Salvar</button>
-				</div>	
-				<div id="sucessoPerfil" class="row alert alert-success" role="alert">
-					<p id="sucessoText"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><strong> Perfil</strong> salvo com sucesso.</p>
-				</div>
-				<div id="erroC" class="row alert alert-danger alert-dismissible" role="alert">
-					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<p id="erroTextP"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Ops.. Ocorreu um <strong>erro</strong>. Tente Novamente.</p>
-				</div>				
 			</div>
-		</div>
+			<div class="row" id="sandbox-container">
+					<div class="input-group date" id="group-data">
+						<input type="text" class="form-control" id="data" name="dataN" placeholder="Data de Nascimento" aria-describedby="addon2" required  value="">
+						<div class="input-group-btn" id="addon2"><button type="button" class="btn btn-default" id="btn-data" data-toggle="popover" data-trigger="hover" data-container="body" data-placement="right" data-content="Clique aqui para escolher a data."><span class="glyphicon glyphicon-calendar"></span></button></div>
+						<select class="form-control" id="sexo">
+							<option value="null">Sexo</option>
+							<option value="F">Feminino</option>
+							<option value="M">Masculino</option>
+						</select>
+					</div>
+			</div>
+			<div class="row">
+				<div class="input-group">
+					<select class="form-control" name="estados" id="estados">
+					</select>
+					<select class="form-control" name="cidades" id="cidades">
+						<option value="null">Escolha uma Cidade</option>
+					</select>
+				</div>
+			</div>
+			<div class="row">
+				<button id="salvar" class="btn btn-success btn-block" type="submit" autocomplete="off" data-loading-text="Registrando ..." >Salvar</button>
+			</div>	
+			<div id="sucessoPerfil" class="row alert alert-success" role="alert">
+				<p id="sucessoText"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><strong> Perfil</strong> salvo com sucesso.</p>
+			</div>
+			<div id="erroC" class="row alert alert-danger alert-dismissible" role="alert">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<p id="erroTextP"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Ops.. Ocorreu um <strong>erro</strong>. Tente Novamente.</p>
+			</div>				
+		
+		</form>
+	</div>
 </div>
+
 
 <!-- jQuery (necessario para os plugins Javascript Bootstrap) -->
 <script src="js/jquery.min.js"></script>

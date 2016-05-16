@@ -41,72 +41,76 @@ if(isset($_GET['logout'])){
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+      <button type="button" id="menu_toggle" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-	<img alt="Brand" id="brand" class="img-responsive img-circle" src="pictures/perfil.png" width="54">
+	<img alt="Brand" id="brand" class="img-responsive img-circle" width="54">
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="perfil" id="perfil">Amanda Andrade</a></li>
+        <li><a href="perfil" id="nomePerfil"></a></li>
       </ul>
+
       <ul class="nav navbar-nav navbar-right">
-		<li><a href="inicial"><span class="glyphicon glyphicon-home"></span>&nbsp; Home</a></li>
-		<li><a href="postar"><span class="glyphicon glyphicon-camera"></span>&nbsp; Postar</a></li>
+		<li><a href="inicial.php"><span class="glyphicon glyphicon-home"></span>&nbsp; Home</a></li>
+		<li ><a id="icone_postar"><span class="glyphicon glyphicon-camera"></span>&nbsp; Postar</a></li>
 		<li><a href="amigos"><span class="glyphicon glyphicon-user"></span>&nbsp; Amigos</a></li>
-		<li><a href="novidades"><span class="glyphicon glyphicon-question-sign"></span>&nbsp; Novidades&nbsp;<span class="badge">5</span></a></li>
-		<li><a href="pesquisa"><span class="glyphicon glyphicon-search"></span>&nbsp; Pesquisa</a></li>
-		<li><a href="configuracoes"><span class="glyphicon glyphicon-cog"></span>&nbsp; Configurações</a></li>
+		<li><a href="novidades"><span class="glyphicon glyphicon-exclamation-sign"></span>&nbsp; Novidades&nbsp;<span class="badge">5</span></a></li>
+		<li><a href="pesquisar"><span class="glyphicon glyphicon-search"></span>&nbsp; Pesquisar</a></li>
+		<li><a href="perfil.php"><span class="glyphicon glyphicon-edit"></span>&nbsp; Editar Perfil</a></li>
 		<li><a href='inicial.php?logout'><span class="glyphicon glyphicon-log-in"></span>&nbsp; Sair</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
-<div class="row" id="template">
-	<div class="container-fluid col-sm-6" id="parte1">
-		<div class="row">
-			<div class="col-sm-8">
-				<a href="#" class="thumbnail">
-					<img alt="publicacao" id="imagem" class="img-responsive center-block" src="pictures/background2.png">
-					<figcaption>
-						<h5></br></br>Gostei muito de conhecer o parque do Pequeno Príncipe, tudo muito fofo e realmente infantil. Espero algum dia levar minhas crianças pra conhecer tamanha beleza e simplicidade, pois como diz a raposa: "O essencial é invisível aos olhos." Livro excelente, recomendo!</h5>
-					</figcaption>
-				</a>
-			</div>
-			<div class="col-sm-4" id="post">
-					<img alt="Brand" id="foto" class="img-responsive img-thumbnail" src="pictures/perfil1.png">
-					<span class="btn glyphicon glyphicon-star"></span><span class="badge">5</span>
-					<span id="comentarioBTN" class="btn glyphicon glyphicon-pencil"></span><span class="badge">5</span>
-			</div>
-			<div class="container-fluid col-sm-12 col-xs-12" id="comentarios">
-				<div class="row">
-						<div class="media">
-							<div class="media-left">
-								<a href="#">
-								<img alt="Brand" id="perfilComent" class="media-object img-responsive img-thumbnail" src="pictures/perfil1.png">
-								</a>
-							</div>
-							<div class="media-body">
-								<p> This is um comentário 
-								This is um comentário </p>
-							</div>
-						</div>
-				</div>
-			</div>
+
+<form class="form-horizontal col-sm-4 col-xs-12" id="novo_post" action="" method="POST" role="form" enctype="multipart/form-data">	
+	<div class="row" id="image-cropper">
+		<label for="ImgInput" id="profileIMG">
+			<img class="cropit-preview img-responsive img-thumbnail center-block" id="imagemPerfil">
+		</label>		
+		<div class="slider-wrapper input-group" id="zoom">
+			<div class="input-group-addon"><span class="glyphicon glyphicon-minus-sign"></span></div>
+			<input type="range" class="cropit-image-zoom-input form-control"/>
+			<div class="input-group-addon"><span class="glyphicon glyphicon-plus-sign"></span></div>
 		</div>
+		
+		<input type="file" id="ImgInput" class="cropit-image-input"/>
+	</div>		
+
+	<input type="text" class="form-control" id="legenda" placeholder="Legenda"></input> 
+	
+	<div class="row">
+		<button id="postar" class="btn btn-success btn-block" type="submit" autocomplete="off" data-loading-text="Postando..." >Postar</button>
 	</div>
 	
-</div>
+	<div id="sucessoPostar" class="row alert alert-info" role="alert">
+		<p id="sucessoText"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><strong> Postagem</strong> realizada com sucesso.</p>
+	</div>
+	<div id="erroC" class="row alert alert-danger alert-dismissible" role="alert">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<p id="erroTextP"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Ops.. Ocorreu um <strong>erro</strong>. Tente Novamente.</p>
+	</div>	
+	
+	<a id="cancelar" > <span class="glyphicon glyphicon-option-horizontal"></span></a>
+
+
+</form>
+
+<div id="black" class="col-sm-12"></div>
+<div id="publicacoes"></div>
+
 	
 
 <!-- jQuery (necessario para os plugins Javascript Bootstrap) -->
 <script src="js/jquery.min.js"></script>
-<script src="js/jquery-1.12.0.min.js"></script>
+<script src="js/jquery-1.7.js"></script>
 <script src="js/jquery-2.2.3.js"></script>
 <script src="js/bootstrap.js"></script>
+<script src="js/jquery.cropit.js"></script>
 <script src="js/inicial.js"></script>
 
 

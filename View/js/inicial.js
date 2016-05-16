@@ -46,14 +46,17 @@ $(document).ready(function(){
 	});
 	
 	$(document).on("click",'.enviar',function(){
-		var legenda = $(this).val();
+		var div_parent = $(this).parent();
+		var div_parent_parent = div_parent.parent();
+		var div_children = div_parent_parent.children(".comentario");
+		var comentario = div_children.val();
 		
-		$.post("../Controller/InicialController-handler.php", {texto: legenda, funcao: 'comentar'},  
+		var postagem_id = div_parent.attr('id');
+		
+		$.post("../Controller/InicialController-handler.php", {texto: comentario, postagem_id: postagem_id,  funcao: 'comentar'},  
 			function(result){   
 				if(result == true){
-					
-				}else{
-					alert("Ocorreu um erro tente novamente");
+					getPosts(5);
 				}
 			});
 		

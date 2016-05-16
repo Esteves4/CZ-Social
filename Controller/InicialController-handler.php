@@ -14,11 +14,15 @@ if (getenv("REQUEST_METHOD") == "GET"){
 
 		
 		
-		$publicacoes = $control->getPosts($mural_id, $quantidade);
+		$publicacoes = $control->getPosts($mural_id, $id, $quantidade);
 		
 		
-		while($row = mysql_fetch_array($publicacoes) ){
-			$fotoPATH = $control->getFotoPerfil($email);
+		while($row = mysql_fetch_array($publicacoes)){
+			$email = $control->getEmail($row['mural_id']);
+			$id_conta = $control->getID($email);
+			
+			
+			$fotoPATH = $control->getFotoPerfil_conta($id_conta);
 			$imgSRC = substr($fotoPATH,31);
 			
 			$fotoPATH_2 = $control->getFotoPost($row['foto_id']);
@@ -27,10 +31,15 @@ if (getenv("REQUEST_METHOD") == "GET"){
 			$comentarios = $control->getComentarios($row['publicacao_id']);
 			$comentarios_div = "";
 			
+			
+			
+			$nome = $control->getNome($email);
+			$sobrenome = $control->getSobrenome($email);
+			
 			while($row2 = mysql_fetch_array($comentarios)){
 				global $comentarios_div;
 				$conta_id_comentario = $row2['conta_id'];
-				$fotoPATH_3 = $control->getFotoPerfilComentario($conta_id_comentario);
+				$fotoPATH_3 = $control->getFotoPerfil_conta($conta_id_comentario);
 				$imgSRC_3= substr($fotoPATH_3,31);
 				
 				$comentarios_div .= '<div class="media">
@@ -51,7 +60,7 @@ if (getenv("REQUEST_METHOD") == "GET"){
 				<div class="col-sm-12 col-xs-12" id="postagem">
 					<a href="#">
 						<img alt="Brand" id="foto" class="img-responsive img-circle" src='. $imgSRC .'>
-						<p id="usuarioPost"> Lucas Esteves </p>
+						<p id="usuarioPost">'. $nome . $sobrenome .'  </p>
 					</a>
 					<a href="#" class="thumbnail">
 						<img alt="publicacao" id="imagem" class="img-responsive center-block" src='. $imgSRC_2 .'>
@@ -70,20 +79,14 @@ if (getenv("REQUEST_METHOD") == "GET"){
 					
 					</div>
 					<div class="input-group" id="group-comentario">
-						<input type="text" class="form-control" placeholder="Insira seu comentário"></input>
-						<div class="input-group-btn" id="addon2"><button type="button" class="btn btn-default enviar" id="btn-comentario"><span class="glyphicon glyphicon-send"></span></button></div>
+						<input type="text" class="form-control comentario" placeholder="Insira seu comentário"></input>
+						<div class="input-group-btn" id='. $row['publicacao_id'].'><button type="button" class="btn btn-default enviar" id="btn-comentario"><span class="glyphicon glyphicon-send"></span></button></div>
 					</div>
 				</div>
 			</div> ';
 		}
-
-		
-		
-		
-		
+	
 	}
-	
-	
 	
 }
 
@@ -123,7 +126,7 @@ if (getenv("REQUEST_METHOD") == "POST"){
 
 		
 		
-		$resultado = $control->getPosts($mural_id, $quantidade);
+		$resultado = $control->getPosts($mural_id, $id, $quantidade);
 
 		
 		while($row = mysql_fetch_array($resultado) ){
@@ -196,9 +199,7 @@ if (getenv("REQUEST_METHOD") == "POST"){
 		
 		
 	}
-	
-	
-	
+		
 	if($_POST['funcao'] == 'postar'){
 		$texto = mysql_real_escape_string($_POST['texto']);
 		$imagem = $_POST['imagem'];
@@ -215,6 +216,20 @@ if (getenv("REQUEST_METHOD") == "POST"){
 		
 		echo $temp;
 	}
+
+	if($_POST['funcao'] == 'comentar'){
+		$texto = mysql_real_escape_string($_POST['texto']);
+		$postagem_id = $_POST['postagem_id'];
+		
+		if( strlen($texto) == 0){
+			return false;
+		}
+			
+		$temp = $control->comentar($postagem_id, $texto, $id);
+		
+		echo $temp;
+	}
+	
 }
 
 ?>

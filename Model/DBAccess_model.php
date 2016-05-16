@@ -30,7 +30,7 @@ class DBAccess{
 	}
 	
 	public function adicionaComentario($comentario, $id_conta, $id_publicacao){
-		$resultado = mysql_query("INSERT INTO comentarios(comentario,data_criacao,conta_id, publicacao_id) VALUES('$comentario',curdate(),'$id_conta', '$id_publicacao' )");
+		$resultado = mysql_query("INSERT INTO comentarios(comentario,data_criacao,conta_id, publicacao_id) VALUES('$comentario',NOW(),'$id_conta',". intval($id_publicacao) .")");
 		
 		return $resultado;
 	}
@@ -53,17 +53,18 @@ class DBAccess{
 		return $resultado;
 	}
 	
+	public function adicionaPublicacao($mural, $texto, $id_foto){
+		$resultado = mysql_query("INSERT INTO publicacoes(mural_id, texto, foto_id, data_criacao) VALUES('$mural', '$texto', '$id_foto', NOW())");
+		
+		return $resultado;
+	}
+	
 	private function criaMural($conta){
 		$resultado = mysql_query("INSERT INTO murais(conta_id) VALUES('$conta')");
 		
 		return $resultado;
 	}
 	
-	public function criaPublicacao($mural, $texto, $id_foto){
-		$resultado = mysql_query("INSERT INTO publicacoes(mural_id, texto, foto_id, data_criacao) VALUES('$mural', '$texto', '$id_foto', NOW())");
-		
-		return $resultado;
-	}
 	
 	public function emailExiste($email){
 		$resultado = mysql_query("SELECT email FROM contas WHERE email = '$email'");
@@ -147,6 +148,14 @@ class DBAccess{
 		return $row['estado_id'];
 	}
 	
+	public function getEmail($id_conta){
+		$resultado = mysql_query("SELECT email FROM contas WHERE conta_id = '$id_conta'");
+		
+		$row = mysql_fetch_assoc($resultado);
+		
+		return $row['email'];
+	}
+	
 	public function getCidadeID($id_perfil){
 		$resultado = mysql_query("SELECT endereco_id FROM perfis WHERE perfil_id = '$id_perfil'");
 		
@@ -206,6 +215,14 @@ class DBAccess{
 		return $row['conta_id'];
 	}
 	
+	public function getContaID($id_mural){
+		$resultado = mysql_query("SELECT conta_id FROM murais WHERE mural_id = '$id_mural'");
+		
+		$row = mysql_fetch_assoc($resultado);
+		
+		return $row['conta_id'];
+	}
+	
 	public  function getAtivarEmail($id){
 		$resultado = mysql_query("SELECT email FROM ativar WHERE ativar_id = '$id'");
 		
@@ -226,8 +243,8 @@ class DBAccess{
 		return $resultado;
 	}
 	
-	public function getPublicacoes($mural_id, $quantidade){
-		$resultado = mysql_query("SELECT publicacao_id, texto, foto_id FROM publicacoes WHERE mural_id = '$mural_id' ORDER BY data_criacao DESC LIMIT ". intval($quantidade) ."");
+	public function getPublicacoes($mural_id, $conta_id,$quantidade){
+		$resultado = mysql_query("SELECT publicacao_id, texto, foto_id, data_criacao, mural_id from publicacoes where mural_id = '$mural_id' union SELECT publicacao_id, texto, foto_id, data_criacao, C.mural_id FROM publicacoes JOIN (SELECT amigo_id, mural_id FROM (SELECT amigo_id FROM amigos where conta_id = '$conta_id')A JOIN (SELECT mural_id, conta_id FROM murais)B ON A.amigo_id = B.conta_id)C ON publicacoes.mural_id = C.mural_id ORDER BY data_criacao DESC LIMIT ". intval($quantidade) ."");
 		
 		return $resultado;
 	}

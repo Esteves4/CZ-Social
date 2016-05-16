@@ -83,11 +83,11 @@ p{
 }
 
 .glyphicon-heart{
-	color: blue;
+	color: #4374e0;
 }
 
 .glyphicon-heart:hover{
-	color: blue;
+	color: #4374e0;
 }
 
 #sucessoPostar, #erroC{
@@ -199,7 +199,7 @@ p{
 
 .cropit-preview {
   /* You can specify preview size in CSS */
-  width: 385.6px;
+  width: 387px;
   height: 289.2px;
 }
 

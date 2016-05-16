@@ -39,7 +39,7 @@ class InicialController{
 		return  $caminho;
 	}
 	
-	public function getFotoPerfilComentario($id_conta){
+	public function getFotoPerfil_conta($id_conta){
 		$id_perfil = $this->db_model->getPerfilID_conta($id_conta);
 		
 		$id_foto = $this->db_model->getFotoPerfilID($id_perfil);
@@ -55,6 +55,15 @@ class InicialController{
 		return  $caminho;
 	}
 	
+	public function getEmail($mural_id){
+		$id_conta = $this->db_model->getContaID($mural_id);
+	
+		$temp = $this->db_model->getEmail($id_conta);
+		
+		return  $temp;
+	}
+	
+	
 	public function checaPerfil($email){
 		$temp = $this->db_model->perfilExiste($email);
 		
@@ -69,13 +78,19 @@ class InicialController{
 	
 	public function publicar($mural, $texto, $path){
 		$id_foto = $this->db_model->adicionaFotos($path);		
-		$temp = $this->db_model->criaPublicacao($mural, $texto, $id_foto);
+		$temp = $this->db_model->adicionaPublicacao($mural, $texto, $id_foto);
 		
 		return $temp;
 	}
 	
-	public function getPosts($mural_id, $quantidade){
-		$posts = $this->db_model->getPublicacoes($mural_id, $quantidade);
+	public function comentar($postagem_id, $texto, $conta_id){		
+		$temp = $this->db_model->adicionaComentario($texto, $conta_id, $postagem_id);
+		
+		return $temp;
+	}
+	
+	public function getPosts($mural_id, $conta_id, $quantidade){
+		$posts = $this->db_model->getPublicacoes($mural_id, $conta_id, $quantidade);
 
 		return $posts;
 	}

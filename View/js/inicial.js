@@ -73,7 +73,7 @@ $(document).ready(function(){
 	$('#cancelar').click(function() {
 		$('#black').hide();
 		$('#novo_post').animate({
-		  left: "-450px"
+		  left: "-560px"
 		}, 200);
 	});
 

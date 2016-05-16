@@ -14,179 +14,76 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 	
 	<!-- Css -->
-	<link rel="stylesheet" href="css/perfiluser.css">
+	<link rel="stylesheet" href="css/perfilUser.css">
 	
 	<!-- Fonte -->
-	<link href='https://fonts.googleapis.com/css?family=Lato:400,300,100,700,900' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Muli:400,400italic' rel='stylesheet' type='text/css'>
 	
 	<title> Perfil </title>
 </head>
 
 <body>
-<nav class="navbar navbar-default"  id= "barra">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-	<img alt="Brand" id="brand" class="img-responsive img-circle" src="pictures/perfil.png" width="54">
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li><a>Amanda Andrade</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-		<li><a href="inicial"><span class="glyphicon glyphicon-home"></span>&nbsp; Home</a></li>
-		<li><a href="postar"><span class="glyphicon glyphicon-camera"></span>&nbsp; Postar</a></li>
-		<li><a href="amigos"><span class="glyphicon glyphicon-user"></span>&nbsp; Amigos</a></li>
-		<li><a href="novidades"><span class="glyphicon glyphicon-exclamation-sign"></span>&nbsp; Novidades&nbsp;<span class="badge">5</span></a></li>
-		<li><a href="pesquisa"><span class="glyphicon glyphicon-search"></span>&nbsp; Pesquisa</a></li>
-		<li><a href="configuracoes"><span class="glyphicon glyphicon-edit"></span>&nbsp; Editar Perfil</a></li>
-		<li><a href="login"><span class="glyphicon glyphicon-log-in"></span>&nbsp; Sair</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-  <div id="perfil" class="col-sm-3">
-	<img id="foto_perfil" alt="foto_perfil" class="img-responsive img-circle" src="pictures/perfil.png">
-		<h3 id="Nome_Usuario"> Amanda Andrade</h3>
-		<div class="list-group">
-			<li class="list-group-item"><span class= "glyphicon glyphicon-user"></span>&nbsp; Feminino, 20 anos</li>	
-			<li class="list-group-item"><span class= "glyphicon glyphicon-map-marker"></span>&nbsp; Mora em <a href="cidade">Fortaleza/CE</a></li>	
-		
+	<nav class="navbar navbar-default"  id= "barra">
+	  <div class="container-fluid">
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>                        
+		  </button>
+		<img alt="Brand" id="brand" class="img-responsive img-circle" src="" width="54">
 		</div>
-		
-		
-	
-	</div>
-
-	<div class="row" id="template" style="margin-left: 30%;margin-right:10%">
-		<div class="container-fluid col-sm-12" id="">
-			
-			
-			<div class="row"  id="1">>
-				<div class="col-sm-10">
-					<a href="#" class="thumbnail">
-						<img alt="publicacao" id="imagem_post" class="img-responsive center-block" src="pictures/background41.png">
-						<figcaption>
-							<h5>Gostei muito de conhecer o parque do Pequeno Príncipe, tudo muito fofo e realmente infantil. Espero algum dia levar minhas crianças pra conhecer tamanha beleza e simplicidade, pois como diz a raposa: "O essencial é invisível aos olhos." Livro excelente, recomendo!</h5>
-						</figcaption>
-					</a>
-				</div>
-				<div class="col-sm-4" id="post">
-						<div class="col-sm-13">
-							<img alt="Brand" id="foto_2" class="img-responsive img-thumbnail" src="pictures/perfil.png"></img>
-						</div>	
-						<span class="btn glyphicon glyphicon-star"></span><span class="badge">5</span>
-						<span id="comentarioBTN" class="btn glyphicon glyphicon-pencil"></span><span class="badge">5</span>
-				</div>
-				<div class="container-fluid col-sm-12 col-xs-12" id="comentarios">
-						<div class="row">
-								<div class="media">
-									<div class="media-left">
-										<a href="#">
-											<img alt="Brand" id="perfilComent" class="media-object img-responsive img-thumbnail" src="pictures/perfil.png">
-										</a>
-									</div>
-									<div class="media-body">
-										<p> This is um comentário 
-										This is um comentário </p>
-									</div>
-								</div>
-						</div>
-					
-				</div>	
-	
-			</div>
-			<div class="row" id="2">
-				<div class="col-sm-10">
-					<a href="#" class="thumbnail">
-						<img alt="publicacao" id="imagem_post" class="img-responsive center-block" src="pictures/background37.png">
-						<figcaption>
-							<h5>Gostei muito de conhecer o parque do Pequeno Príncipe, tudo muito fofo e realmente infantil. Espero algum dia levar minhas crianças pra conhecer tamanha beleza e simplicidade, pois como diz a raposa: "O essencial é invisível aos olhos." Livro excelente, recomendo!</h5>
-						</figcaption>
-					</a>
-				</div>
-				<div class="col-sm-4" id="post">
-					<div class="col-sm-13">
-						<img alt="Brand" id="foto_2" class="img-responsive img-thumbnail" src="pictures/perfil.png"></img>
-					</div>	
-					<span class="btn glyphicon glyphicon-star"></span><span class="badge">5</span>
-					<span id="comentarioBTN" class="btn glyphicon glyphicon-pencil"></span><span class="badge">5</span>
-				</div>
-				<div class="container-fluid col-sm-12 col-xs-12" id="comentarios">
-					<div class="row">
-							<div class="media">
-								<div class="media-left">
-									<a href="#">
-									<img alt="Brand" id="perfilComent" class="media-object img-responsive img-thumbnail" src="pictures/perfil.png">
-									</a>
-								</div>
-								<div class="media-body">
-									<p> This is um comentário 
-									This is um comentário </p>
-								</div>
-							</div>
-					</div>
-				</div>
-					
-				
-	
-			</div>
-			<div class="row" id="3">
-				<div class="col-sm-10">
-					<a href="#" class="thumbnail">
-						<img alt="publicacao" id="imagem_post" class="img-responsive center-block" src="pictures/background40.png">
-						<figcaption>
-							<h5>Gostei muito de conhecer o parque do Pequeno Príncipe, tudo muito fofo e realmente infantil. Espero algum dia levar minhas crianças pra conhecer tamanha beleza e simplicidade, pois como diz a raposa: "O essencial é invisível aos olhos." Livro excelente, recomendo!</h5>
-						</figcaption>
-					</a>
-				</div>
-				<div class="col-sm-2" id="post">
-					<div class="col-sm-13">
-						<img alt="Brand" id="foto_2" class="img-responsive img-thumbnail" src="pictures/perfil.png"></img>
-					</div>	
-					<span class="btn glyphicon glyphicon-star"></span><span class="badge">5</span>
-					<span id="comentarioBTN" class="btn glyphicon glyphicon-pencil"></span><span class="badge">5</span>
-				</div>
-				<div class="container-fluid col-sm-12 col-xs-12" id="comentarios">
-					<div class="row">
-							<div class="media">
-								<div class="media-left">
-									<a href="#">
-									<img alt="Brand" id="perfilComent" class="media-object img-responsive img-thumbnail" src="pictures/perfil.png">
-									</a>
-								</div>
-								<div class="media-body">
-									<p> This is um comentário 
-									This is um comentário </p>
-								</div>
-							</div>
-						</div>
-					</div
-				</div>	
-				
-	
-			</div>
-		
+		<div class="collapse navbar-collapse" id="myNavbar">
+		  <ul class="nav navbar-nav">
+			<li><a id="nomePerfil"></a></li>
+		  </ul>
+		  <ul class="nav navbar-nav navbar-right">
+			<li><a href="inicial"><span class="glyphicon glyphicon-home"></span>&nbsp; Home</a></li>
+			<li><a href="amigos"><span class="glyphicon glyphicon-user"></span>&nbsp; Amigos</a></li>
+			<li><a href="novidades"><span class="glyphicon glyphicon-exclamation-sign"></span>&nbsp; Novidades&nbsp;<span class="badge">5</span></a></li>
+			<li><a href="pesquisa"><span class="glyphicon glyphicon-search"></span>&nbsp; Pesquisa</a></li>
+			<li><a href="configuracoes"><span class="glyphicon glyphicon-edit"></span>&nbsp; Editar Perfil</a></li>
+			<li><a href="login"><span class="glyphicon glyphicon-log-in"></span>&nbsp; Sair</a></li>
+		  </ul>
 		</div>
-	
+	  </div>
+	</nav>
+
+	<div id="perfil" class=" col-sm-12">
+		<div class="col-sm-2 col-sm-offset-3 col-xs-12">
+			<img id="foto_perfil" alt="foto_perfil" class="img-responsive img-circle center-block" src="pictures/perfil.png">
+		</div>
+		<div class="col-sm-3 col-xs-12" id="informacoes_perfil">
+			<table class="table">
+				<thead>
+				  <tr>
+					<h3 id="Nome_Usuario"></h3>
+				  </tr>
+				</thead>
+				<tbody>
+				  <tr>
+					<td><span class= "glyphicon glyphicon-user"></span>&nbsp; Feminino</td>
+					<td><span class= "glyphicon glyphicon-calendar"></span>&nbsp; 20/11/1996</td>
+					<td><span class= "glyphicon glyphicon-map-marker"></span>&nbsp; Fortaleza - CE</td>
+				  </tr>
+				</tbody>	
+			</table>
+		</div>
 	</div>
+	
+	<div id="publicacoes"></div>
+	
+
+	
 	
 
 	
 <!-- jQuery (necessario para os plugins Javascript Bootstrap) -->
-<script src="js/jquery-2.2.3.js"></script>
-<script src="js/bootstrap.js"></script>
-
 <script src="js/jquery.min.js"></script>
 <script src="js/jquery-1.12.0.min.js"></script>
 <script src="js/jquery-2.2.3.js"></script>
 <script src="js/bootstrap.js"></script>
-<script src="js/perfil.js"></script>
+<script src="js/perfilUser.js"></script>
 
 </body>
 </html>

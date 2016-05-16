@@ -1,3 +1,4 @@
+
 body {
 	background-color: lightgray;
 	background-repeat: no-repeat;
@@ -6,9 +7,18 @@ body {
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+	font-family: 'Muli', sans-serif;
 }
 
- .navbar-inverse{
+p{
+	margin: 0px;
+}
+
+.navbar{
+	margin-bottom: 0px;
+}
+
+.navbar-inverse{
 	background-image: linear-gradient(to bottom,#fff 0,#FEFEFE 100%);
 	border-color: black;
 	border-radius:0px;
@@ -17,117 +27,14 @@ body {
 
 .navbar-default .navbar-nav > li > a{
 	color: black;
-	font-family: arial;
 	font-size:15px;
-}
-.media-body{
-	background-color: white;
-	padding: 20px;
-}
-
-
-#imagem{
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	width: 100%;
-	height: 100%;
-}
-
-#post{
-	margin-top:20px;
-	height: 400px;
-	width: 130px;
- }
-
- 
- #perfil{
-	background-color: #FFF;
-	border: 1px solid #808080;
-	box-shadow: 1px 1px 10px #000;
-	position: absolute;
-	top: 80px%;
-	max-width: 350px;
-	min-width: auto;
-	max-height: 650px;
-	min-height: auto;
-	width: 100%;
-	background-size: 100% auto;
-	background-repeat: no-repeat;
-	height: 550px;
-	margin-left: 20px;
-	
- }
-  
-#foto{
-	position: absolute;
-	top: 0px;
-	left:0px;
-	min-height: 100px;
-	min-width: 100px;
-	max-height: 100px;
-	max-width: 100px;
-}
-#foto_perfil{
-	width: 100%;
-	max-width: 150px;
-	min-width: auto;
-	background-size: 100% auto;
-	background-repeat: no-repeat;
-	position: relative;
-	margin-top: 10px;
-	overflow: hidden;
-	height: 150px;
-	clear: both;
-	top: 2%;
-	left: 25%;
-
-	
-	
-	
-}
-
-#icones{
-	position: absolute;
-	display: inline-block;
-	top:100px;
-	left:10px;
-	height:80px;
-	width: 100px;
-}
- 
- #Nome_Usuario{
-	
-	position: relative;
-    left: auto;
-    top: auto;
-}
-
-h3{
-	text-align: center;
-}
- 
-
-
-figure.foto-legenda figcaption{
-	opacity: 0;
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	background-color: rgba(0,0,0,0.6);
-	color: white;
-	font-weight: bold;
-	font-family: calibri;
-	width: 100%;
-	height: 100%;
-	padding: 10px;
-	box-sizing: border-box;
-	transition: opacity 1s;
 }
 
 
 .thumbnail{
 	position: inherit;
+	padding: 0px;
+	margin-bottom: 0px;
 }
 
 .h5{
@@ -143,7 +50,6 @@ figure.foto-legenda figcaption{
 	background-color: rgba(0,0,0,0.6);
 	color: white;
 	font-weight: bold;
-	font-family: calibri;
 	width: 100%;
 	height: 100%;
 	box-sizing: border-box;
@@ -163,21 +69,160 @@ figure.foto-legenda figcaption{
 
 }
 
-
-#barra{
-	
-	
-	
+.media{
+	margin-bottom: 5px;
 }
+
+.media-body{
+	background-color: white;
+	vertical-align: middle;
+}
+
+.row{
+	padding: 10px;
+}
+
+.glyphicon-heart{
+	color: #4374e0;
+}
+
+.glyphicon-heart:hover{
+	color: #4374e0;
+}
+
+#sucessoPostar, #erroC{
+	display: none;
+	margin-left: -5px;
+	margin-right: -5px;
+}
+
+#curtir, #comentar{
+	padding: 5px;
+	margin: 5px;
+}
+
+
+#black{
+	height:100vh;
+	background-color: rgba(0,0,0,0.6);
+	z-index: 10000;
+	display: none;
+	position: absolute;
+}
+
+#profileIMG{
+	display: block;
+	cursor: pointer;
+}
+
+#ImgInput{
+	display: none;
+}
+
+#zoom{
+	margin-left: 26px;
+	margin-right: 26px;
+}
+
+#cancelar{
+	float: right;
+	cursor: pointer;
+	color: black;
+}
+
+#icone_postar{
+	cursor: pointer;
+}
+
+#novo_post{
+	margin-top: 20px;
+	padding: 10px;
+	z-index: 100000;
+	background-color: rgb(255, 255, 255);
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	position: absolute;
+	left: -560px;
+}
+
+#brand{
+	margin: 2px;
+}
+
+#post{
+	margin-top:20px;
+	margin-bottom: 10px;
+}
+
+#inicial{
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#postagem{
+	padding-top: 10px;
+	background-color: rgb(255, 255, 255);
+	border: 1px solid #ddd;
+	border-radius: 5px;
+}
+
+#group-comentario{
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+#foto{
+	margin-bottom: 2px;
+	display: inline;
+	width: 65px;
+	height: 65px;
+}
+
+#usuarioPost{
+	color: black;
+	margin-left: 5px;
+	display: inline;
+}
+
 #perfilComent{
-	width: 70px;
-	height: 70px;
+	padding: 0px;
+	width: 40px;
+	height: 40px;
 }
 
 #comentarios{
-	height: 300px;
-	overflow: scroll;
-	background-color: rgba(0,0,0,0.6);
-	display: none;
-	margin-left: 15px;
+	display: none; /*  Ativar somente se ajeitar o bug dos posts .*/
+	height: 100px;
+	overflow: auto;
+}
+
+#foto_perfil{
+	width: 120px;
+	height: 120px;
+}
+
+#perfil{
+	margin-top: 10px;
+}
+
+h3{
+	margin-top: 0px;
+	margin-bottom: 0px;
+	text-align: center;
+	
+}
+
+#informacoes_perfil{
+	margin-top: 25px;
+}
+
+
+.list-group-item{
+	background-color: transparent;
+	border-color: transparent;
+}
+
+.list-group{
+	box-shadow: 0 1px 2px rgba(0,0,0,0);
+	
 }

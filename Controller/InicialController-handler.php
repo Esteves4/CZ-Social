@@ -15,9 +15,11 @@ if (getenv("REQUEST_METHOD") == "GET"){
 		
 		
 		$publicacoes = $control->getPosts($mural_id, $id, $quantidade);
-		
+		$contador = 1;
+		$quantidade_publicacoes = mysql_num_rows($publicacoes);
 		
 		while($row = mysql_fetch_array($publicacoes)){
+			global $contador;
 			$email = $control->getEmail($row['mural_id']);
 			$id_conta = $control->getID($email);
 			
@@ -31,10 +33,21 @@ if (getenv("REQUEST_METHOD") == "GET"){
 			$comentarios = $control->getComentarios($row['publicacao_id']);
 			$comentarios_div = "";
 			
-			
+			$quantidade_comentarios = mysql_num_rows($comentarios);
 			
 			$nome = $control->getNome($email);
 			$sobrenome = $control->getSobrenome($email);
+			
+			$curtir_id = $control->checaCurtir($row['publicacao_id'], $id);
+			$quantidade_curtidas = $control->getCurtidas($row['publicacao_id']);
+			
+			if($curtir_id != ''){
+				$elemento_curtir = '<span class="btn btn-lg glyphicon glyphicon-heart" id="curtir" ></span><span class="badge">'.$quantidade_curtidas.'</span>';
+			}else{
+				$elemento_curtir = '<span class="btn btn-lg glyphicon glyphicon-heart-empty" id="curtir" ></span><span class="badge">'.$quantidade_curtidas.'</span>';
+			}
+			
+			
 			
 			while($row2 = mysql_fetch_array($comentarios)){
 				global $comentarios_div;
@@ -54,36 +67,41 @@ if (getenv("REQUEST_METHOD") == "GET"){
 									</div>';
 			}
 			
+			if (($contador - 1)%3 == 0 or $contador == 1 ){ echo '<div class="row">'; };
 			
-			echo '
-			<div class="container-fluid col-sm-4" id="post">
-				<div class="col-sm-12 col-xs-12" id="postagem">
-					<a href="#">
-						<img alt="Brand" id="foto" class="img-responsive img-circle" src='. $imgSRC .'>
-						<p id="usuarioPost">'. $nome . ' ' . $sobrenome .'  </p>
-					</a>
-					<a href="#" class="thumbnail">
-						<img alt="publicacao" id="imagem" class="img-responsive center-block" src='. $imgSRC_2 .'>
-						<figcaption>
-							<h5></br></br>'. $row['texto'] .'</h5>
-						</figcaption>
-					</a>
-					
-					<span class="btn btn-lg glyphicon glyphicon-heart-empty" id="curtir" ></span><span class="badge">5</span>
-					<span class="btn btn-lg glyphicon glyphicon-comment" id="comentar" ></span><span class="badge">5</span>
-								
-					<div class="comentarios" id="comentarios">
-						
-							'. $comentarios_div .'
+			echo 
 				
-					
-					</div>
-					<div class="input-group" id="group-comentario">
-						<input type="text" class="form-control comentario" placeholder="Insira seu comentário"></input>
-						<div class="input-group-btn" id='. $row['publicacao_id'].'><button type="button" class="btn btn-default enviar" id="btn-comentario"><span class="glyphicon glyphicon-send"></span></button></div>
-					</div>
-				</div>
-			</div> ';
+					'<div class="container-fluid col-sm-4" id="post">
+						<div class="col-sm-12 col-xs-12" id="postagem">
+							<a href="#">
+								<img alt="Brand" id="foto" class="img-responsive img-circle" src='. $imgSRC .'>
+								<p id="usuarioPost">'. $nome . ' ' . $sobrenome .'  </p>
+							</a>
+							<a href="#" class="thumbnail">
+								<img alt="publicacao" id="imagem" class="img-responsive center-block" src='. $imgSRC_2 .'>
+								<figcaption>
+									<h5></br></br>'. $row['texto'] .'</h5>
+								</figcaption>
+							</a>
+							
+							'.$elemento_curtir.'
+							<span class="btn btn-lg glyphicon glyphicon-comment" id="comentar" ></span><span class="badge">'.$quantidade_comentarios.'</span>
+										
+							<div class="comentarios" id="comentarios">
+								
+									'. $comentarios_div .'
+						
+							
+							</div>
+							<div class="input-group" id="group-comentario">
+								<input type="text" class="form-control comentario" placeholder="Insira seu comentário"></input>
+								<div class="input-group-btn" id='. $row['publicacao_id'].'><button type="button" class="btn btn-default enviar" id="btn-comentario"><span class="glyphicon glyphicon-send"></span></button></div>
+							</div>
+						</div>
+					</div> ';
+			if($contador%3 == 0 or $contador == $quantidade_publicacoes){ echo '</div>'; };
+						
+			$contador++;
 		}
 	
 	}
@@ -226,6 +244,23 @@ if (getenv("REQUEST_METHOD") == "POST"){
 		}
 			
 		$temp = $control->comentar($postagem_id, $texto, $id);
+		
+		echo $temp;
+	}
+	
+	if($_POST['funcao'] == 'curtir'){
+		$postagem_id = $_POST['postagem_id'];
+			
+		$temp = $control->curtir($postagem_id, $id);
+		
+		echo $temp;
+	}
+	
+	if($_POST['funcao'] == 'descurtir'){
+		$postagem_id = $_POST['postagem_id'];
+
+		$curtir_id = $control->checaCurtir($postagem_id, $id);
+		$temp = $control->descurtir($curtir_id);
 		
 		echo $temp;
 	}

@@ -89,6 +89,18 @@ class InicialController{
 		return $temp;
 	}
 	
+	public function curtir($postagem_id, $conta_id){		
+		$temp = $this->db_model->adicionaCurtir($postagem_id, $conta_id);
+		
+		return $temp;
+	}
+	
+	public function descurtir($curtir_id){		
+		$temp = $this->db_model->apagaCurtir($curtir_id);
+		
+		return $temp;
+	}
+	
 	public function getPosts($mural_id, $conta_id, $quantidade){
 		$posts = $this->db_model->getPublicacoes($mural_id, $conta_id, $quantidade);
 
@@ -99,6 +111,18 @@ class InicialController{
 		$comments = $this->db_model->getComentarios($publicacao_id);
 
 		return $comments;
+	}
+	
+	public function getCurtidas($publicacao_id){
+		$temp = $this->db_model->getCurtidas($publicacao_id);
+
+		return $temp;
+	}
+	
+	public function checaCurtir($publicacao_id, $id_conta){
+		$temp = $this->db_model->checaCurtir($publicacao_id, $id_conta);
+
+		return $temp;
 	}
 }
 	

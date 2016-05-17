@@ -10,11 +10,12 @@ CREATE TABLE cidades (cidade_id int(11) NOT NULL AUTO_INCREMENT,cidade_nome varc
 create table perfis(perfil_id int primary key AUTO_INCREMENT, sexo char(1) not null, perf_foto int not null, endereco_id int not null, foreign key(perf_foto) references fotos(foto_id), foreign key(endereco_id) references cidades(cidade_id));
 create table contas(conta_id int primary key AUTO_INCREMENT, nome varchar(20), sobrenome varchar(20), data_nascimento date not null, email varchar(50) unique not null, senha varchar(32) not null, perfil_id int, status char(1) DEFAULT 'F', foreign key(perfil_id) references perfis(perfil_id));
 create table murais(mural_id int primary key AUTO_INCREMENT, conta_id int not null, foreign key(conta_id) references contas(conta_id));
-create table publicacoes(publicacao_id int primary key AUTO_INCREMENT, mural_id int not null, texto varchar(200), foto_id int, data_criacao datetime not null, foreign key(foto_id) references fotos(foto_id), foreign key(mural_id) references murais(mural_id));
+create table publicacoes(publicacao_id int primary key AUTO_INCREMENT, mural_id int not null, texto varchar(200), foto_id int, data_criacao datetime not null, curtidas int, foreign key(foto_id) references fotos(foto_id), foreign key(mural_id) references murais(mural_id));
 create table comentarios (comentario_id int primary key AUTO_INCREMENT, comentario varchar(200) not null, data_criacao datetime not null, conta_id int not null, publicacao_id int not null, foreign key(conta_id) references contas(conta_id), foreign key(publicacao_id) references publicacoes(publicacao_id));
 create table amigos(conta_id int, amigo_id int, data_amizade date, primary key(conta_id,amigo_id), foreign key(conta_id) references contas(conta_id), foreign key(amigo_id) references contas(conta_id));
 create table reset(reset_id varchar(32), email varchar(50), primary key(reset_id,email),foreign key(email) references contas(email));
 create table ativar(ativar_id varchar(32), email varchar(50), foreign key(email) references contas(email));
+create table curtidas(curtida_id int primary key AUTO_INCREMENT, publicacao_id int, conta_id int, foreign key(publicacao_id) references publicacoes(publicacao_id), foreign key(conta_id) references contas(conta_id));
 
 
 /*Data for the table estados */

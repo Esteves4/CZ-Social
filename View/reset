@@ -26,7 +26,7 @@
 		<div class="container">
 
 			<form class="form-horizontal col-sm-offset-4 col-sm-4" action="" id="resetForm" method="POST" role="form">
-				<a href="login">
+				<a href="login.php">
 					<img alt="Brand" id="login" class="img-responsive center-block" src="pictures/vdc5.png" width="200" height="200">
 				</a>
 				<div class="row">

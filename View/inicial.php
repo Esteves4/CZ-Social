@@ -86,16 +86,11 @@ if(isset($_SESSION['email']) == true){
 		<label id="profileIMG">
 			<img class="cropit-preview img-responsive img-thumbnail center-block" id="imagemPerfil">
 		</label>		
-
 		
-		<label for="ImgInput" class="row" id="upload">
-			<span class="btn btn-warning form-control">Fazer upload de foto.</span>
-		</label>
-	
 		<div class="slider-wrapper input-group" id="zoom">
-			<div class="input-group-addon"><span class="glyphicon glyphicon-minus-sign"></span></div>
+			<div class="input-group-addon"><span class="glyphicon glyphicon-zoom-out"></span></div>
 			<input type="range" class="cropit-image-zoom-input form-control"/>
-			<div class="input-group-addon"><span class="glyphicon glyphicon-plus-sign"></span></div>
+			<div class="input-group-addon"><span class="glyphicon glyphicon-zoom-in"></span></div>
 			
 		</div>
 		
@@ -117,13 +112,17 @@ if(isset($_SESSION['email']) == true){
 				<p id="erroTextP"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Ops.. Ocorreu um <strong>erro</strong>. Tente Novamente.</p>
 	</div>	
 	
-	<a id="cancelar" > <span class="glyphicon glyphicon-option-horizontal"></span></a>
+	<a id="cancelar" > <span class="glyphicon glyphicon-remove"></span></a>
 
 
 </form>
 
 <div id="black" class="col-sm-12"></div>
 <div id="publicacoes"></div>
+
+
+<span class="btn btn-info center-block" id="carregar_posts">Carregar mais publicações.</span>
+
 
 	
 

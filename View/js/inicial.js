@@ -18,9 +18,11 @@ var atualizaFoto = function(){
 
 
 $(document).ready(function(){
+	var quantidade_posts = 6;
+	
 	nomeSobrenome();
 	atualizaFoto();
-	getPosts(5);
+	getPosts(quantidade_posts);
 	
 	$('#comentarioBTN').click(function(){
 		$('#comentarios').toggle();
@@ -35,14 +37,57 @@ $(document).ready(function(){
 		
 	});
 	
+	
+	$(window).scroll(function() {
+	   
+	   if($(window).scrollTop() + $(window).height() == $(document).height()) {
+		   $('#carregar_posts').css( "display", "block" );
+	   }else{
+			$('#carregar_posts').css( "display", "none" );
+	}
+	   
+	});
+	
+	$('#profileIMG').dblclick(function() {
+		$('#ImgInput').click();
+	});
+	
 	$(document).on("click",'.glyphicon-heart-empty',function(){
 		$(this).toggleClass('glyphicon-heart-empty');
 		$(this).toggleClass('glyphicon-heart');
+		
+		
+		var div_parent = $(this).parent();
+		var div_children = div_parent.children(".input-group");
+		var div_children_children = div_children.children(".input-group-btn");
+		
+		var postagem_id = div_children_children.attr('id');
+
+		$.post("../Controller/InicialController-handler.php", {postagem_id: postagem_id, funcao: 'curtir'},  
+			function(result){ 
+				if(result == true){
+					getPosts(quantidade_posts);
+				}
+			});
 	});
 	
 	$(document).on("click",'.glyphicon-heart',function(){
 		$(this).toggleClass('glyphicon-heart-empty');
 		$(this).toggleClass('glyphicon-heart');
+		
+		
+		var div_parent = $(this).parent();
+		var div_children = div_parent.children(".input-group");
+		var div_children_children = div_children.children(".input-group-btn");
+		
+		var postagem_id = div_children_children.attr('id');
+
+		$.post("../Controller/InicialController-handler.php", {postagem_id: postagem_id, funcao: 'descurtir'},  
+			function(result){
+				if(result == true){
+					getPosts(quantidade_posts);
+				}
+			});
 	});
 	
 	$(document).on("click",'.enviar',function(){
@@ -56,7 +101,7 @@ $(document).ready(function(){
 		$.post("../Controller/InicialController-handler.php", {texto: comentario, postagem_id: postagem_id,  funcao: 'comentar'},  
 			function(result){   
 				if(result == true){
-					getPosts(5);
+					getPosts(quantidade_posts);
 				}
 			});
 		
@@ -65,10 +110,11 @@ $(document).ready(function(){
 	});
 	
 	$(document).on('click', '.glyphicon-comment', function(){
-		var divParent = $(this).parent();
-		var divChildren = divParent.children("div.comentarios");
-		divChildren.toggle();
+		var div_parent = $(this).parent();
+		var div_children = div_parent.children("div.comentarios");
+		div_children.toggle();
 	});
+	
 	
 	$('#cancelar').click(function() {
 		$('#black').hide();
@@ -93,7 +139,7 @@ $(document).ready(function(){
 					window.setTimeout(function(){
 						$('#cancelar').trigger('click');
 						$('#sucessoPostar').hide();
-						getPosts(5);
+						getPosts(quantidade_posts);
 					}, 2000);
 					
 				}else{
@@ -103,6 +149,13 @@ $(document).ready(function(){
 			
 		return false;
 	});
+	
+	$('#carregar_posts').click(function() {
+		quantidade_posts += 6;
+		getPosts(quantidade_posts);
+	});
+	
+
 	
 	$('#image-cropper').cropit();
 	$('#image-cropper').cropit('imageSrc', "pictures/landscape.jpg");

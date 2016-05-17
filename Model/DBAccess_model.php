@@ -35,6 +35,14 @@ class DBAccess{
 		return $resultado;
 	}
 	
+	
+	public function adicionaCurtir($id_publicacao, $id_conta){
+		$resultado = mysql_query("INSERT INTO curtidas(conta_id, publicacao_id) VALUES(". intval($id_conta) .",". intval($id_publicacao) .")");
+		
+		return $resultado;
+	}
+
+	
 	public function adicionaFotos($imagem){
 		$resultado = mysql_query("INSERT INTO fotos(imagem) VALUES('$imagem')");
 		
@@ -105,6 +113,15 @@ class DBAccess{
 		$row = mysql_fetch_assoc($resultado);
 		
 		return $row['mural_id'];
+	}
+	
+	public function getCurtidas($id_publicacao){
+		$resultado = mysql_query("SELECT curtida_id FROM curtidas WHERE publicacao_id = '$id_publicacao'");
+						
+		$qnt_rows = mysql_num_rows($resultado);
+		
+		return $qnt_rows;
+
 	}
 	
 	public function getNome($email){
@@ -304,6 +321,15 @@ class DBAccess{
 		return $row['status'];
 	}
 	
+	public function checaCurtir($publicacao_id, $id_conta){
+		$resultado = mysql_query("SELECT curtida_id FROM curtidas WHERE conta_id = '$id_conta' and publicacao_id = '$publicacao_id'");
+						
+		$row = mysql_fetch_assoc($resultado);
+		
+		return $row['curtida_id'];
+
+	}
+	
 	public function resetSenha($email,$senha){
 		$resultado = mysql_query("UPDATE contas SET senha = '$senha' WHERE email='$email'");
 		
@@ -320,6 +346,13 @@ class DBAccess{
 		$resultado = mysql_query("DELETE FROM ativar WHERE email='$email'");
 		
 		return $resultado;
+	}
+	
+		
+	public function apagaCurtir($curtir_id){
+		$resultado = mysql_query("DELETE FROM curtidas WHERE curtida_id=". intval($curtir_id) .")");
+		
+		return $curtir_id;
 	}
 	
 	public function ativarConta($email){

@@ -14,11 +14,10 @@ if(isset ($_GET['id']) == true){
 	
 	if($resultado == true){
 		$control->apagaAtivar($id);
+	}else{
+		header("Location:login.php?status=id_invalido");
 	}
-	
-	if($resultado == false ){
-		header("Location:../login.php?err=1");
-	}
+
 }else{
 	header("Location:login.php?err=2");
 }

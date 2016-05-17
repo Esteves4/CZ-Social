@@ -18,7 +18,7 @@ class ativarController{
 		$email = $this->db_model->getAtivarEmail($id);
 		$resultado = $this->db_model->ativarConta($email);
 		
-		return $resultado;
+		return $email;
 	}
 	
 	public function apagaAtivar($id){

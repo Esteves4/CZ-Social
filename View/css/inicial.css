@@ -111,7 +111,7 @@ p{
 
 #profileIMG{
 	display: block;
-	cursor: pointer;
+	cursor: move;
 }
 
 #ImgInput{
@@ -119,6 +119,15 @@ p{
 }
 
 #zoom{
+	margin-left: 26px;
+	margin-right: 26px;
+}
+
+#upload{
+	display: block;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 0px;
 	margin-left: 26px;
 	margin-right: 26px;
 }
@@ -149,6 +158,7 @@ p{
 }
 
 #post{
+	display: inline-block;
 	margin-top:20px;
 	margin-bottom: 10px;
 }

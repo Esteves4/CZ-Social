@@ -18,6 +18,13 @@ if(isset($_GET['status']) == true){
 			  </div>';
 	}
 	
+	if ($status == 'id_invalido'){
+		echo '<div class="row alert alert-danger alert-dismissible" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<p id="sucessoText"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> ID de ativação inválido. Tente Novamente.</p>
+			  </div>';
+	}
+	
 }
 
 if(isset($_SESSION['email']) == true){

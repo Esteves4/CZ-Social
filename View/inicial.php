@@ -12,6 +12,20 @@ if(isset($_GET['logout'])){
   header("Location:login.php");
 }
 
+if(isset($_SESSION['email']) == true){
+	require_once("../Controller/perfilController.php");
+	
+	$control2 = new PerfilController();
+	
+	$email = $_SESSION['email'];
+	
+	$resultado2 = $control2->checaPerfil($email);
+	
+	if ($resultado2 == false){
+		header("Location:perfil.php");
+	}
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -68,14 +82,23 @@ if(isset($_GET['logout'])){
 
 <form class="form-horizontal col-sm-4 col-xs-12" id="novo_post" action="" method="POST" role="form" enctype="multipart/form-data">	
 	<div class="row" id="image-cropper">
-		<label for="ImgInput" id="profileIMG">
+		
+		<label id="profileIMG">
 			<img class="cropit-preview img-responsive img-thumbnail center-block" id="imagemPerfil">
 		</label>		
+
+		
+		<label for="ImgInput" class="row" id="upload">
+			<span class="btn btn-warning form-control">Fazer upload de foto.</span>
+		</label>
+	
 		<div class="slider-wrapper input-group" id="zoom">
 			<div class="input-group-addon"><span class="glyphicon glyphicon-minus-sign"></span></div>
 			<input type="range" class="cropit-image-zoom-input form-control"/>
 			<div class="input-group-addon"><span class="glyphicon glyphicon-plus-sign"></span></div>
+			
 		</div>
+		
 		
 		<input type="file" id="ImgInput" class="cropit-image-input"/>
 	</div>		

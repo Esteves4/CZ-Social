@@ -48,14 +48,14 @@ if(isset($_GET['logout'])){
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-	<img alt="Brand" id="brand" class="img-responsive img-circle" width="54">
+	<a href="perfilUser"><img alt="Brand" id="brand" class="img-responsive img-circle" width="54"></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a id="nomePerfil"></a></li>
+        <li><a id="nomePerfil" href="perfilUser" ></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-		
+		<li><a href="inicial.php"><span class="glyphicon glyphicon-home"></span>&nbsp; Home</a></li>
 		<li><a href='perfil.php?logout'><span class="glyphicon glyphicon-log-out"></span>&nbsp; Sair</a></li>
       </ul>
     </div>

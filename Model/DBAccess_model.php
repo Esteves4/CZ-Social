@@ -350,9 +350,9 @@ class DBAccess{
 	
 		
 	public function apagaCurtir($curtir_id){
-		$resultado = mysql_query("DELETE FROM curtidas WHERE curtida_id=". intval($curtir_id) .")");
+		$resultado = mysql_query("DELETE FROM curtidas WHERE curtida_id=". intval($curtir_id));
 		
-		return $curtir_id;
+		return $resultado;
 	}
 	
 	public function ativarConta($email){

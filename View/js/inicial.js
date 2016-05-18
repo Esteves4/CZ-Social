@@ -90,6 +90,17 @@ $(document).ready(function(){
 			});
 	});
 	
+	 $('.comentario').on( "keydown", function(event) {
+		var div_parent = $(this).parent();
+		var div_children = div_parent.children(".input-group-btn");
+		
+		if(event.which == 13){
+			div_children.click();
+		} 
+		
+		
+    });
+	
 	$(document).on("click",'.enviar',function(){
 		var div_parent = $(this).parent();
 		var div_parent_parent = div_parent.parent();

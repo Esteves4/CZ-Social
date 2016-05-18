@@ -65,7 +65,7 @@ if(isset($_GET['logout'])){
 	<div class="container">
 		<form class="form-horizontal col-sm-offset-4 col-sm-4" action="" id="perfilForm" method="POST" role="form" enctype="multipart/form-data">
 			<div class="row" id="image-cropper">
-				<label for="ImgInput" id="profileIMG">
+				<label id="profileIMG">
 					<img class="cropit-preview img-responsive img-thumbnail center-block" id="imagemPerfil">
 				</label>	
 									

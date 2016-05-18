@@ -24,7 +24,7 @@ body {
 
 #profileIMG{
 	display: block;
-	cursor: pointer;
+	cursor: move;
 }
 
 #ImgInput{

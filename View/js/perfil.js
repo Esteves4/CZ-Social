@@ -90,6 +90,9 @@ $(document).ready(function(){
 		return false;
 	});
 	
+	$('#profileIMG').dblclick(function() {
+		$('#ImgInput').click();
+	});
 	
 	$('#image-cropper').cropit();
 	$('#image-cropper').cropit({ imageState: { src: { imageSrc } } });

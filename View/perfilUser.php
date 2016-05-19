@@ -1,3 +1,41 @@
+<?php
+session_start();
+
+if((!isset ($_SESSION['email']) == true) and (!isset ($_SESSION['senha']) == true)){
+	unset($_SESSION['email']);
+	unset($_SESSION['senha']);
+	header("Location:login.php?status=forbidden");
+}
+
+if(isset($_GET['logout'])){
+  session_destroy();
+  header("Location:login.php");
+}
+
+if(isset($_SESSION['email']) == true){
+	require_once("../Controller/perfilController.php");
+	
+	$control2 = new PerfilController();
+	
+	$email = $_SESSION['email'];
+	
+	$resultado2 = $control2->checaPerfil($email);
+	
+	if ($resultado2 == false){
+		header("Location:perfil.php");
+	}
+}
+
+if(isset($_GET['id']) == true){
+	echo "<p id='id_usuario'>".$_GET['id']."</p>";
+	
+}
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <html>
@@ -49,10 +87,10 @@
 	</nav>
 
 	<div id="perfil" class=" col-sm-12">
-		<div class="col-sm-2 col-sm-offset-3 col-xs-12">
-			<img id="foto_perfil" alt="foto_perfil" class="img-responsive img-circle center-block" src="pictures/perfil.png">
+		<div class="col-sm-12 col-xs-12">
+			<img id="foto_perfil" alt="foto_perfil" class="img-responsive img-circle center-block">
 		</div>
-		<div class="col-sm-3 col-xs-12" id="informacoes_perfil">
+		<div class="col-sm-offset-4 col-sm-4 col-xs-12" id="informacoes_perfil">
 			<table class="table">
 				<thead>
 				  <tr>
@@ -70,9 +108,9 @@
 		</div>
 	</div>
 	
-	<div id="publicacoes"></div>
+<div id="publicacoes"></div>
 	
-
+<span class="btn btn-info center-block" id="carregar_posts">Carregar mais publicações.</span>
 	
 	
 

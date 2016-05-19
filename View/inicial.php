@@ -65,7 +65,7 @@ if(isset($_SESSION['email']) == true){
  
 	<div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="perfilUser" id="nomePerfil"></a></li>
+        <li><a href="" id="nomePerfil"></a></li>
       </ul>
 	  
       <ul class="nav navbar-nav navbar-right">

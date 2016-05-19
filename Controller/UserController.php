@@ -1,6 +1,6 @@
 <?php
 
-class InicialController{
+class UserController{
 	private $db_model;
 	
 	public function __construct(){
@@ -55,9 +55,7 @@ class InicialController{
 		return  $caminho;
 	}
 	
-	public function getEmail($mural_id){
-		$id_conta = $this->db_model->getContaID($mural_id);
-	
+	public function getEmail($id_conta){	
 		$temp = $this->db_model->getEmail($id_conta);
 		
 		return  $temp;
@@ -89,8 +87,26 @@ class InicialController{
 		return $temp;
 	}
 	
+	public function curtir($postagem_id, $conta_id){		
+		$temp = $this->db_model->adicionaCurtir($postagem_id, $conta_id);
+		
+		return $temp;
+	}
+	
+	public function descurtir($curtir_id){		
+		$temp = $this->db_model->apagaCurtir($curtir_id);
+		
+		return $temp;
+	}
+	
 	public function getPosts($mural_id, $conta_id, $quantidade){
 		$posts = $this->db_model->getPublicacoes($mural_id, $conta_id, $quantidade);
+
+		return $posts;
+	}
+	
+	public function getPostsMural($mural_id, $quantidade){
+		$posts = $this->db_model->getPublicacoesMural($mural_id, $quantidade);
 
 		return $posts;
 	}
@@ -99,6 +115,18 @@ class InicialController{
 		$comments = $this->db_model->getComentarios($publicacao_id);
 
 		return $comments;
+	}
+	
+	public function getCurtidas($publicacao_id){
+		$temp = $this->db_model->getCurtidas($publicacao_id);
+
+		return $temp;
+	}
+	
+	public function checaCurtir($publicacao_id, $id_conta){
+		$temp = $this->db_model->checaCurtir($publicacao_id, $id_conta);
+
+		return $temp;
 	}
 }
 	

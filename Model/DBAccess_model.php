@@ -272,6 +272,12 @@ class DBAccess{
 		return $resultado;
 	}
 	
+	public function getPublicacoesMural($mural_id, $quantidade){
+		$resultado = mysql_query("SELECT publicacao_id, texto, foto_id, data_criacao, mural_id from publicacoes where mural_id = '$mural_id' ORDER BY data_criacao DESC LIMIT ". intval($quantidade) ."");
+		
+		return $resultado;
+	}
+	
 	public function getComentarios($publicacao_id){
 		$resultado = mysql_query("SELECT comentario, conta_id FROM comentarios WHERE publicacao_id = '$publicacao_id' ORDER BY data_criacao DESC ");
 		

@@ -11,8 +11,6 @@ if (getenv("REQUEST_METHOD") == "GET"){
 	
 	if($_GET['funcao'] == 'getPosts'){
 		$quantidade = $_GET['quantidadePosts'];
-
-		
 		
 		$publicacoes = $control->getPosts($mural_id, $id, $quantidade);
 		$contador = 1;
@@ -139,82 +137,8 @@ if (getenv("REQUEST_METHOD") == "POST"){
 		
 	}
 	
-	if($_POST['funcao'] == 'getPosts'){
-		$quantidade = $_POST['quantidadePosts'];
-
-		
-		
-		$resultado = $control->getPosts($mural_id, $id, $quantidade);
-
-		
-		while($row = mysql_fetch_array($resultado) ){
-			$fotoPATH = $control->getFotoPerfil($email);
-			$imgSRC = substr($fotoPATH,31);
-			
-			$fotoPATH_2 = $control->getFotoPost($row['foto_id']);
-			$imgSRC_2 = substr($fotoPATH_2,31);
-			
-			echo '
-			<div class="container-fluid col-sm-4" id="post">
-				<div class="col-sm-12 col-xs-12" id="postagem">
-					<a href="#">
-						<img alt="Brand" id="foto" class="img-responsive img-circle" src='. $imgSRC .'>
-						<p id="usuarioPost"> Lucas Esteves </p>
-					</a>
-					<a href="#" class="thumbnail">
-						<img alt="publicacao" id="imagem" class="img-responsive center-block" src='. $imgSRC_2 .'>
-						<figcaption>
-							<h5></br></br>'. $row['texto'] .'</h5>
-						</figcaption>
-					</a>
-					
-					<span class="btn btn-lg glyphicon glyphicon-heart-empty" id="curtir" ></span><span class="badge">5</span>
-					<!--<span class="btn btn-lg glyphicon glyphicon-comment" id="comentar" ></span><span class="badge">5</span> Buga os posts -->
-								
-					<div class="comentarios" id="comentarios">
-						<div class="media">
-							<div class="media-left">
-								<a href="#">
-								<img alt="Brand" id="perfilComent" class="media-object img-responsive img-thumbnail img-circle" src="pictures/perfil1.png">
-								</a>
-							</div>
-							<div class="media-body">
-								Isso é um comentário.
-							</div>
-						</div>
-						<div class="media">
-							<div class="media-left">
-								<a href="#">
-								<img alt="Brand" id="perfilComent" class="media-object img-responsive img-thumbnail img-circle" src="pictures/perfil1.png">
-								</a>
-							</div>
-							<div class="media-body">
-								Isso é um comentário.
-							</div>
-						</div>
-						<div class="media">
-							<div class="media-left">
-								<a href="#">
-								<img alt="Brand" id="perfilComent" class="media-object img-responsive img-thumbnail img-circle" src="pictures/perfil1.png">
-								</a>
-							</div>
-							<div class="media-body">
-								Isso é um comentário.
-							</div>
-						</div>
-					
-					</div>
-					<div class="input-group" id="group-comentario">
-						<input type="text" class="form-control" placeholder="Insira seu comentário"></input>
-						<div class="input-group-btn" id="addon2"><button type="button" class="btn btn-default" id="btn-comentario"><span class="glyphicon glyphicon-send"></span></button></div>
-					</div>
-				</div>
-			</div> ';
-		}
-
-		
-		
-		
+	if($_POST['funcao'] == 'getID'){
+		echo base64_encode($id);
 		
 	}
 		

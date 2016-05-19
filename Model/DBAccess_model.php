@@ -113,6 +113,14 @@ class DBAccess{
 		return $resultado;
 	}
 	
+	public function getNomeCidadeEstado($id_cidade){
+		$resultado = mysql_query("SELECT cidade_nome, estado_sigla FROM cidades NATURAL JOIN estados WHERE cidade_id = '$id_cidade'");
+		
+		$row = mysql_fetch_assoc($resultado);
+		
+		return $row['cidade_nome'].'/'.$row['estado_sigla'];
+	}
+	
 	public function getMuralID($id_conta){
 		$resultado = mysql_query("SELECT mural_id FROM murais WHERE conta_id = '$id_conta'");
 						

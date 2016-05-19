@@ -60,9 +60,7 @@ if (getenv("REQUEST_METHOD") == "GET"){
 			
 			if (($contador - 1)%3 == 0 or $contador == 1 ){ echo '<div class="row">'; };
 			
-			echo 
-				
-					'<div class="container-fluid col-sm-4" id="post">
+			echo'<div class="container-fluid col-sm-4" id="post">
 						<div class="col-sm-12 col-xs-12" id="postagem">
 							<a href="#" class="thumbnail">
 								<img alt="publicacao" id="imagem" class="img-responsive center-block" src='. $imgSRC_2 .'>
@@ -113,6 +111,45 @@ if (getenv("REQUEST_METHOD") == "POST"){
 		$sobrenome = $control->getSobrenome($email);
 			
 		echo $nome .' '. $sobrenome;
+	}
+
+	if($_POST['funcao'] == 'sexo'){
+		if(isset($_POST['id']) == true){
+			$id_conta = base64_decode($_POST['id']);
+			$email = $control->getEmail($id_conta);
+		}
+				
+		$nome = $control->getSexo($email);
+		
+		if($nome == 'M'){
+			echo 'Masculino';
+		}else{
+			echo 'Feminino';
+		}
+	}
+	
+	if($_POST['funcao'] == 'dataN'){
+		if(isset($_POST['id']) == true){
+			$id_conta = base64_decode($_POST['id']);
+			$email = $control->getEmail($id_conta);
+		}
+				
+		$temp = $control->getDataN($email);
+		
+		$data = date("d/m/Y",strtotime(str_replace('-','/',$temp)));  
+		
+		echo $data;
+	}
+	
+	if($_POST['funcao'] == 'endereco'){
+		if(isset($_POST['id']) == true){
+			$id_conta = base64_decode($_POST['id']);
+			$email = $control->getEmail($id_conta);
+		}
+				
+		$temp = $control->getEndereco($email);
+				
+		echo $temp;
 	}
 	
 	if ($_POST['funcao'] == 'foto'){

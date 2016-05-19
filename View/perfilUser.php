@@ -69,7 +69,7 @@ if(isset($_GET['id']) == true){
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>                        
 		  </button>
-		<img alt="Brand" id="brand" class="img-responsive img-circle" src="" width="54">
+		<img id="brand" class="img-responsive img-circle" src="" width="54">
 		</div>
 		<div class="collapse navbar-collapse" id="myNavbar">
 		  <ul class="nav navbar-nav">
@@ -88,7 +88,7 @@ if(isset($_GET['id']) == true){
 
 	<div id="perfil" class=" col-sm-12">
 		<div class="col-sm-12 col-xs-12">
-			<img id="foto_perfil" alt="foto_perfil" class="img-responsive img-circle center-block">
+			<img id="foto_perfil" class="img-responsive img-circle center-block">
 		</div>
 		<div class="col-sm-offset-4 col-sm-4 col-xs-12" id="informacoes_perfil">
 			<table class="table">
@@ -99,9 +99,9 @@ if(isset($_GET['id']) == true){
 				</thead>
 				<tbody>
 				  <tr>
-					<td><span class= "glyphicon glyphicon-user"></span>&nbsp; Feminino</td>
-					<td><span class= "glyphicon glyphicon-calendar"></span>&nbsp; 20/11/1996</td>
-					<td><span class= "glyphicon glyphicon-map-marker"></span>&nbsp; Fortaleza - CE</td>
+					<td id="sexo"><span class= "glyphicon glyphicon-user"></span>&nbsp; </td>
+					<td id="dataN"><span class= "glyphicon glyphicon-calendar"></span>&nbsp; </td>
+					<td id="localizacao"><span class= "glyphicon glyphicon-map-marker"></span>&nbsp; </td>
 				  </tr>
 				</tbody>	
 			</table>

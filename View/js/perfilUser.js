@@ -1,9 +1,11 @@
-var nomeSobrenome =  function(id_usuario){
+var nomeSobrenome =  function(){
 	$.post("../Controller/UserController-handler.php", {funcao: 'nomePerfil'},  
 		function(result){   
 			$('#nomePerfil').append(result);
 		});
-	
+}
+
+var nomeSobrenome_perfil =  function(id_usuario){
 	$.post("../Controller/UserController-handler.php", {id: id_usuario, funcao: 'nomePerfil'},  
 		function(result){   
 			$('#Nome_Usuario').append(result);
@@ -14,28 +16,54 @@ var getPosts = function(quantidade, id_usuario){
 	$('#publicacoes').load("../Controller/UserController-handler.php?quantidadePosts="+quantidade+"&funcao=getPosts"+"&id="+id_usuario);
 }
 
-var atualizaFoto = function(id_usuario){
+var atualizaFoto = function(){
 	$.post("../Controller/UserController-handler.php", {funcao: 'foto'},  
 		function(result){
 		$("#brand").attr("src",result);
 	});
-	
+
+}
+
+var atualizaFoto_perfil = function(id_usuario){
 	$.post("../Controller/UserController-handler.php", {id: id_usuario, funcao: 'foto'},  
 		function(result){
 		$("#foto_perfil").attr("src",result);
 	});
 }
 
+var getSexo = function(id_usuario){
+	$.post("../Controller/UserController-handler.php", {id: id_usuario, funcao: 'sexo'},  
+		function(result){
+		$("#sexo").append(result);
+	});
+}
+
+var getDataN = function(id_usuario){
+	$.post("../Controller/UserController-handler.php", {id: id_usuario, funcao: 'dataN'},  
+		function(result){
+		$("#dataN").append(result);
+	});
+}
+
+var getEndereco = function(id_usuario){
+	$.post("../Controller/UserController-handler.php", {id: id_usuario, funcao: 'endereco'},  
+		function(result){
+		$("#localizacao").append(result);
+	});
+}
 
 $(document).ready(function(){
 	var quantidade_posts = 6;
 	var id_usuario = $('#id_usuario').text();
-	nomeSobrenome(id_usuario);
-	atualizaFoto(id_usuario);
-	getPosts(quantidade_posts, id_usuario);
-	/*getDataN(id_usuario);
+	atualizaFoto();
+	nomeSobrenome();
+	atualizaFoto_perfil(id_usuario);
+	nomeSobrenome_perfil(id_usuario);
 	getSexo(id_usuario);
-	getEndereco(id_usuario); Fazer depois*/ 
+	getDataN(id_usuario);
+	getEndereco(id_usuario);
+	getPosts(quantidade_posts, id_usuario);
+	
 		
 	$(window).scroll(function() {
 	   

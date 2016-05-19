@@ -23,6 +23,31 @@ class UserController{
 		return $temp;
 	}
 
+	public function getSexo($email){
+		$id_perfil = $this->db_model->getPerfilID($email);
+		
+		$temp = $this->db_model->getSexo($id_perfil);
+		
+		return $temp;
+	}
+
+	public function getDataN($email){
+		
+		$temp = $this->db_model->getDataN($email);
+		
+		return $temp;
+	}
+	
+	public function getEndereco($email){
+		$id_perfil = $this->db_model->getPerfilID($email);
+		
+		$cidade_id = $this->db_model->getCidadeID($id_perfil);
+		
+		$temp = $this->db_model->getNomeCidadeEstado($cidade_id);
+		
+		return $temp;
+	}
+	
 	public function getSobrenome($email){
 		$temp = $this->db_model->getSobrenome($email);
 		

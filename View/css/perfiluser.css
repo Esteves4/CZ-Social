@@ -59,6 +59,10 @@ p{
 
 }
 
+#id_usuario{
+	display: none;
+}
+
 .thumbnail:hover figcaption {
 	opacity: 1;
 
@@ -79,7 +83,7 @@ p{
 }
 
 .row{
-	padding: 10px;
+	margin: 10px;
 }
 
 .glyphicon-heart{
@@ -101,14 +105,52 @@ p{
 	margin: 5px;
 }
 
-#brand{
-	margin: 2px;
+
+#black{
+	height:100vh;
+	background-color: rgba(0,0,0,0.6);
+	z-index: 10000;
+	display: none;
+	position: absolute;
 }
 
-#post{
-	display: inline-block;
-	margin-top:20px;
-	margin-bottom: 10px;
+#profileIMG{
+	display: block;
+	cursor: pointer;
+}
+
+#ImgInput{
+	display: none;
+}
+
+#zoom{
+	margin-left: 26px;
+	margin-right: 26px;
+}
+
+#cancelar{
+	float: right;
+	cursor: pointer;
+	color: black;
+}
+
+#icone_postar{
+	cursor: pointer;
+}
+
+#novo_post{
+	margin-top: 20px;
+	padding: 10px;
+	z-index: 100000;
+	background-color: rgb(255, 255, 255);
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	position: absolute;
+	left: -560px;
+}
+
+#brand{
+	margin: 2px;
 }
 
 #inicial{
@@ -153,6 +195,12 @@ p{
 	overflow: auto;
 }
 
+#post{
+	display: inline-block;
+	margin-top:20px;
+	margin-bottom: 10px;
+}
+
 #foto_perfil{
 	width: 120px;
 	height: 120px;
@@ -160,10 +208,6 @@ p{
 
 #perfil{
 	margin-top: 10px;
-}
-
-#id_usuario{
-	display: none;
 }
 
 h3{

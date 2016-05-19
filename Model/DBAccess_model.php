@@ -254,6 +254,13 @@ class DBAccess{
 		return $row['conta_id'];
 	}
 	
+	public function getContas($nome, $quantidade){
+		$nome = '%'.$nome.'%';
+		$resultado = mysql_query("SELECT conta_id, nome, sobrenome FROM contas WHERE nome LIKE '$nome' or sobrenome LIKE '$nome' ORDER BY nome,sobrenome LIMIT ". intval($quantidade) ."");
+		
+		return $resultado;
+	}
+	
 	public  function getAtivarEmail($id){
 		$resultado = mysql_query("SELECT email FROM ativar WHERE ativar_id = '$id'");
 		

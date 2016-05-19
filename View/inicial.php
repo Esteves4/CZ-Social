@@ -72,6 +72,7 @@ if(isset($_SESSION['email']) == true){
 		<li><a href="inicial.php"><span class="glyphicon glyphicon-home"></span>&nbsp; Home</a></li>
 		<li><a id="icone_postar"><span class="glyphicon glyphicon-camera"></span>&nbsp; Postar</a></li>
 		<li><a href="amigos.php"><span class="glyphicon glyphicon-user"></span>&nbsp; Amigos</a></li>
+		
 		<li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-exclamation-sign"></span>&nbsp; Novidades&nbsp;<span class="badge">5</span>&nbsp;<span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -83,7 +84,7 @@ if(isset($_SESSION['email']) == true){
         </li>
 		
 		
-		<li><a href="pesquisar"><span class="glyphicon glyphicon-search"></span>&nbsp; Pesquisar</a></li>
+		<li><a href="pesquisar.php"><span class="glyphicon glyphicon-search"></span>&nbsp; Pesquisar</a></li>
 		<li><a href="perfil.php"><span class="glyphicon glyphicon-edit"></span>&nbsp; Editar Perfil</a></li>
 		<li><a href='inicial.php?logout'><span class="glyphicon glyphicon-log-in"></span>&nbsp; Sair</a></li>
       </ul>

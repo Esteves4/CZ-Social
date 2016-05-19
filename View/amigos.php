@@ -72,7 +72,7 @@ if(isset($_SESSION['email']) == true){
       <ul class="nav navbar-nav navbar-right">
 		<li><a href="inicial.php"><span class="glyphicon glyphicon-home"></span>&nbsp; Home</a></li>
 		<li><a href="amigos.php"><span class="glyphicon glyphicon-user"></span>&nbsp; Amigos</a></li>
-		<li><a href="pesquisa"><span class="glyphicon glyphicon-search"></span>&nbsp; Pesquisa</a></li>
+		<li><a href="pesquisar.php"><span class="glyphicon glyphicon-search"></span>&nbsp; Pesquisar</a></li>
 		<li><a href="perfil.php"><span class="glyphicon glyphicon-edit"></span>&nbsp; Editar Perfil</a></li>
 		<li><a href='inicial.php?logout'><span class="glyphicon glyphicon-log-in"></span>&nbsp; Sair</a></li>
       </ul>
@@ -80,10 +80,7 @@ if(isset($_SESSION['email']) == true){
   </div>
 </nav>
 
-<div class="container-fluid" id="amigos">
-
-
-</div>
+<div class="container-fluid" id="amigos"></div>
 
 <span class="btn btn-info center-block" id="carregar_amigos">Carregar mais Amigos.</span>
 

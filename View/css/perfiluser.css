@@ -216,7 +216,7 @@ h3{
 	margin-top: 25px;
 }
 
-#id_usuario{
+#id_usuario, #carregar_posts{
 	display: none;
 }
 

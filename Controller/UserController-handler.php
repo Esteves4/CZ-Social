@@ -12,6 +12,7 @@ if (getenv("REQUEST_METHOD") == "GET"){
 	if($_GET['funcao'] == 'getPosts'){
 		$quantidade = $_GET['quantidadePosts'];
 		$id_conta =  base64_decode($_GET['id']);
+		$mural_id = $control->getMuralID($id_conta);
 		
 		$publicacoes = $control->getPostsMural($mural_id, $quantidade);
 		$contador = 1;

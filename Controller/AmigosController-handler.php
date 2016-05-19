@@ -28,7 +28,7 @@ if (getenv("REQUEST_METHOD") == "GET"){
 			$nome = $row['nome'];
 			$sobrenome = $row['sobrenome'];			
 			
-			if (($contador - 1)%3 == 0 or $contador == 1 ){ echo '<div class="container-fluid col-sm-offset-2 col-sm-10">'; };
+			if (($contador - 1)%5 == 0 or $contador == 1 ){ echo '<div class="container-fluid col-sm-offset-2 col-sm-10">'; };
 			
 			echo'<div class="col-sm-2" id="post">
 					<a href="perfilUser.php?id='.base64_encode($id_conta).'"><img id="foto" class="img-responsive img-circle center-block" src='.$imgSRC.'>

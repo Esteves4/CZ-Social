@@ -16,6 +16,14 @@ var atualizaFoto = function(){
 	});
 }
 
+var getPerfilID = function(){
+	$.post("../Controller/InicialController-handler.php", {funcao: 'getID'},  
+		function(result){
+			var new_href = "perfilUser.php?id=" + result;
+			$("#nomePerfil").attr("href", new_href);		
+	});
+}
+
 
 $(document).ready(function(){
 	var quantidade_amigos = 10;
@@ -23,6 +31,7 @@ $(document).ready(function(){
 	nomeSobrenome();
 	atualizaFoto();
 	getAmigos(quantidade_amigos);
+	getPerfilID();
 
 	
 	$(window).scroll(function() {

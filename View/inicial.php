@@ -108,10 +108,10 @@ if(isset($_SESSION['email']) == true){
 		
 		
 		<input type="file" id="ImgInput" class="cropit-image-input"/>
-	</div>		
-
-	<input type="text" class="form-control" id="legenda" placeholder="Legenda"></input> 
-	
+	</div>
+	<div class="row">
+		<input type="text" class="form-control" id="legenda" placeholder="Legenda"></input>
+	</div>
 	<div class="row">
 		<button id="postar" class="btn btn-success btn-block" type="submit" autocomplete="off" data-loading-text="Postando..." >Postar</button>
 	</div>

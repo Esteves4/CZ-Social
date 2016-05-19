@@ -107,6 +107,12 @@ class DBAccess{
 		}
 	}
 	
+	public function getAmigos($id_conta, $quantidade){
+		$resultado = mysql_query("SELECT conta_id, nome, sobrenome FROM contas JOIN (SELECT amigo_id FROM amigos where conta_id = '$id_conta')A ON contas.conta_id = A.amigo_id ORDER BY nome, sobrenome LIMIT ". intval($quantidade) ."");
+		
+		return $resultado;
+	}
+	
 	public function getMuralID($id_conta){
 		$resultado = mysql_query("SELECT mural_id FROM murais WHERE conta_id = '$id_conta'");
 						

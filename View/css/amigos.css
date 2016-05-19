@@ -53,3 +53,11 @@ h4{
 	font-size: 18px;
 	
 }
+
+#carregar_amigos{
+	display: none;
+}
+
+#amigos{
+	padding: 0px;
+}

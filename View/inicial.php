@@ -62,15 +62,27 @@ if(isset($_SESSION['email']) == true){
       </button>
 	<img alt="Brand" id="brand" class="img-responsive img-circle" width="54">
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
+ 
+	<div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li><a href="perfilUser" id="nomePerfil"></a></li>
       </ul>
+	  
       <ul class="nav navbar-nav navbar-right">
 		<li><a href="inicial.php"><span class="glyphicon glyphicon-home"></span>&nbsp; Home</a></li>
 		<li><a id="icone_postar"><span class="glyphicon glyphicon-camera"></span>&nbsp; Postar</a></li>
 		<li><a href="amigos"><span class="glyphicon glyphicon-user"></span>&nbsp; Amigos</a></li>
-		<li><a href="novidades"><span class="glyphicon glyphicon-exclamation-sign"></span>&nbsp; Novidades&nbsp;<span class="badge">5</span></a></li>
+		<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-exclamation-sign"></span>&nbsp; Novidades&nbsp;<span class="badge">5</span>&nbsp;<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+		
+		
 		<li><a href="pesquisar"><span class="glyphicon glyphicon-search"></span>&nbsp; Pesquisar</a></li>
 		<li><a href="perfil.php"><span class="glyphicon glyphicon-edit"></span>&nbsp; Editar Perfil</a></li>
 		<li><a href='inicial.php?logout'><span class="glyphicon glyphicon-log-in"></span>&nbsp; Sair</a></li>

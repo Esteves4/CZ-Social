@@ -59,10 +59,6 @@ p{
 
 }
 
-#id_usuario{
-	display: none;
-}
-
 .thumbnail:hover figcaption {
 	opacity: 1;
 
@@ -153,6 +149,11 @@ p{
 	margin: 2px;
 }
 
+#post{
+	margin-top:20px;
+	margin-bottom: 10px;
+}
+
 #inicial{
 	padding-left: 10px;
 	padding-right: 10px;
@@ -193,12 +194,6 @@ p{
 	display: none; /*  Ativar somente se ajeitar o bug dos posts .*/
 	height: 100px;
 	overflow: auto;
-}
-
-#post{
-	display: inline-block;
-	margin-top:20px;
-	margin-bottom: 10px;
 }
 
 #foto_perfil{

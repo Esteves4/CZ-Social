@@ -216,6 +216,9 @@ h3{
 	margin-top: 25px;
 }
 
+#id_usuario{
+	display: none;
+}
 
 .list-group-item{
 	background-color: transparent;

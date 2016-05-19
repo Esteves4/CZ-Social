@@ -55,7 +55,7 @@ if (getenv("REQUEST_METHOD") == "GET"){
 				
 				$comentarios_div .= '<div class="media">
 										<div class="media-left">
-											<a href="#">
+											<a href="perfilUser.php?id='.base64_encode($conta_id_comentario) .'">
 											<img alt="Brand" id="perfilComent" class="media-object img-responsive img-thumbnail img-circle" src='. $imgSRC_3 .'>
 											</a>
 										</div>
@@ -71,7 +71,7 @@ if (getenv("REQUEST_METHOD") == "GET"){
 				
 					'<div class="container-fluid col-sm-4" id="post">
 						<div class="col-sm-12 col-xs-12" id="postagem">
-							<a href="#">
+							<a href="perfilUser.php?id='.base64_encode($id_conta) .'">
 								<img alt="Brand" id="foto" class="img-responsive img-circle" src='. $imgSRC .'>
 								<p id="usuarioPost">'. $nome . ' ' . $sobrenome .'  </p>
 							</a>

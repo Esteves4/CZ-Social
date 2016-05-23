@@ -52,6 +52,10 @@ var getEndereco = function(id_usuario){
 	});
 }
 
+var getStatusAmizade = function(id_usuario){
+	$('#status_amizade').load("../Controller/UserController-handler.php?funcao=getStatusAmizade"+"&id="+id_usuario);
+}
+
 $(document).ready(function(){
 	var quantidade_posts = 6;
 	var id_usuario = $('#id_usuario').text();
@@ -63,7 +67,7 @@ $(document).ready(function(){
 	getDataN(id_usuario);
 	getEndereco(id_usuario);
 	getPosts(quantidade_posts, id_usuario);
-	
+	getStatusAmizade(id_usuario);
 		
 	$(window).scroll(function() {
 	   
@@ -88,7 +92,7 @@ $(document).ready(function(){
 		$.post("../Controller/InicialController-handler.php", {postagem_id: postagem_id, funcao: 'curtir'},  
 			function(result){ 
 				if(result == true){
-					getPosts(quantidade_posts);
+					getPosts(quantidade_posts, id_usuario);
 				}
 			});
 	});
@@ -107,7 +111,7 @@ $(document).ready(function(){
 		$.post("../Controller/InicialController-handler.php", {postagem_id: postagem_id, funcao: 'descurtir'},  
 			function(result){
 				if(result == true){
-					getPosts(quantidade_posts);
+					getPosts(quantidade_posts, id_usuario);
 				}
 			});
 	});
@@ -123,7 +127,7 @@ $(document).ready(function(){
 		$.post("../Controller/InicialController-handler.php", {texto: comentario, postagem_id: postagem_id,  funcao: 'comentar'},  
 			function(result){   
 				if(result == true){
-					getPosts(quantidade_posts);
+					getPosts(quantidade_posts, id_usuario);
 				}
 			});
 		
@@ -137,10 +141,37 @@ $(document).ready(function(){
 		div_children.toggle();
 	});
 	
+	$(document).on("click",'#adiconar_amigo',function(){		
+		$.post("../Controller/UserController-handler.php", {amigo_id: id_usuario, funcao: 'adicionarAmigo'},  
+			function(result){
+				if(result == true){
+					getStatusAmizade(id_usuario);
+				}
+			});
+	});
+	
+	$(document).on("click",'#aceitar_amizade',function(){
+		$.post("../Controller/UserController-handler.php", {amigo_id: id_usuario, funcao: 'aceitarAmizade'},  
+			function(result){
+				if(result == true){
+					getStatusAmizade(id_usuario);
+				}
+			});
+	});
+	
+	$(document).on("click",'#remover_amizade',function(){
+		$.post("../Controller/UserController-handler.php", {amigo_id: id_usuario, funcao: 'removerAmizade'},  
+			function(result){
+				if(result == true){
+					getStatusAmizade(id_usuario);
+				}
+			});
+	});
+	
 	
 	$('#carregar_posts').click(function() {
 		quantidade_posts += 6;
-		getPosts(quantidade_posts);
+		getPosts(quantidade_posts, id_usuario);
 	});
 	
 });

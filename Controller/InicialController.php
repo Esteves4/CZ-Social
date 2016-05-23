@@ -49,6 +49,12 @@ class InicialController{
 		return  $caminho;
 	}
 	
+	public function getFotoID_postagem($publicacao_id){
+		$temp =  $this->db_model->getFotoID_postagem($publicacao_id);
+		
+		return $temp;
+	}
+	
 	public function getFotoPost($id_foto){		
 		$caminho = $this->db_model->getFoto($id_foto);
 		
@@ -124,6 +130,19 @@ class InicialController{
 
 		return $temp;
 	}
+	
+	public function adicionaNovidade($conta_id, $id, $tipo,$postagem_id){
+		$temp = $this->db_model->adicionaNovidade($conta_id, $id, $tipo,$postagem_id);
+
+		return $temp;
+	}
+	
+	public function getNovidades($conta_id){
+		$temp = $this->db_model->getNovidades($conta_id);
+
+		return $temp;
+	}
+
 }
 	
 ?>

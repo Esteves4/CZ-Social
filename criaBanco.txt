@@ -16,6 +16,8 @@ create table amigos(conta_id int, amigo_id int, data_amizade date, primary key(c
 create table reset(reset_id varchar(32), email varchar(50), primary key(reset_id,email),foreign key(email) references contas(email));
 create table ativar(ativar_id varchar(32), email varchar(50), foreign key(email) references contas(email));
 create table curtidas(curtida_id int primary key AUTO_INCREMENT, publicacao_id int, conta_id int, foreign key(publicacao_id) references publicacoes(publicacao_id), foreign key(conta_id) references contas(conta_id));
+create table solicitacoesAmizade(conta_id int, amigo_id int, primary key(conta_id,amigo_id), foreign key(conta_id) references contas(conta_id), foreign key(amigo_id) references contas(conta_id));
+create table novidades(novidade_id int primary key NOT NULL AUTO_INCREMENT, conta_id int not null, amigo_id int not null, tipo int not null, publicacao_id int NULL, data_criacao datetime not null, foreign key(publicacao_id) references publicacoes(publicacao_id),foreign key(conta_id) references contas(conta_id), foreign key(amigo_id) references contas(conta_id));
 
 
 /*Data for the table estados */

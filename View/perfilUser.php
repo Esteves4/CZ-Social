@@ -106,7 +106,11 @@ if(isset($_GET['id']) == true){
 				</tbody>	
 			</table>
 		</div>
+		<div class="col-sm-offset-5 col-sm-2 col-xs-12" id="status_amizade">
+			
+		</div>
 	</div>
+	
 	
 <div id="publicacoes"></div>
 	

@@ -60,7 +60,7 @@ if(isset($_SESSION['email']) == true){
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-	<img alt="Brand" id="brand" class="img-responsive img-circle" width="54">
+	  <img alt="Brand" id="brand" class="img-responsive img-circle" width="54">
     </div>
  
 	<div class="collapse navbar-collapse" id="myNavbar">
@@ -74,14 +74,12 @@ if(isset($_SESSION['email']) == true){
 		<li><a href="amigos.php"><span class="glyphicon glyphicon-user"></span>&nbsp; Amigos</a></li>
 		
 		<li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-exclamation-sign"></span>&nbsp; Novidades&nbsp;<span class="badge">5</span>&nbsp;<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-exclamation-sign"></span>&nbsp; Novidades&nbsp;<!--<span class="badge">5</span>-->&nbsp;<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+
+					
+				</ul>
+		</li>
 		
 		
 		<li><a href="pesquisar.php"><span class="glyphicon glyphicon-search"></span>&nbsp; Pesquisar</a></li>

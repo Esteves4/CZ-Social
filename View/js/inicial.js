@@ -24,6 +24,10 @@ var getPerfilID = function(){
 	});
 }
 
+var getNovidades = function(){
+	$('.dropdown-menu').load("../Controller/InicialController-handler.php?funcao=getNovidades");
+}
+
 
 $(document).ready(function(){
 	var quantidade_posts = 6;
@@ -32,6 +36,8 @@ $(document).ready(function(){
 	atualizaFoto();
 	getPosts(quantidade_posts);
 	getPerfilID();
+	getNovidades();
+	
 	
 	$('#comentarioBTN').click(function(){
 		$('#comentarios').toggle();
@@ -69,10 +75,12 @@ $(document).ready(function(){
 		var div_parent = $(this).parent();
 		var div_children = div_parent.children(".input-group");
 		var div_children_children = div_children.children(".input-group-btn");
+		var div_sibling = div_parent.children(".usuario");
 		
 		var postagem_id = div_children_children.attr('id');
+		var conta_id = div_sibling.attr('id');
 
-		$.post("../Controller/InicialController-handler.php", {postagem_id: postagem_id, funcao: 'curtir'},  
+		$.post("../Controller/InicialController-handler.php", {postagem_id: postagem_id, conta_id: conta_id, funcao: 'curtir'},  
 			function(result){ 
 				if(result == true){
 					getPosts(quantidade_posts);
@@ -99,16 +107,6 @@ $(document).ready(function(){
 			});
 	});
 	
-	 $('.comentario').on( "keydown", function(event) {
-		var div_parent = $(this).parent();
-		var div_children = div_parent.children(".input-group-btn");
-		
-		if(event.which == 13){
-			div_children.click();
-		} 
-		
-		
-    });
 	
 	$(document).on("click",'.enviar',function(){
 		var div_parent = $(this).parent();
@@ -118,7 +116,11 @@ $(document).ready(function(){
 		
 		var postagem_id = div_parent.attr('id');
 		
-		$.post("../Controller/InicialController-handler.php", {texto: comentario, postagem_id: postagem_id,  funcao: 'comentar'},  
+		var div_postagem = div_parent_parent.parent();
+		var div_sibling = div_postagem.children(".usuario");
+		var conta_id = div_sibling.attr('id');
+		
+		$.post("../Controller/InicialController-handler.php", {texto: comentario, postagem_id: postagem_id, conta_id: conta_id, funcao: 'comentar'},  
 			function(result){   
 				if(result == true){
 					getPosts(quantidade_posts);
@@ -135,6 +137,9 @@ $(document).ready(function(){
 		div_children.toggle();
 	});
 	
+	$(document).on('click', '.news', function(){
+		$(this).toggleClass('selected');
+	});
 	
 	$('#cancelar').click(function() {
 		$('#black').hide();

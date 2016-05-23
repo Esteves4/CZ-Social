@@ -71,7 +71,7 @@ if (getenv("REQUEST_METHOD") == "GET"){
 				
 					'<div class="container-fluid col-sm-4" id="post">
 						<div class="col-sm-12 col-xs-12" id="postagem">
-							<a href="perfilUser.php?id='.base64_encode($id_conta) .'">
+							<a href="perfilUser.php?id='.base64_encode($id_conta) .'" id='.base64_encode($id_conta).' class="usuario">
 								<img alt="Brand" id="foto" class="img-responsive img-circle" src='. $imgSRC .'>
 								<p id="usuarioPost">'. $nome . ' ' . $sobrenome .'  </p>
 							</a>
@@ -104,6 +104,63 @@ if (getenv("REQUEST_METHOD") == "GET"){
 	
 	}
 	
+	if($_GET['funcao'] == 'getNovidades'){
+		$novidades = $control->getNovidades($id);
+		
+		
+		while($row = mysql_fetch_array($novidades)){
+			
+			$id_conta = $row['amigo_id'];
+			$tipo = $row['tipo'];
+			$publicacao_id = $row['publicacao_id'];
+			
+			$fotoPATH = $control->getFotoPerfil_conta($id_conta);
+			$imgSRC = substr($fotoPATH,31);
+			
+			$texto = '';
+			$mediaRight = '';
+			
+			if($publicacao_id != null){
+				
+				$foto_id = $control->getFotoID_postagem($publicacao_id);
+				
+				$fotoPATH_2 = $control->getFotoPost($foto_id);
+				$imgSRC_2 = substr($fotoPATH_2,31);
+				
+				$mediaRight = '<a href="perfilUser.php?id='.base64_encode($id) .'">
+									<img alt="Brand" id="perfilComent" class="media-object img-responsive img-thumbnail " src='. $imgSRC_2 .'>
+							   </a>';
+			}
+			
+			if($tipo == 1){
+				$texto = "Curtiu sua foto.";
+			}
+			
+			if($tipo == 2){
+				$texto = "Comentou na sua foto.";
+			}
+			
+			if($tipo == 3){
+				$texto = "Enviou uma solicitação de amizade.";
+			}
+			
+			echo'	<li><div class="media ">
+						<div class="media-left">
+							<a href="perfilUser.php?id='.base64_encode($id_conta) .'">
+							<img alt="Brand" id="perfilComent" class="media-object img-responsive img-thumbnail img-circle" src='. $imgSRC .'>
+							</a>
+						</div>
+						<div class="media-body ">
+							'.$texto.'
+						</div>
+						<div class="media-right">
+							'.$mediaRight.'
+						</div>
+					</div></li>
+					<li role="separator" class="divider"></li>';
+		}
+		
+	}
 }
 
 
@@ -162,20 +219,31 @@ if (getenv("REQUEST_METHOD") == "POST"){
 	if($_POST['funcao'] == 'comentar'){
 		$texto = mysql_real_escape_string($_POST['texto']);
 		$postagem_id = $_POST['postagem_id'];
+		$conta_id = base64_decode($_POST['conta_id']);
 		
 		if( strlen($texto) == 0){
 			return false;
 		}
-			
+		
+		
 		$temp = $control->comentar($postagem_id, $texto, $id);
+
+		if($temp == true and $conta_id != $id){
+			$temp2 = $control->adicionaNovidade($conta_id, $id, 2,$postagem_id);
+		}
 		
 		echo $temp;
 	}
 	
 	if($_POST['funcao'] == 'curtir'){
 		$postagem_id = $_POST['postagem_id'];
+		$conta_id = base64_decode($_POST['conta_id']);
 			
 		$temp = $control->curtir($postagem_id, $id);
+		
+		if($temp == true and $conta_id != $id){
+			$temp2 = $control->adicionaNovidade($conta_id, $id, 1,$postagem_id);
+		}
 		
 		echo $temp;
 	}

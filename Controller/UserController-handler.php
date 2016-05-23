@@ -92,6 +92,39 @@ if (getenv("REQUEST_METHOD") == "GET"){
 	
 	}
 	
+	if($_GET['funcao'] == 'getStatusAmizade'){
+		$id_amigo =  base64_decode($_GET['id']);
+				
+		$solicitacao = $control->getSolicitacaoAmizade($id, $id_amigo);
+		
+		if ( $id_amigo == $id ){
+			
+			echo ''; 
+			
+		}else if($solicitacao == 'aceitar'){
+			
+			echo '<span class="btn btn-warning center-block" id="aceitar_amizade">Aceitar Amizade</span>'; 
+			
+		}else if($solicitacao == 'true'){ 
+		
+			echo '<span class="btn btn-success disabled center-block" id="solicitacao_enviada">Solicitação Enviada</span>'; 
+		
+		}else{
+			$amizade = $control->getAmigo($id, $id_amigo);
+			
+			if($amizade == true){
+				echo '<span class="btn btn-danger center-block" id="remover_amizade">Remover amigo</span>'; 
+			}else{
+				echo '<span class="btn btn-info center-block" id="adiconar_amigo">Adicionar como amigo</span>'; 
+			}
+			
+		}
+			
+			
+	
+	}
+	
+
 }
 
 
@@ -173,34 +206,45 @@ if (getenv("REQUEST_METHOD") == "POST"){
 		
 	}
 	
-	if($_POST['funcao'] == 'comentar'){
-		$texto = mysql_real_escape_string($_POST['texto']);
-		$postagem_id = $_POST['postagem_id'];
-		
-		if( strlen($texto) == 0){
-			return false;
-		}
-			
-		$temp = $control->comentar($postagem_id, $texto, $id);
-		
-		echo $temp;
-	}
-	
-	if($_POST['funcao'] == 'curtir'){
-		$postagem_id = $_POST['postagem_id'];
-			
-		$temp = $control->curtir($postagem_id, $id);
-		
-		echo $temp;
-	}
-	
-	if($_POST['funcao'] == 'descurtir'){
-		$postagem_id = $_POST['postagem_id'];
+	if($_POST['funcao'] == 'adicionarAmigo'){
+		$amigo_id = base64_decode($_POST['amigo_id']);
 
-		$curtir_id = $control->checaCurtir($postagem_id, $id);
-		$temp = $control->descurtir($curtir_id);
+		$solicitacao = $control->adicionaSolicitacao($id, $amigo_id);
 		
-		echo $temp;
+		if($solicitacao == true and $amigo_id != $id){
+			$temp = $control->adicionaNovidade($amigo_id, $id, 3,null);
+		}
+		
+		echo $solicitacao;
+	}
+	
+	if($_POST['funcao'] == 'aceitarAmizade'){
+		$amigo_id = base64_decode($_POST['amigo_id']);
+
+		$solicitacao = $control->adicionaAmigo($id, $amigo_id);
+		$solicitacao2 = $control->adicionaAmigo($amigo_id, $id);
+		
+		if( $solicitacao == true and $solicitacao2 = true){
+			$temp = $control->removeSolicitacao($amigo_id, $id);
+			echo $temp;
+		}else{
+			echo false;
+		}
+		
+	}
+	
+	if($_POST['funcao'] == 'removerAmizade'){
+		$amigo_id = base64_decode($_POST['amigo_id']);
+
+		$solicitacao = $control->removeAmigo($id, $amigo_id);
+		$solicitacao2 = $control->removeAmigo($amigo_id, $id);
+		
+		if( $solicitacao == true and $solicitacao2 = true){
+			echo true;
+		}else{
+			echo false;
+		}
+		
 	}
 	
 }

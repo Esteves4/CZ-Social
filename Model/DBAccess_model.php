@@ -29,6 +29,29 @@ class DBAccess{
 		return $resultado;
 	}
 	
+	public function adicionaSolicitacao($id, $amigo_id){
+		$resultado = mysql_query("INSERT INTO solicitacoesAmizade(conta_id,amigo_id) VALUES('$id','$amigo_id')");
+		
+		return $resultado;
+	}
+	
+	public function adicionaNovidade($conta_id, $amigo_id, $tipo, $publicacao_id){
+		if($publicacao_id == null){
+			$resultado = mysql_query("INSERT INTO novidades(conta_id, amigo_id, tipo, data_criacao) VALUES('$conta_id','$amigo_id','$tipo', NOW())");
+		}else{
+			$resultado = mysql_query("INSERT INTO novidades VALUES(null,'$conta_id','$amigo_id','$tipo','$publicacao_id', NOW())");
+		}
+		
+		
+		return $resultado;
+	}
+	
+	public function removeSolicitacao($amigo_id, $id){
+		$resultado = mysql_query("DELETE FROM solicitacoesAmizade WHERE conta_id = '$amigo_id' and amigo_id='$id' ");
+		
+		return $resultado;
+	}
+	
 	public function adicionaComentario($comentario, $id_conta, $id_publicacao){
 		$resultado = mysql_query("INSERT INTO comentarios(comentario,data_criacao,conta_id, publicacao_id) VALUES('$comentario',NOW(),'$id_conta',". intval($id_publicacao) .")");
 		
@@ -113,6 +136,18 @@ class DBAccess{
 		return $resultado;
 	}
 	
+	public function getAmizade($id, $id_amigo){
+		$resultado = mysql_query("SELECT * from amigos where conta_id ='$id' and amigo_id ='$id_amigo'");
+		
+		$qnt_rows = mysql_num_rows($resultado);
+		
+		if($qnt_rows > 0){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
 	public function getNomeCidadeEstado($id_cidade){
 		$resultado = mysql_query("SELECT cidade_nome, estado_sigla FROM cidades NATURAL JOIN estados WHERE cidade_id = '$id_cidade'");
 		
@@ -128,6 +163,31 @@ class DBAccess{
 		
 		return $row['mural_id'];
 	}
+
+	public function getSolicitacaoAmizade($id, $id_amigo){
+		$resultado = mysql_query("SELECT * FROM solicitacoesAmizade WHERE conta_id = '$id' AND amigo_id = '$id_amigo'");
+		$resultado2 = mysql_query("SELECT * FROM solicitacoesAmizade WHERE conta_id = '$id_amigo' AND amigo_id = '$id'");
+		
+		$qnt_rows = mysql_num_rows($resultado);
+		$qnt_rows2 = mysql_num_rows($resultado2);
+		
+		if($qnt_rows > 0){
+			return 'true';
+		}else{
+			if ($qnt_rows2 > 0){
+				return 'aceitar';
+			}else{
+				return false;
+			}
+		
+		}
+	}
+	public function getNovidades($conta_id){
+		$resultado = mysql_query("SELECT amigo_id, tipo, publicacao_id FROM novidades WHERE conta_id = '$conta_id' ORDER BY data_criacao DESC ");
+		
+		return $resultado;
+	}
+	
 	
 	public function getCurtidas($id_publicacao){
 		$resultado = mysql_query("SELECT curtida_id FROM curtidas WHERE publicacao_id = '$id_publicacao'");
@@ -235,6 +295,15 @@ class DBAccess{
 		$row = mysql_fetch_assoc($resultado);
 		
 		return $row['imagem'];
+		
+	}
+	
+	public function getFotoID_postagem($publicacao_id){
+		$resultado = mysql_query("SELECT foto_id FROM publicacoes WHERE publicacao_id = '$publicacao_id'");
+		
+		$row = mysql_fetch_assoc($resultado);
+		
+		return $row['foto_id'];
 		
 	}
 	
@@ -369,12 +438,19 @@ class DBAccess{
 		return $resultado;
 	}
 	
+	public function apagaAmigo($id, $amigo_id){
+		$resultado = mysql_query("DELETE FROM amigos WHERE conta_id='$id' and amigo_id='$amigo_id'");
+		
+		return $resultado;
+	}
+	
 	public function apagaAtivar($email){
 		$resultado = mysql_query("DELETE FROM ativar WHERE email='$email'");
 		
 		return $resultado;
 	}
 	
+
 		
 	public function apagaCurtir($curtir_id){
 		$resultado = mysql_query("DELETE FROM curtidas WHERE curtida_id=". intval($curtir_id));

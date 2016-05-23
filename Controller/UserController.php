@@ -15,7 +15,31 @@ class UserController{
 		$temp = $this->db_model->getID($email);
 		
 		return $temp;
-	}	
+	}
+
+	public function adicionaSolicitacao($id, $amigo_id){		
+		$temp = $this->db_model->adicionaSolicitacao($id, $amigo_id);
+		
+		return $temp;
+	}
+	
+	public function removeSolicitacao($amigo_id, $id){		
+		$temp = $this->db_model->removeSolicitacao($amigo_id, $id);
+		
+		return $temp;
+	}
+	
+	public function adicionaAmigo($id, $amigo_id){		
+		$temp = $this->db_model->adicionaAmigo($id, $amigo_id);
+		
+		return $temp;
+	}
+	
+	public function removeAmigo($id, $amigo_id){		
+		$temp = $this->db_model->apagaAmigo($id, $amigo_id);
+		
+		return $temp;
+	}
 	
 	public function getNome($email){		
 		$temp = $this->db_model->getNome($email);
@@ -34,6 +58,18 @@ class UserController{
 	public function getDataN($email){
 		
 		$temp = $this->db_model->getDataN($email);
+		
+		return $temp;
+	}
+	
+	public function getSolicitacaoAmizade($id, $id_amigo){
+		$temp = $this->db_model->getSolicitacaoAmizade($id, $id_amigo);
+		
+		return $temp;
+	}
+	
+	public function getAmigo($id, $id_amigo){
+		$temp = $this->db_model->getAmizade($id, $id_amigo);
 		
 		return $temp;
 	}
@@ -150,6 +186,12 @@ class UserController{
 	
 	public function checaCurtir($publicacao_id, $id_conta){
 		$temp = $this->db_model->checaCurtir($publicacao_id, $id_conta);
+
+		return $temp;
+	}
+	
+	public function adicionaNovidade($conta_id, $id, $tipo,$postagem_id){
+		$temp = $this->db_model->adicionaNovidade($conta_id, $id, $tipo,$postagem_id);
 
 		return $temp;
 	}

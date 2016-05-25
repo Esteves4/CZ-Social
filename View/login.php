@@ -63,7 +63,7 @@ if(isset($_SESSION['email']) == true){
 		<div class="container">
 			<form class="form-horizontal col-sm-offset-4 col-sm-4" action="" role="form" id="loginForm" method="POST">
 				<a href="login.php">
-					<img alt="Brand" id="brand" class="img-responsive center-block" src="pictures/vdc5.png" width="200" height="200">
+					<img alt="Brand" id="brand" class="img-responsive center-block" src="pictures/logo.png" width="200" height="200">
 				</a>
 				<div class="row">
 					<label class="sr-only control-label" for="email"></label>

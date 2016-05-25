@@ -89,7 +89,7 @@ $(document).ready(function(){
 		
 		var postagem_id = div_children_children.attr('id');
 
-		$.post("../Controller/InicialController-handler.php", {postagem_id: postagem_id, funcao: 'curtir'},  
+		$.post("../Controller/InicialController-handler.php", {postagem_id: postagem_id,  conta_id: id_usuario, funcao: 'curtir'},  
 			function(result){ 
 				if(result == true){
 					getPosts(quantidade_posts, id_usuario);
@@ -108,7 +108,7 @@ $(document).ready(function(){
 		
 		var postagem_id = div_children_children.attr('id');
 
-		$.post("../Controller/InicialController-handler.php", {postagem_id: postagem_id, funcao: 'descurtir'},  
+		$.post("../Controller/InicialController-handler.php", {postagem_id: postagem_id,  conta_id: id_usuario, funcao: 'descurtir'},  
 			function(result){
 				if(result == true){
 					getPosts(quantidade_posts, id_usuario);
@@ -124,7 +124,7 @@ $(document).ready(function(){
 		
 		var postagem_id = div_parent.attr('id');
 		
-		$.post("../Controller/InicialController-handler.php", {texto: comentario, postagem_id: postagem_id,  funcao: 'comentar'},  
+		$.post("../Controller/InicialController-handler.php", {texto: comentario, postagem_id: postagem_id, conta_id: id_usuario,  funcao: 'comentar'},  
 			function(result){   
 				if(result == true){
 					getPosts(quantidade_posts, id_usuario);
